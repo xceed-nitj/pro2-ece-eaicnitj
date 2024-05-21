@@ -5,7 +5,7 @@ function Slider() {
     
   const slides = [
     {
-      url: '/side-1.webp',
+      url: 'https://nitj.ac.in/files/1710597637693-WhatsApp%20Image%202024-03-16%20at%204.43.42%20PM%20(1).jpeg',
     },
     {
       url: '/main.webp',
