@@ -341,7 +341,7 @@ function HeroSection() {
                 className=" opacity-60"
               />
             </svg>
-            <h3 className=" font-bold opacity-60 ">November 26, 2024</h3>
+            <h3 className=" font-bold opacity-60 ">5th - 7th June 2025</h3>
           </div>
           </div>
           <h1 className="md:text-4.5xl text-3xl md:ml-8 font-bold sm:text-left text-center  text-accent-900">
