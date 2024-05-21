@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+:root {
+  font-family: "Plus Jakarta Sans", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+}
+
+::selection {
+  color: white;
+  background: hsl(161.39999999999998, 93.5%, 30.4%);
+}
+
+
+#news::-webkit-scrollbar {
+  display: none;
+}
+
+#news {
+  scrollbar-width: none;
+}
+
+.hero-sec {
+  /* background-image: url(/public/yellowbgonly.png); */
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  /* Set the section height to 100% of its container's height */
+
+  /* Ensure the section covers the entire viewport height */
+  min-height: 100vh;
+}
+
+.upper-cut-img {
+  position: absolute;
+  height: 60%;
+  top: 0;
+  right: 0;
+}
+
+.lower-cut-img {
+  position: absolute;
+  height: 60%;
+  bottom: 0;
+  right: 0;
+}
+
+.industry-img {
+  position: absolute;
+  /* Position the image absolutely within the parent container */
+  top: 50%;
+  /* Align the top edge of the image at the vertical center */
+  left: 80%;
+  /* Align the left edge of the image at the horizontal center */
+  transform: translate(-50%, -50%);
+  /* Center the image precisely */
+}
+
+.fade-in{
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out ;
+}
+
+
+.fade-out{
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out ;
+}
