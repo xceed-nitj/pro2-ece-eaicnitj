@@ -8,7 +8,7 @@ function AboutNews(props) {
   const apiUrl = getEnvironment();
 
   const [isMouseOver, setIsMouseOver] = useState(false);
-  const confid = props.confid;
+  const confId = props.confid;
   // const [data, setData] = useState(null)
 
   // useEffect(() => {
@@ -26,7 +26,7 @@ function AboutNews(props) {
   // }, []);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
-    axios.get(`${apiUrl}/conferencemodule/announcements/conf/${confid}`, {
+    axios.get(`${apiUrl}/conferencemodule/announcements/conf/${confId}`, {
       withCredentials: true
 
     })
@@ -37,7 +37,7 @@ function AboutNews(props) {
       })
       .catch(err => console.log(err))
 
-  }, []);
+  }, [apiUrl, confId]);
 
 
   return (
@@ -48,12 +48,11 @@ function AboutNews(props) {
         </h2>
         <Separator />
         <div className=" border-dashed border-accent-700 border-2 bg-accent-50 rounded-b-xl border-t-0 ">
-        <p className="text-lg text-justify font-base text-accent-900 p-4  ">
+        <p className="text-lg text-justify font-base text-accent-900 p-2 ">
           {/* {data ? <div className="min-h-[216px]" dangerouslySetInnerHTML={{ __html: data.aboutConf }} /> : <div className="min-h-[216px]"></div>} */}
 
-                      The International Conference of Electronics, AI, and Computing (EAIC-2025) will be held from June 5th to 7th, 2025, at Dr. B R Ambedkar National Institute of Technology in Jalandhar, Punjab, India. This event aims to bring together leading researchers, academicians, and industry professionals worldwide to present cutting-edge research, discuss emerging trends, and network within various technology fields. The program includes keynote speeches, technical presentations, panel discussions, and technology exhibitions. Nestled in the heart of culturally vibrant Punjab, participants will experience the host institute's academic excellence and dynamic research environment. This conference is a celebration of innovation and collaboration, providing an unparalleled opportunity to engage with the global scientific community, present research, and contribute to advancing technology. Participants will delve into specialized tracks covering areas such as Nanoelectronics, VLSI Design, Communication Systems, Machine Learning, Power Electronics, Control, Renewable Energy, Electric Mobility, Security and Privacy etc. These tracks' technical depth and breadth ensure that attendees can explore the latest advancements and applications in their fields.
+                      EAIC-2025 aims to bring together leading researchers, academicians, and industry professionals worldwide to present cutting-edge research, discuss emerging trends, and network within various technology fields. The program includes keynote speeches, technical presentations, panel discussions, and technology exhibitions. Nestled in the heart of culturally vibrant Punjab, participants will experience the host institutes academic excellence and dynamic research environment. This conference is a celebration of innovation and collaboration, providing an unparalleled opportunity to engage with the global scientific community, present research, and contribute to advancing technology. Participants will delve into specialized tracks covering areas such as Nanoelectronics, VLSI Design, Communication Systems, Machine Learning, Power Electronics, Control, Renewable Energy, Electric Mobility, Security and Privacy etc. These tracks technical depth and breadth ensure that attendees can explore the latest advancements and applications in their fields.
 
-                      Moreover, participants will experience the region's rich heritage, warm hospitality, and scenic beauty. Punjab, known for its historical significance and culinary delights, offers an enriching cultural backdrop that enhances the conference experience. Join us at EAIC-2025 to shape the future of electronics, AI, and computing amidst the vibrant culture and traditions of Punjab.
                   </p></div>
         
         {/* <h2 className="text-4xl font-sans font-bold mt-4 text-gray-950  ">
@@ -70,7 +69,7 @@ function AboutNews(props) {
         <Separator />
         <div
           id="news"
-          className="h-[400px]  overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
+          className="h-[440px]  overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
         >
           <div
             className={`space-y-4  ${isMouseOver ? "animate-none cursor-default" : "animate-wiggle"

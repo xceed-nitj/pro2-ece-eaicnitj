@@ -2,32 +2,34 @@ import {  Link } from "react-router-dom";
 
 const data = [
   {
-    title: "Technical Sessions",
+    title: "Technical Paper Sessions",
     content:
     `
+    Track 1: Nanoelectronics and VLSI Design <br>
+    Track 2: Communication Systems and Networks <br>
   `,
     bg: "bg-accent-100",
   },
   {
-    title: "",
+    title: "Poster Presentations",
     content:
       "",
     bg: "bg-accent-200",
   },
   {
-    title: "",
+    title: "Worshops",
     content:
       "",
     bg: "bg-accent-300",
   },
   {
-    title: "",
+    title: "Special Sessions",
     content:
       "",
     bg: "bg-accent-400 text-white",
   },
   {
-    title: "",
+    title: "Awards",
     content:
       "",
     bg: "bg-accent-500 text-white",

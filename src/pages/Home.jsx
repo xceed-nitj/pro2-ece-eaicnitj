@@ -8,7 +8,6 @@ import AboutNews from "../components/AboutNews";
 // import SponsorShip from "../components/Sponsorship";
 import { useEffect } from "react";
 // import Slider from "../components/Slider";
-import SecNavbar from "../components/SecNavbar";
 import Navbar from "../components/Navbar"
 // import AboutNews from "./components/Dummy";
 function Home(props) {
@@ -21,7 +20,7 @@ function Home(props) {
         <Navbar />
       </div>
     <div className=" overscroll-none"><HeroSection confid={props.confId} />
-      <SecNavbar />
+     
       <AboutNews confid={props.confId} />
       {/* <Slider/> */}
       <Timeline confid={props.confId} />
