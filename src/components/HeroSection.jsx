@@ -281,18 +281,18 @@ function HeroSection() {
     
   const slides = [
     {
-      url: '/side-1.webp',
+      url: '/ece1.jpeg',
     },
     {
-      url: '/main.webp',
+      url: '/ece2.jpg',
     }
     ,
     {
-      url: '/side-2.webp',
+      url: '/ece3.jpeg',
     },
 
     {
-      url:'/side-3.webp',
+      url:'/ece4.jpg',
     },
     
   ];
