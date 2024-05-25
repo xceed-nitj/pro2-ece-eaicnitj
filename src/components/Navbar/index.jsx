@@ -8,12 +8,12 @@ import { useState, useEffect } from "react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Events", href: "/events", current: false },
-  { name: "Sponsors", href: "/sponsorship", current: false },
+//  { name: "Events", href: "/events", current: false },
+  //{ name: "Sponsors", href: "/sponsorship", current: false },
   { name: "Committees", href: "/committee", current: false },
   { name: "Location", href: "/location", current: false },
   { name: "Accommodation", href: "/accommodation", current: false },
-  { name: "Souvenir", href: "/souvenir", current: false },
+  //{ name: "Souvenir", href: "/souvenir", current: false },
   { name: "Registration Fee", href: "/registration", current: false },
 ];
 
