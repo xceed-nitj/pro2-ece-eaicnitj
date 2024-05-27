@@ -9,7 +9,9 @@ import { Route, Routes } from "react-router-dom";
 import Committee from "./pages/Committee";
 import CommonNews from "./pages/CommonNews";
 import PaperDetails from "./pages/Papers";
-
+import IntCommittee from "./pages/IntCommittee";
+import OtherCommittee from "./pages/OtherCommittee";
+import NaCommittee from "./pages/NationalCommittee";
 function App() {
     const confid ="664cca585f685bd4d93815b9";
   return (
@@ -24,6 +26,10 @@ function App() {
         <Route path="souvenir" element={<Souvenir />} />
         <Route path="registration" element={<Registration />} />
         <Route path="committee" element={<Committee confid={confid} />} />
+        <Route path="committee/international" element={<IntCommittee confid={confid} />} />
+        <Route path="committee/national" element={<NaCommittee confid={confid} />} />
+        <Route path="committee/others" element={<OtherCommittee confid={confid} />} />
+        
         <Route path="paperdetails" element={<PaperDetails confid={confid} />} />
         
         <Route path="news/:newsid" element={<CommonNews /> } />

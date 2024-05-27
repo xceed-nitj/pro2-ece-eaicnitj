@@ -69,7 +69,7 @@ function AboutNews(props) {
         <Separator />
         <div
           id="news"
-          className="h-[440px]  overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
+          className="h-[410px]  overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
         >
           <div
             className={`space-y-4  ${isMouseOver ? "animate-none cursor-default" : "animate-wiggle"

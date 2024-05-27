@@ -22,7 +22,7 @@ function CommonNews() {
                 console.log(res.data);
             })
             .catch(err => console.log(err))
-      }, []);
+      }, [apiUrl,newsid]);
 
     return (
         <>
