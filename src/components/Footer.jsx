@@ -83,7 +83,7 @@ const Footer = () => {
       <footer className="bg-stone-100 lg:grid lg:grid-cols-5">
         <div className="relative block h-32 lg:col-span-2 lg:h-full">
           <img
-            src="/side-1.webp"
+            src="/ece2.jpg"
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -104,13 +104,11 @@ const Footer = () => {
               <p className="block text-2xl font-medium text-stone-900 hover:opacity-75 sm:text-3xl">Contact Us</p>
 
               <ul className="mt-4 space-y-1 text-sm text-stone-700 ">
-              {/* <li>Prof. S. Bajpai</li> */}
-              <li>Organizing Secretary, Conference-2024</li>
+              <li>Dr. Balwinder Raj</li> 
+              <li> Conference Organizing Chairman</li>
               <li>NIT Jalandhar</li>
-                <li>Phone:</li>
-                <li>Email:</li>
-                <li> <a href="/">
-                  Website: </a></li>
+                              <li>Email: rajb@nitj.ac.in                                          </li>
+            
               </ul>
 
               {/* <ul className="mt-8 flex gap-6">

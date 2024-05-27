@@ -11,7 +11,7 @@ import CommonNews from "./pages/CommonNews";
 import PaperDetails from "./pages/Papers";
 
 function App() {
-   const confid="65fed89def981d3a955ddd9f";
+    const confid ="664cca585f685bd4d93815b9";
   return (
     <>
 

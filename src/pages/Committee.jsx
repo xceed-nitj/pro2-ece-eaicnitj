@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import SecNavbar from '../components/SecNavbar';
 import axios from "axios";
 import getEnvironment from "../getenvironment";
+
 function Committee(props) {
     const confid = props.confid;
   const [data, setData] = useState(null)
@@ -45,7 +46,7 @@ useEffect(() => {
             <Footer />
 
         </>
-    )
+    );
 }
 
 export default Committee

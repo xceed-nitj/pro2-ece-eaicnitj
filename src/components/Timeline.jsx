@@ -93,26 +93,26 @@ export default function Timeline() {
 
 <ol className="w-[70vw] sm:flex ">
       <ListItem
-        version="November 15, 2024"
+        version="Febraury 15, 2025"
         date=""
-        description="●	Last date of abstract Submission "
+        description="● Paper Submission Deadline "
       />
       <ListItem
-        version="November 20, 2024"
+        version="March 30, 2025"
         date=""
-        description="●	Notification for the acceptance of abstract  "
+        description="●	Notification for the Acceptance  "
       />
       <ListItem
-        version="November 10, 2024"
+        version="April 10, 2025"
         date=""
-        description="●	Last date for online registration  "
+        description="●Submission of Final Paper "
       />
-      {/* <ListItem
-        version="November 29, 2024"
+      <ListItem
+        version="May 10, 2025"
         date=""
-        description="●	Conference Starts from now onwards " 
+        description="●	Registration Deadline " 
 
-      /> */}
+      /> 
     </ol>
 
 

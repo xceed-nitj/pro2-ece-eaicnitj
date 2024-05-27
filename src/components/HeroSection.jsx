@@ -1,7 +1,8 @@
 import  { useState ,useEffect} from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { RxDotFilled } from 'react-icons/rx';
+//import { RxDotFilled } from 'react-icons/rx';
 import "./hero.css"
+import SecNavbar from './SecNavbar';
 // import axios from "axios";
 // import formatDate from "../utility/formatDate";
 // import getEnvironment from "../getenvironment";
@@ -281,18 +282,18 @@ function HeroSection() {
     
   const slides = [
     {
-      url: '/side-1.webp',
+      url: '/ece1.jpeg',
     },
     {
-      url: '/main.webp',
+      url: '/ece2.jpg',
     }
     ,
     {
-      url: '/side-2.webp',
+      url: '/ece3.jpeg',
     },
 
     {
-      url:'/side-3.webp',
+      url:'/ece4.jpg',
     },
     
   ];
@@ -388,8 +389,12 @@ function HeroSection() {
 Jalandhar
 </span>
             </div>
-          </div>
-        </div>
+                  </div>
+                
+                
+
+              </div>
+
         <div className="w-3/4  flex-auto pt-5 md:block hidden">
           <div className="h-4/6 w-5/6 m-auto  relative group ">
             <div className="slider">
@@ -416,13 +421,20 @@ Jalandhar
                     currentIndex === slideIndex ? "text-accent-500" : ""
                   }`}
                 >
-                  <RxDotFilled />
                 </div>
+//                  <RxDotFilled />
+
               ))}
-            </div>
+                      </div>
+
+
           </div>
-        </div>
-      </div>
+              </div>
+
+          </div>
+          <div className="container lg:max-w-7xl">
+              <SecNavbar />
+          </div>
     </>
   );
 }
