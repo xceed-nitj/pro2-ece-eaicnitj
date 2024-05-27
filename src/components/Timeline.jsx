@@ -25,7 +25,7 @@ export default function Timeline() {
 
   return (<>
     <div className="text-center w-full">
-          <h2 className="text-4xl text-accent-50 font-bold  mb-4 bg-accent-800 w-full mt-28 py-2">TIMELINE</h2>
+          <h2 className="text-4xl text-accent-50 font-bold  mb-4 bg-accent-800 w-full mt-28 py-2">Important Dates</h2>
 
           <h3 className="text-xl font-medium leading-relaxed text-gray-800 lg:w-2/3 mx-auto">
 

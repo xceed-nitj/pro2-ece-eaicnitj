@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import SecNavbar from '../components/SecNavbar';
 import axios from "axios";
 import getEnvironment from "../getenvironment";
-function Committee(props) {
+function PaperDetails(props) {
     const confid = props.confid;
   const [data, setData] = useState(null)
 
@@ -16,8 +16,8 @@ useEffect(() => {
     withCredentials: true
   })
     .then(res => {
-      setData(res.data[0]);
-      console.log(res.data[0]);
+      setData(res.data[1]);
+      console.log(res.data[1]);
 
     })
     .catch(err => console.log(err))
@@ -48,4 +48,4 @@ useEffect(() => {
     )
 }
 
-export default Committee
+export default PaperDetails

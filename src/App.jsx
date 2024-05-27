@@ -8,6 +8,7 @@ import Sponsors from "./pages/Sponsors";
 import { Route, Routes } from "react-router-dom";
 import Committee from "./pages/Committee";
 import CommonNews from "./pages/CommonNews";
+import PaperDetails from "./pages/Papers";
 
 function App() {
    const confid="65fed89def981d3a955ddd9f";
@@ -23,6 +24,8 @@ function App() {
         <Route path="souvenir" element={<Souvenir />} />
         <Route path="registration" element={<Registration />} />
         <Route path="committee" element={<Committee confid={confid} />} />
+        <Route path="paperdetails" element={<PaperDetails confid={confid} />} />
+        
         <Route path="news/:newsid" element={<CommonNews /> } />
       </Routes >
     </>
