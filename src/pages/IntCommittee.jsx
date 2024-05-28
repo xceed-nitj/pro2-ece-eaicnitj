@@ -17,8 +17,8 @@ useEffect(() => {
     withCredentials: true
   })
     .then(res => {
-      setData(res.data);
-      console.log(res.data);
+      setData(res.data[1]);
+      console.log(res.data[1]);
 
     })
     .catch(err => console.log(err))
