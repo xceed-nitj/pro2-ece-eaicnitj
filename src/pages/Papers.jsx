@@ -12,12 +12,12 @@ const apiUrl = getEnvironment();
 useEffect(() => {
     window.scrollTo(0, 0);
 
-  axios.get(`${apiUrl}/conferencemodule/commontemplate/conference${confid}${confid}`, {
+  axios.get(`${apiUrl}/conferencemodule/commontemplate/conference/${confid}`, {
     withCredentials: true
   })
     .then(res => {
-      setData(res.data[1]);
-      console.log(res.data[1]);
+      setData(res.data[7]);
+      console.log(res.data[7]);
 
     })
     .catch(err => console.log(err))
