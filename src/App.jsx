@@ -27,7 +27,7 @@ function App() {
         <Route path="accommodation" element={<Accommodation />} />
         <Route path="souvenir" element={<Souvenir />} />
         <Route path="registration" element={<Registration />} />
-        <Route path="committee" element={<IntCommittee confid={confid} />} />
+        <Route path="committee" element={<MainCommittee confid={confid} />} />
         <Route path="committee/international" element={<IntCommittee confid={confid} />} />
         <Route path="committee/national" element={<NaCommittee confid={confid} />} />
         <Route path="committee/technical" element={<TechCommittee confid={confid} />} />
