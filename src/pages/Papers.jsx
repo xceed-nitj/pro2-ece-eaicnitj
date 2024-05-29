@@ -16,8 +16,11 @@ useEffect(() => {
     withCredentials: true
   })
     .then(res => {
-      setData(res.data[7]);
-      console.log(res.data[7]);
+      const data1=res.data[5].description;
+      const data2=res.data[6].description;
+      const completedata=data1+data2;
+      setData(completedata);
+      console.log(completedata);
 
     })
     .catch(err => console.log(err))
@@ -29,15 +32,15 @@ useEffect(() => {
         <Navbar />      
         </div>
         <SecNavbar />
-        <div className="container max-w-7xl mx-auto px-5 sm:px-10  lg:px-8 mt-[58px] min-h-[300px] lg:mt-[10px] mb-5">
+        <div className="container max-w-7xl mx-auto px-5 sm:px-10  lg:px-8 mt-[58px] min-h-[300px] lg:mt-[70px] mb-5">
                 <div className="w-full mx-auto  md:w-[700px] px-4 lg:w-full" >
                     <p className="text-2xl font-sans font-bold mb-5  text-gray-950 underline ">
-                        {data? data.pageTitle: "No available data"}
+                        {data? "Tracks for Paper Submission": "Paper Tracks"}
                     </p>
                     <p className="text-base  text-justify font-sans font-base text-gray-800">
                       
 
-                        {data? <div dangerouslySetInnerHTML={{__html:data.description}}/>: " "}
+                        {data? <div dangerouslySetInnerHTML={{__html:data}}/>: " "}
                     </p>
 
                 </div>

@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
+  { name: "Paper Tracks", href: "/paperdetails", current: true },
+
   {
     name: "Committees",
     href: "/committee",
