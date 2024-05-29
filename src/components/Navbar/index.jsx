@@ -10,6 +10,7 @@ const navigation = [
     href: "/committee",
     current: false,
     subItems: [
+      { name: "Organising Heads", href: "/committee/main" },
       { name: "International Advisory Committee", href: "/committee/international" },
       { name: "National Advisory Committee", href: "/committee/national" },
       { name: "Technical Committee", href: "/committee/technical" },

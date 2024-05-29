@@ -5,7 +5,7 @@ import SecNavbar from '../components/SecNavbar';
 import axios from "axios";
 import getEnvironment from "../getenvironment";
 
-function OtherCommittee(props) {
+function MainCommittee(props) {
     const confid = props.confid;
   const [data, setData] = useState(null)
 
@@ -17,8 +17,8 @@ useEffect(() => {
     withCredentials: true
   })
     .then(res => {
-      setData(res.data[4]);
-      console.log(res.data[4]);
+      setData(res.data[0]);
+      console.log(res.data[0]);
 
     })
     .catch(err => console.log(err))
@@ -49,4 +49,4 @@ useEffect(() => {
     );
 }
 
-export default OtherCommittee
+export default MainCommittee
