@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Events from "./pages/Events";
+// import Events from "./pages/Events";
 import Accommodation from "./pages/Accomodation";
 import Location from "./pages/Location";
 import Registration from "./pages/Registration";
@@ -22,7 +22,7 @@ function App() {
       < Routes >
         <Route path="/" element={<Home confId={confid} />} />
         <Route path="sponsorship" element={<Sponsors />} />
-        <Route path="events" element={<Events />} />
+        {/* <Route path="events" element={<Events />} /> */}
         <Route path="location" element={<Location confid={confid}  />} />
         <Route path="accommodation" element={<Accommodation />} />
         <Route path="souvenir" element={<Souvenir />} />
