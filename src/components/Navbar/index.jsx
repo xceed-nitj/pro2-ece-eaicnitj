@@ -47,7 +47,7 @@ export default function Example() {
         {({ open }) => (
           <>
             <div className="mx-auto">
-              <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center bg-accent-300">
+              <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center bg-accent-400">
                 <span className="text-xl font-bold text-accent-800">
                   EAIC 2025
                 </span>
