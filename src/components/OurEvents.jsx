@@ -23,7 +23,7 @@ const data = [
 
     <br>
 
-    Read More..
+    View Additional Tracks..
   `,
     bg: "bg-accent-100",
   },
