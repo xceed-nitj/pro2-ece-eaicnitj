@@ -327,8 +327,8 @@ function HeroSection() {
   }, [currentIndex, nextSlide]);
   return (
     <>
-      <div className="Hero flex md:flex-row flex-col  bg-accent-300 mt-[52px] ">
-        <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 ">
+      <div className="Hero flex md:flex-row flex-col  bg-accent-300 sm:mt-[52px] mt-[40px] ">
+        <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 flex flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
           <div className='flex flex-col justify-center'>
           <div className="ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
             <svg
@@ -345,26 +345,29 @@ function HeroSection() {
             <h3 className=" font-bold opacity-60 ">5th - 7th June 2025</h3>
           </div>
           </div>
-          <h1 className="md:text-4.5xl text-3xl md:ml-8 font-bold sm:text-left text-center  text-accent-900">
+          <h1 className="xl:text-5xl md:text-4.5xl text-3xl md:ml-8 font-bold sm:text-left text-center  text-accent-900 2xl:text-6xl">
             International Conference <br />
-            <span className="ON md:text-3xl text-2xl text-center text-accent-900">
+            <span className="ON md:text-3xl xl:text-4xl text-2xl text-center text-accent-900 xl:mt-4 ">
               on
             </span>
             <br />
-            <span className="md:text-5xl text-4xl font-bold text-justify text-accent-950">
+            <span className="md:text-5xl xl:text-6xl text-4xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
               Electronics, AI and Computing
             </span>
           </h1>
-          <div className='md:ml-8 mt-4 flex md:flex-row flex-col md:gap-0 gap-3 rounded-full justify-around'>
-            <a
+
+          
+          <div className='mt-4 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-5'>
+            <div className='md:mr-3 flex flex-col justify-center'>           
+              <a
               href="#"
-              className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full "
+              className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full 2xl:text-lg"
               role="alert"
             >
-              <span className="text-xs bg-accent-600 rounded-full text-white px-1.5 py-2 mr-3 font-medium">
-              <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="22"><path d="M80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18q30 0 58.5 3t55.5 9l-70 70q-11-2-21.5-2H400q-71 0-127.5 17T180-306q-9 5-14.5 14t-5.5 20v32h250l80 80H80Zm542 16L484-282l56-56 82 82 202-202 56 56-258 258ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm10 240Zm-10-320q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Z" className=' fill-accent-50'/></svg>
+              <span className="text-xs bg-accent-600 rounded-full text-white px-1.5 py-2 mr-3 font-medium 2xl:px-[0.8rem] 2xl:py-4 ">
+              <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="22"><path d="M80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18q30 0 58.5 3t55.5 9l-70 70q-11-2-21.5-2H400q-71 0-127.5 17T180-306q-9 5-14.5 14t-5.5 20v32h250l80 80H80Zm542 16L484-282l56-56 82 82 202-202 56 56-258 258ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm10 240Zm-10-320q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Z" className=' fill-accent-50 2xl:h-24'/></svg>
               </span>
-              <span className="text-sm font-semibold">
+              <span className="text-sm font-semibold 2xl:text-lg">
                 Register
               </span>
               <svg
@@ -380,15 +383,17 @@ function HeroSection() {
                 ></path>
               </svg>
             </a>
-
-            <div className="flex flex-row items-center bg-accent-900  px-2 rounded-full py-">
-            <div className=' bg-accent-900 rounded-full p-2 '>
+            </div>
+ 
+            <div className="flex flex-row items-center bg-accent-900  px-2 rounded-full 2xl:px-4">
+            <div className=' bg-accent-900 rounded-full p-2 2xl:p-4'>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z" className=' fill-accent-200'/></svg>
             </div>
-            <span className=' text-sm font-medium text-accent-100 md:p-0 p-3 '>Dr. B. R. Ambedkar National Institute of Technology,
+            <span className=' text-sm font-medium text-accent-100 md:p-0 p-3 2xl:text-lg'>Dr. B. R. Ambedkar National Institute of Technology,
 Jalandhar
 </span>
             </div>
+
                   </div>
                 
                 
@@ -432,7 +437,7 @@ Jalandhar
               </div>
 
           </div>
-          <div className="container lg:max-w-7xl">
+          <div className="  flex flex-col justify-center ">
               <SecNavbar />
           </div>
     </>
