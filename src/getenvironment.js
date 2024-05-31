@@ -10,7 +10,8 @@ async function getEnvironment() {
   } else if (currentURL.includes('nitjtt')) {
       return production;
   } else {
-    return nitjServer;
+    // return nitjServer;
+    return production;
 
       // try {
       //     // Create a promise that rejects in <timeout> milliseconds
