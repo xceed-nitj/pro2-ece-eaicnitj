@@ -10,27 +10,29 @@ async function getEnvironment() {
   } else if (currentURL.includes('nitjtt')) {
       return production;
   } else {
-      try {
-          // Create a promise that rejects in <timeout> milliseconds
-          const timeoutPromise = new Promise((_, reject) =>
-              setTimeout(() => reject(new Error('Request timed out')), timeout)
-          );
+    return nitjServer;
 
-          // Attempt to fetch the URL and race it against the timeout
-          const response = await Promise.race([
-              fetch(nitjServer, { method: 'HEAD' }),
-              timeoutPromise
-          ]);
+      // try {
+      //     // Create a promise that rejects in <timeout> milliseconds
+      //     const timeoutPromise = new Promise((_, reject) =>
+      //         setTimeout(() => reject(new Error('Request timed out')), timeout)
+      //     );
 
-          if (response.ok) {
-              return nitjServer;
-          } else {
-              throw new Error('Server response not OK');
-          }
-      } catch (error) {
-          // If there is an error (including timeout), fallback to production
-          return production;
-      }
+      //     // Attempt to fetch the URL and race it against the timeout
+      //     const response = await Promise.race([
+      //         fetch(nitjServer, { method: 'HEAD' }),
+      //         timeoutPromise
+      //     ]);
+
+      //     if (response.ok) {
+      //         return nitjServer;
+      //     } else {
+      //         throw new Error('Server response not OK');
+      //     }
+      // } catch (error) {
+      //     // If there is an error (including timeout), fallback to production
+      //     return production;
+      // }
   }
 }
 
