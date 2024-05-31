@@ -2,6 +2,7 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./nav.css";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -42,12 +43,15 @@ export default function Example() {
   }, []);
 
   return (
-    <div>
+    <div className="z-100">
+      
       <Disclosure as="header" className="bg-accent-300">
         {({ open }) => (
           <>
-            <div className="mx-auto">
-              <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center bg-accent-400">
+            <div className="mx-auto ">
+              
+              <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center  nav">
+                
                 <span className="text-xl font-bold text-accent-800">
                   EAIC 2025
                 </span>
