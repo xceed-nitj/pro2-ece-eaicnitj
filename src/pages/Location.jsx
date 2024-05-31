@@ -23,7 +23,7 @@ useEffect(() => {
     })
     .catch(err => console.log(err))
 
-}, []);
+}, [apiUrl,confid]);
    
     return (
         <><div className="fixed top-0 w-screen z-40 "> 

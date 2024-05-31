@@ -324,7 +324,7 @@ function HeroSection() {
 
     // Clean up the interval when the component is unmounted or on dependency change
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, [currentIndex, nextSlide]);
   return (
     <>
       <div className="Hero flex md:flex-row flex-col  bg-accent-300 mt-[52px] ">
