@@ -3,7 +3,7 @@ async function getEnvironment() {
   const currentURL = window.location.href;
   const production = 'https://nitjtt.onrender.com';
   const nitjServer = 'https://xceed.nitj.ac.in';
-  const timeout = 5000; // 5 seconds timeout
+  // const timeout = 5000; // 5 seconds timeout
 
   if (currentURL.includes('localhost')) {
       return production;
