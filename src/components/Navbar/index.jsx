@@ -105,7 +105,7 @@ export default function Example() {
                       ) : (
                         <Link
                           to={item.href}
-                          className="inline-flex items-center py-5 px-2 text-xs text-accent-800 uppercase hover:bg-accent-500 hover:text-accent-100 font-bold"
+                          className="inline-flex py-5 px-2 text-xs text-accent-800 uppercase hover:bg-accent-500 hover:text-accent-100 font-bold"
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
@@ -126,7 +126,7 @@ export default function Example() {
                       item.current
                         ? "bg-gray-100 text-gray-900"
                         : "text-gray-900 hover:bg-gray-50 hover:text-gray-900",
-                      "block rounded-md py-2 px-3 text-base font-medium"
+                      "block rounded-md py-2 px-3 text-base font-medium text-left"
                     )}
                     aria-current={item.current ? "page" : undefined}
                     onClick={() => setIsDropdownOpen((prevState) => !prevState)}
@@ -138,9 +138,9 @@ export default function Example() {
                           <Link
                             key={subItem.name}
                             to={subItem.href}
-                            className="block pl-4 text-gray-700 hover:bg-gray-50"
+                            className="block pl-4 text-gray-700 hover:bg-gray-50 text-left "
                           >
-                            {subItem.name}
+                            ● {subItem.name}
                           </Link>
                         ))}
                       </div>

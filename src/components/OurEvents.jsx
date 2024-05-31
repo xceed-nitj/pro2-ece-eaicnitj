@@ -66,12 +66,11 @@ const data = [
 ]; // replace Array.from({ length: 12 }) with data to get layout
 function OurEvents() {
   
-  return (
-
+  return (<>
+<h2 className="text-4xl text-accent-50 font-bold  mb-4 bg-accent-800 w-full mt-28 py-2 text-center">Our Events</h2>
     <div className="container space-y-8 lg:max-w-7xl mx-auto px-8 sm:px-10 lg:px-8 md:mb-1 mt-10">
       <div className="text-center">
-        <h2 className="text-4xl font-bold mb-5">Our Events</h2>
-      </div>
+            </div>
       <Link  to="/paperdetails" smooth>
 
       <div className="grid md:grid-rows-2 md:grid-cols-3 justify-around gap-5 md:gap-5 ">
@@ -98,6 +97,7 @@ function OurEvents() {
       </Link>
 
     </div>
+    </>
   );
 }
 
