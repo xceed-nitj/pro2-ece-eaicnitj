@@ -327,7 +327,7 @@ function HeroSection() {
   }, [currentIndex, nextSlide]);
   return (
     <>
-      <div className="Hero flex md:flex-row flex-col  bg-accent-300 mt-[52px] ">
+      <div className="Hero flex md:flex-row flex-col  bg-accent-300 sm:mt-[52px] mt-[40px] ">
         <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 flex flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
           <div className='flex flex-col justify-center'>
           <div className="ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
@@ -357,8 +357,8 @@ function HeroSection() {
           </h1>
 
           
-          <div className='mt-4 flex md:flex-row flex-col md:gap-0  rounded-full justify-between md:ml-7 xl:justify-start 2xl:pt-4 '>
-            <div className='md:mr-3 '>           
+          <div className='mt-4 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-5'>
+            <div className='md:mr-3 flex flex-col justify-center'>           
               <a
               href="#"
               className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full 2xl:text-lg"
