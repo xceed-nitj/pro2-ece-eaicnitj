@@ -42,7 +42,7 @@ function AboutNews(props) {
 
   return (
     <div className=" container max-w-7xl flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-start  mx-auto px-5 sm:px-10  lg:px-8 py-20">
-      <div className="w-full  md:w-[700px]  s px-4 lg:w-3/5 ">
+      <div className="w-full  md:w-[700px]   px-4 lg:w-3/5 ">
         <h2 className="text-4xl font-bold  text-accent-50 bg-accent-600 px-4 py-2 rounded-t-xl border-2 border-accent-600 ">
           About the <span className="text-4xl font-bold text-accent-50 py-2 ">Conference</span> 
         </h2>
