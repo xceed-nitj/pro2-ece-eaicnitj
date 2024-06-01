@@ -400,7 +400,7 @@ Jalandhar
 
               </div>
 
-        <div className="w-3/4  flex-auto pt-5 md:block hidden">
+        <div className="md:w-3/4  flex-auto pt-8 md:block ">
           <div className="h-4/6 w-5/6 m-auto  relative group ">
             <div className="slider">
               <div className="card"></div>
