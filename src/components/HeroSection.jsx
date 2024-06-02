@@ -327,7 +327,7 @@ function HeroSection() {
   }, [currentIndex, nextSlide]);
   return (
     <>
-      <div className="Hero flex md:flex-row flex-col  bg-accent-300 sm:mt-[52px] mt-[40px] ">
+      <div className="Hero pattern flex md:flex-row flex-col  sm:mt-[52px] mt-[40px] ">
         <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 flex flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
           <div className='flex flex-col justify-center'>
           <div className="ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
@@ -400,7 +400,7 @@ Jalandhar
 
               </div>
 
-        <div className="w-3/4  flex-auto pt-5 md:block hidden">
+        <div className="md:w-3/4  flex-auto pt-8 md:block ">
           <div className="h-4/6 w-5/6 m-auto  relative group ">
             <div className="slider">
               <div className="card"></div>
