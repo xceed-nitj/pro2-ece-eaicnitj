@@ -327,10 +327,10 @@ function HeroSection() {
   }, [currentIndex, nextSlide]);
   return (
     <>
-      <div className="Hero pattern flex md:flex-row flex-col  sm:mt-[52px] mt-[40px] ">
+      <div className="Hero pattern flex md:flex-row flex-col sm:mt-[52px] mt-[40px] ">
         <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 flex flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
-          <div className='flex flex-col justify-center'>
-          <div className="ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
+          <div className='flex flex-col justify-center '>
+          <div className="md:ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -342,12 +342,12 @@ function HeroSection() {
                 className=" opacity-60"
               />
             </svg>
-            <h3 className=" font-bold opacity-60 ">5th - 7th June 2025</h3>
+            <h3 className=" font-bold opacity-60 md:pb-0 pb-2">5th - 7th June 2025</h3>
           </div>
           </div>
-          <h1 className="xl:text-5xl md:text-4.5xl text-3xl md:ml-8 font-bold sm:text-left text-center  text-accent-900 2xl:text-6xl">
+          <h1 className="xl:text-5xl md:text-4.5xl text-4xl md:ml-8 mt-2 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
             International Conference <br />
-            <span className="ON md:text-3xl xl:text-4xl text-2xl text-center text-accent-900 xl:mt-4 ">
+            <span className="ON md:text-3xl xl:text-4xl text-3xl text-center text-accent-900 xl:mt-4 ">
               on
             </span>
             <br />
@@ -357,7 +357,7 @@ function HeroSection() {
           </h1>
 
           
-          <div className='mt-4 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-5'>
+          <div className='md:mt-4 mt-16 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-10'>
             <div className='md:mr-3 flex flex-col justify-center'>           
               <a
               href="#"
@@ -400,7 +400,7 @@ Jalandhar
 
               </div>
 
-        <div className="md:w-3/4  flex-auto pt-8 md:block ">
+        <div className="md:w-3/4 flex-auto pt-8 md:block hidden ">
           <div className="h-4/6 w-5/6 m-auto  relative group ">
             <div className="slider">
               <div className="card"></div>
@@ -437,7 +437,7 @@ Jalandhar
               </div>
 
           </div>
-          <div className="  flex flex-col justify-center ">
+          <div className="flex flex-col justify-center ">
               <SecNavbar />
           </div>
     </>

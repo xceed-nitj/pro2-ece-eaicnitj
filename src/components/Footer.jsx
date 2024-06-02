@@ -182,7 +182,7 @@ const Footer = () => {
               </ul>
 
               <p className="mt-8 text-xs text-stone-500 sm:mt-0">
-                &copy; 2023 XCEED-NITJ All rights reserved.
+                &copy; 2024 XCEED-NITJ All rights reserved.
               </p>
             </div>
           </div>
