@@ -1,15 +1,21 @@
 .Hero {
-    display: flex;
+  display: flex;
   flex: 1;
   position: relative;
   height: 95vh;
   width: 100%;
   clip-path: circle(220vh at 50% -125vh); 
-   padding: 2em;
+  padding: 2em;
   /* border-bottom-left-radius: 70% 100px;
   border-bottom-right-radius: 100% 70px; */
+}
 
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .Hero {
+    height: 69vh;
   }
+}
 .ON{
     margin-top: -5px;
 }

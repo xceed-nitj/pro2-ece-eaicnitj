@@ -2,7 +2,7 @@ import CountdownTimer from "./CountdownTimer"
 function SecNavbar() {
   return (
 <div
-  className="-mt-[50px] h-[50px]  sm:px-4 py-3 flex flex-row justify-center"
+  className=" h-[50px]  sm:px-4 py-3 flex flex-row justify-center -mt-[50px] "
 >
   <span className='relative '>
     <CountdownTimer />
