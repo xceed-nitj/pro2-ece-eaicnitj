@@ -357,7 +357,7 @@ function HeroSection() {
           </h1>
 
           
-          <div className='md:mt-4 mt-16 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-10'>
+          <div className='md:mt-4 mt-10 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-6'>
             <div className='md:mr-3 flex flex-col justify-center'>           
               <a
               href="#"
