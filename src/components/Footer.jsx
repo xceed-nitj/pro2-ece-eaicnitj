@@ -149,7 +149,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>*/}
-             <div className="pt-14 pl-7"><a className="" href="https://info.flagcounter.com/Jzxx"><img src="https://s01.flagcounter.com/count2/Jzxx/bg_F5F5F4/txt_000000/border_8F8F8F/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a> </div>
+             <div className="md:pt-14 md:pl-7"><a className="" href="https://info.flagcounter.com/Jzxx"><img src="https://s01.flagcounter.com/count2/Jzxx/bg_F5F5F4/txt_000000/border_8F8F8F/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a> </div>
           </div> 
 
           <div className="mt-12 border-t border-stone-200 pt-12">
