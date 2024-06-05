@@ -13,7 +13,7 @@
 /* Media query for mobile view */
 @media (max-width: 768px) {
   .Hero {
-    height: 75vh;
+    height: 73vh;
   }
 }
 .ON{
