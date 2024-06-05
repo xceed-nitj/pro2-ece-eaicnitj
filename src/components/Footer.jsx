@@ -89,8 +89,7 @@ const Footer = () => {
           />
           <div className="absolute w-full h-full bg-accent-500 z-10 mix-blend-color" />
         </div>
-
-        <div className="px-4 py-16 sm:px-6 lg:col-span-3 lg:mx-20">
+               <div className="px-4 py-16 sm:px-6 lg:col-span-3 lg:mx-20">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
               <p>
@@ -108,6 +107,8 @@ const Footer = () => {
               <li> Conference Organizing Chairman</li>
               <li>NIT Jalandhar</li>
                               <li>Email: eaic2025nitj@gmail.com                                          </li>
+                             
+                              
             
               </ul>
 
@@ -148,6 +149,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>*/}
+             <div className="pt-14 pl-7"><a className="" href="https://info.flagcounter.com/Jzxx"><img src="https://s01.flagcounter.com/count2/Jzxx/bg_F5F5F4/txt_000000/border_8F8F8F/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a> </div>
           </div> 
 
           <div className="mt-12 border-t border-stone-200 pt-12">
