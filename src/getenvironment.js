@@ -1,16 +1,22 @@
-function getEnvironment() {
+async function getEnvironment() {
   const currentURL = window.location.href;
-//const development = 'http://localhost:8010';
   const production = 'https://nitjtt.onrender.com';
-   const nitjServer = 'https://xceed.nitj.ac.in';
-//for time being using nijtt server
-  if (currentURL.includes('localhost')) {
-    return production;
-  } else if (currentURL.includes('nitjtt')) {
+  const nitjServer = 'https://xceed.nitj.ac.in';
+
+  if (currentURL.includes('localhost') || currentURL.includes('nitjtt')) {
     return production;
   } else {
-    // Default to a specific environment or handle other cases
-    return nitjServer;
+    try {
+      const response = await fetch(nitjServer, { method: 'HEAD' });
+      if (response.ok) {
+        return nitjServer;
+      } else {
+        return production;
+      }
+    } catch (error) {
+      console.error('NitjServer is not reachable, falling back to production:', error);
+      return production;
+    }
   }
 }
 
