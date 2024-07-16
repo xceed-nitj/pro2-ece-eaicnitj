@@ -8,9 +8,15 @@ import getEnvironment from "../getenvironment";
 function Committee(props) {
     const confid = props.confid;
   const [data, setData] = useState(null)
+  const [apiUrl, setApiUrl] = useState(null);
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
 
-const apiUrl = getEnvironment();
 useEffect(() => {
+  if (apiUrl) {
+
     window.scrollTo(0, 0);
 
   axios.get(`${apiUrl}/conferencemodule/commontemplate/conference${confid}${confid}`, {
@@ -22,7 +28,7 @@ useEffect(() => {
 
     })
     .catch(err => console.log(err))
-
+  }
 }, [apiUrl, confid]);
    
     return (

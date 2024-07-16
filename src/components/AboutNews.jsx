@@ -5,8 +5,11 @@ import axios from "axios";
 import getEnvironment from "../getenvironment";
 
 function AboutNews(props) {
-  const apiUrl = getEnvironment();
-
+  const [apiUrl, setApiUrl] = useState(null);
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
   const [isMouseOver, setIsMouseOver] = useState(false);
   const confId = props.confid;
   // const [data, setData] = useState(null)
@@ -26,6 +29,7 @@ function AboutNews(props) {
   // }, []);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
+    if(apiUrl) {
     axios.get(`${apiUrl}/conferencemodule/announcements/conf/${confId}`, {
       withCredentials: true
 
@@ -36,7 +40,7 @@ function AboutNews(props) {
 
       })
       .catch(err => console.log(err))
-
+    }
   }, [apiUrl, confId]);
 
 

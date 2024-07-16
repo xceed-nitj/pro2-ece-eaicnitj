@@ -6,12 +6,17 @@ import { useParams } from 'react-router-dom';
 import getEnvironment from '../getenvironment';
 import axios from 'axios';
 function CommonNews() {
-    const apiUrl = getEnvironment();
     const  {newsid}  = useParams();
     const [data,setData]=useState("");
-
+    const [apiUrl, setApiUrl] = useState(null);
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
 
     useEffect(() => {
+        if (apiUrl) {
+
         window.scrollTo(0, 0);
         console.log(newsid);
         axios.get(`${apiUrl}/conferencemodule/announcements/${newsid}`, {
@@ -22,6 +27,7 @@ function CommonNews() {
                 console.log(res.data);
             })
             .catch(err => console.log(err))
+        }
       }, [apiUrl,newsid]);
 
     return (

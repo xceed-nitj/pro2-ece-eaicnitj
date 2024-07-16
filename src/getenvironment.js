@@ -1,23 +1,24 @@
+async function checkServer(url) {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    console.log("server is ok"); //incase server is ok it will
+    return response.ok;
+
+  } catch (error) {
+   // console.log("server is not ok"); //incase server is not ok it will return false
+    return false;
+  }
+}
+
 async function getEnvironment() {
-  const currentURL = window.location.href;
   const production = 'https://nitjtt.onrender.com';
   const nitjServer = 'https://xceed.nitj.ac.in';
 
-  if (currentURL.includes('localhost') || currentURL.includes('nitjtt')) {
-    return production;
+  const currentURL = window.location.href;
+   if (currentURL.includes('nitjtt')) {
+    return Promise.resolve(production);
   } else {
-    try {
-      const response = await fetch(nitjServer, { method: 'HEAD' });
-      if (response.ok) {
-        return nitjServer;
-      } else {
-        return production;
-      }
-    } catch (error) {
-      console.error('NitjServer is not reachable, falling back to production:', error);
-      return production;
-    }
-  }
+    return checkServer(nitjServer).then(isNitjServerUp => isNitjServerUp ? nitjServer : production); }
 }
 
 export default getEnvironment;
