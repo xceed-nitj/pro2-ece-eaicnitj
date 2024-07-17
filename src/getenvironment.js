@@ -5,7 +5,7 @@ async function checkServer(url) {
     return response.ok;
 
   } catch (error) {
-   // console.log("server is not ok"); //incase server is not ok it will return false
+   console.log("server is not ok"); //incase server is not ok it will return false
     return false;
   }
 }
