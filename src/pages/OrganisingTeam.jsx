@@ -9,8 +9,13 @@ function MainCommittee(props) {
     const confid = props.confid;
   const [data, setData] = useState(null)
 
-const apiUrl = getEnvironment();
-useEffect(() => {
+  const [apiUrl, setApiUrl] = useState(null);
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
+    useEffect(() => {
+      if (apiUrl) {
     window.scrollTo(0, 0);
 
   axios.get(`${apiUrl}/conferencemodule/commontemplate/conference/${confid}`, {
@@ -22,7 +27,7 @@ useEffect(() => {
 
     })
     .catch(err => console.log(err))
-
+  }
 }, [apiUrl, confid]);
    
     return (
