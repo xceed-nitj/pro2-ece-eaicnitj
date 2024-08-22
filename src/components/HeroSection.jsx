@@ -354,7 +354,16 @@ function HeroSection() {
             <span className="md:text-5xl xl:text-6xl text-4xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
               Electronics, AI and Computing
             </span>
+            
           </h1>
+          <div className="inline-block w-auto px-14 rounded-full">
+  <span className="font-large text-green-600 md:p-10 p-13 2xl:text-lg">
+  &quot; Innovating for a Sustainable and Connected Future &quot;
+  </span>
+</div>
+
+
+
 
           
           <div className='md:mt-4 mt-10 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-11'>
