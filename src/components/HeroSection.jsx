@@ -357,7 +357,7 @@ function HeroSection() {
             
           </h1>
           <div className="inline-block w-auto px-14 rounded-full">
-  <span className="font-large text-green-600 md:p-10 p-13 2xl:text-lg">
+  <span className="font-large text-green-600 md:p-10 p-3 2xl:text-lg">
   &quot; Innovating for a Sustainable and Connected Future &quot;
   </span>
 </div>
