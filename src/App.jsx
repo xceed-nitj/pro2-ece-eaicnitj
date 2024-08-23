@@ -14,6 +14,7 @@ import OtherCommittee from "./pages/OtherCommittee";
 import NaCommittee from "./pages/NationalCommittee";
 import MainCommittee from "./pages/OrganisingTeam";
 import TechCommittee from "./pages/TechCommittee";
+import Speakers from "./pages/Speakers";
 function App() {
     const confid ="664cca585f685bd4d93815b9";
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="paperdetails" element={<PaperDetails confid={confid} />} />
         
         <Route path="news/:newsid" element={<CommonNews /> } />
+        <Route path="/speakers" element={<Speakers/>}/>
       </Routes >
     </>
   );
