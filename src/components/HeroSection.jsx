@@ -345,7 +345,7 @@ function HeroSection() {
             <h3 className=" font-bold opacity-60 md:pb-0 pb-2">5th - 7th June 2025</h3>
           </div>
           </div>
-          <h1 className="xl:text-5xl md:text-4.5xl text-4xl md:ml-8 mt-2 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
+          <h1 className="xl:text-5xl md:text-4.5xl text-4xl md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
             International Conference <br />
             <span className="ON md:text-3xl xl:text-4xl text-3xl text-center text-accent-900 xl:mt-4 ">
               on
@@ -356,9 +356,9 @@ function HeroSection() {
             </span>
             
           </h1>
-          <div className="inline-block w-auto px-14 rounded-full">
-  <span className="font-large text-green-600 md:p-10 p-3 2xl:text-lg">
-  &quot; Innovating for a Sustainable and Connected Future &quot;
+          <div className="inline-block text-center md:text-left md:pt-3 pt-4 rounded-full">
+  <span className="font-large text-accent-700 md:p-10 p-3 2xl:text-lg  font-bold">
+  &quot;Innovating for a Sustainable and Connected Future&quot;
   </span>
 </div>
 
