@@ -17,6 +17,7 @@ const navigation = [
       { name: "International Advisory Committee", href: "/committee/international" },
       { name: "National Advisory Committee", href: "/committee/national" },
       { name: "Technical Committee", href: "/committee/technical" },
+{ name: "IEEE Delhi Section Oversight Committee", href: "/committee/ieeesoc" },
       { name: "Other Committees", href: "/committee/others" },
 
     ],
