@@ -55,7 +55,7 @@ export default function Example() {
               <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center  nav">
                 
                 <span className="text-xl font-bold text-accent-800">
-                  EAIC 2025
+                  IEEE EAIC 2025
                 </span>
                 <div className="relative z-10 flex items-center lg:hidden">
                   <Disclosure.Button
