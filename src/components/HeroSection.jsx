@@ -346,7 +346,7 @@ function HeroSection() {
           </div>
           </div>
           <h1 className="xl:text-5xl md:text-4.5xl text-4xl md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
-            International Conference <br />
+            IEEE sponsored International Conference <br />
             <span className="ON md:text-3xl xl:text-4xl text-3xl text-center text-accent-900 xl:mt-4 ">
               on
             </span>
