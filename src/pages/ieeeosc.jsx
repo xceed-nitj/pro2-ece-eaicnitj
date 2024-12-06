@@ -24,8 +24,8 @@ function IEEECommittee(props) {
                 withCredentials: true
             })
                 .then(res => {
-                    setData(res.data[5]);
-                    console.log(res.data[5]);
+                    setData(res.data[7]);
+                    console.log(res.data[7]);
                 })
                 .catch(err => {
                     console.error('Error fetching data:', err);

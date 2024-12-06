@@ -15,6 +15,7 @@ import NaCommittee from "./pages/NationalCommittee";
 import MainCommittee from "./pages/OrganisingTeam";
 import TechCommittee from "./pages/TechCommittee";
 import Speakers from "./pages/Speakers";
+import IEEECommittee from "./pages/ieeeosc";
 function App() {
     const confid ="6752deeb39431d9a5d4256b6";
   return (
@@ -33,7 +34,8 @@ function App() {
         <Route path="committee/national" element={<NaCommittee confid={confid} />} />
         <Route path="committee/technical" element={<TechCommittee confid={confid} />} />
         <Route path="committee/others" element={<OtherCommittee confid={confid} />} />
-      
+        <Route path="committee/ieeesoc" element={<IEEECommittee confid={confid} />} />
+
         <Route path="committee/main" element={<MainCommittee confid={confid} />} />
         
         <Route path="paperdetails" element={<PaperDetails confid={confid} />} />
