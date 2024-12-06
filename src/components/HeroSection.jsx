@@ -366,34 +366,34 @@ function HeroSection() {
 
 
           
-          <div className='md:mt-4 mt-10 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-22'>
-            <div className='md:mr-3 flex flex-col justify-center'>           
-              <a
-              href="#"
-              className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full 2xl:text-lg"
-              role="alert"
-            >
-              <span className="text-xs bg-accent-600 rounded-full text-white px-1.5 py-2 mr-3 font-medium 2xl:px-[0.8rem] 2xl:py-4 ">
-              <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="22"><path d="M80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18q30 0 58.5 3t55.5 9l-70 70q-11-2-21.5-2H400q-71 0-127.5 17T180-306q-9 5-14.5 14t-5.5 20v32h250l80 80H80Zm542 16L484-282l56-56 82 82 202-202 56 56-258 258ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm10 240Zm-10-320q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Z" className=' fill-accent-50 2xl:h-24'/></svg>
-              </span>
-              <span className="text-sm font-semibold 2xl:text-lg ">
-                Register
-              </span>
-              <svg
-                className="ml-2 w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
-            </div>
- 
+          <div className='md:mt-2 mt-10 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-23'>
+                      <div className='md:mr-3 flex flex-col justify-center'>
+                          <a
+                              href="https://cmt3.research.microsoft.com/EAIC2025"
+                              className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full 2xl:text-lg"
+                              role="alert"
+                          >
+                              <span className="text-xs bg-accent-600 rounded-full text-white px-1.5 py-2 mr-3 font-medium 2xl:px-[0.8rem] 2xl:py-4 ">
+                                  <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="22"><path d="M80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18q30 0 58.5 3t55.5 9l-70 70q-11-2-21.5-2H400q-71 0-127.5 17T180-306q-9 5-14.5 14t-5.5 20v32h250l80 80H80Zm542 16L484-282l56-56 82 82 202-202 56 56-258 258ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm10 240Zm-10-320q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Z" className=' fill-accent-50 2xl:h-24' /></svg>
+                              </span>
+                              <span className="text-sm font-semibold 2xl:text-lg ">
+                                  Submit paper
+                              </span>
+                              <svg
+                                  className="ml-2 w-5 h-5"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                              >
+                                  <path
+                                      fillRule="evenodd"
+                                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                      clipRule="evenodd"
+                                  ></path>
+                              </svg>
+                          </a>
+                      </div>
+
             <div className="flex flex-row items-center bg-accent-900  px-2 rounded-full 2xl:px-4">
             <div className=' bg-accent-900 rounded-full p-2 2xl:p-4'>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z" className=' fill-accent-200'/></svg>
