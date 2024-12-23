@@ -1,4 +1,4 @@
-import {  Link } from "react-router-dom";
+// import {  Link } from "react-router-dom";
 
 const data = [
   {
@@ -71,8 +71,8 @@ function OurEvents() {
     <div className="container space-y-8 lg:max-w-7xl mx-auto px-8 sm:px-10 lg:px-8 md:mb-1 mt-10">
       <div className="text-center">
             </div>
-      <Link  to="/paperdetails" smooth>
-
+      {/* <Link  to="/paperdetails"> */}
+      <a href="/paperdetails">
       <div className="grid md:grid-rows-2 md:grid-cols-3 justify-around gap-5 md:gap-5 ">
 
         {data.map((item, index) => (
@@ -94,7 +94,8 @@ function OurEvents() {
           </div>
         ))}
       </div>
-      </Link>
+      </a>
+      {/* </Link> */}
 
     </div>
     </>
