@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./nav.css";
 
+import ieeelogo from '../../../public/ieee.svg'
+
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Paper Tracks", href: "/paperdetails", current: true },
@@ -53,9 +55,9 @@ export default function Example() {
             <div className="mx-auto ">
               
               <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center  nav">
-                
-                <span className="text-xl font-bold text-accent-800">
-                  IEEE EAIC 2025
+                <span className="text-xl font-bold text-accent-800 flex justify-center items-center">
+                  <img src={ieeelogo} alt="ieee" style={{height:'5vh'}} />
+                  EAIC 2025
                 </span>
                 <div className="relative z-10 flex items-center lg:hidden">
                   <Disclosure.Button
