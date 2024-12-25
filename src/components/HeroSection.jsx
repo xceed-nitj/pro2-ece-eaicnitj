@@ -4,6 +4,9 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import "./hero.css"
 import SecNavbar from './SecNavbar';
 
+import nitjlogo from '../../public/logo.png'
+import ieeelogo from '../../public/ieee.svg'
+
 function HeroSection() {
 
   function SubmitPaperButton(props) {
@@ -118,7 +121,7 @@ function HeroSection() {
     return (
       <>
       <div className='flex flex-col justify-center '>
-        <div className="md:ml-8 flex flex-row gap-2 mb-3 md:text-left text-center justify-center md:justify-normal">
+        <div className="md:ml-8 flex flex-row gap-2 sm:mb-3 mb-0 md:text-left text-center justify-center md:justify-normal">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"
@@ -133,7 +136,7 @@ function HeroSection() {
           <h3 className=" font-bold opacity-60 md:pb-0 pb-2">5th - 7th June 2025</h3>
         </div>
       </div>
-      <h1 className="xl:text-5xl md:text-4.5xl sm:text-4xl text-xl md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
+      <h1 className="xl:text-5xl md:text-4.5xl sm:text-4xl text-md md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
         IEEE Technically Sponsored <br /> International Conference on
         <br />
         <span className="md:text-5xl xl:text-6xl sm:text-4xl text-xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
@@ -150,19 +153,35 @@ function HeroSection() {
     )
   }
 
+  function Logos() {
+
+    const logoStyle = "w-[40%] sm:h-[35%] object-contain sm:w-auto"
+
+    return (
+      // <></>
+      <div className='flex sm:h-full h-[10vh] m-1 sm:m-10 justify-center align-center'>
+      <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
+      <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="Hero pattern flex md:flex-row flex-col sm:mt-[52px] mt-[40px]">
 
         {/* Left Section */}
-        <div className="container lg:max-w-7xl p-4  mx-auto md:mb-5 flex flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
+        <div className="container lg:max-w-7xl p-4 h-full flex items-center justify-evenly mx-auto md:mb-5 flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
           <TextSection/>
 
+          <Logos/>
+
           {/* button cluster */}
-          <div className='md:mt-2 mt-10 flex md:flex-row flex-col md:gap-0  rounded-full sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
+          <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
             <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
             <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
           </div>
+
         </div>
 
         <Gallery slides={[
