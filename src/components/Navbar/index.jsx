@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./nav.css";
 
-import ieeelogo from '../../../public/ieee.svg'
+// import ieeelogo from '../../../public/ieee.svg'
 
 const navigation = [
   { name: "Home", href: "/", current: true },
