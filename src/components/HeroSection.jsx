@@ -4,8 +4,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import "./hero.css"
 import SecNavbar from './SecNavbar';
 
-import nitjlogo from '../../public/logo.png'
-import ieeelogo from '../../public/ieee.svg'
+// import nitjlogo from '../../public/logo.png'
+// import ieeelogo from '../../public/ieee.svg'
 
 function HeroSection() {
 
@@ -153,18 +153,18 @@ function HeroSection() {
     )
   }
 
-  function Logos() {
+  // function Logos() {
 
-    const logoStyle = "w-[40%] sm:h-[30%] object-contain sm:w-auto"
+  //   const logoStyle = "w-[40%] sm:h-[30%] object-contain sm:w-auto"
 
-    return (
-      // <></>
-      <div className='flex sm:h-full h-[8vh] m-1 sm:m-10 justify-center align-center'>
-      <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
-      <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
-      </div>
-    )
-  }
+  //   return (
+  //     // <></>
+  //     <div className='flex sm:h-full h-[8vh] m-1 sm:m-10 justify-center align-center'>
+  //     <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
+  //     <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
+  //     </div>
+  //   )
+  // }
 
   return (
     <>
@@ -174,7 +174,7 @@ function HeroSection() {
         <div className="container lg:max-w-7xl p-4 h-full flex items-center justify-evenly mx-auto md:mb-5 flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
           <TextSection/>
 
-          <Logos/>
+{/*           <Logos/> */}
 
           {/* button cluster */}
           <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
