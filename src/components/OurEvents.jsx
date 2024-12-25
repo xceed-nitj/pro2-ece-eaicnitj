@@ -4,26 +4,25 @@ const data = [
   {
     title: "Technical Paper Sessions",
     content:
-    `
     Track 1: Nanoelectronics and VLSI Design <br>
     Track 2: Communication Systems and Networks <br>
     Track 3: Machine Learning and Data Science <br>
     Track 4: Security and Privacy <br>
-    Track 5: Track 5: Data and Software Engineering <br>
-    Track 6: Machine Intelligence Systems <br>
-    Track 7: Next-Generation Computing <br>
+    Track 5: Data and Software Engineering <br>
+    Track 6: Biomedical Engineering and Healthcare Technologies <br>
+    Track 7: Smart & Sustainable Energy Solutions <br>
     Track 8: Robotics and Cybernetics <br>
-    Track 9: Devices Circuits and Systems <br>
+    Track 9: High Voltage Engineering and Condition Monitoring <br>
     Track 10: Control, Instrumentation, Signal Processing and Multimedia <br>
     Track 11: Antenna, Microwave Techniques, Communications, Networks and IoT <br>
-    Track 12: Power Electronics and Electric Vehicles <br>
-    Track 13: Biomedical Engineering and Healthcare Technologies <br>
+    Track 12: Advancements in Power system <br>
+    Track 13: Power Electronics, Electric Mobility and Autonomous Vehicles <br>
    
 
 
     <br>
 
-    View Additional Tracks..
+    Click to View Additional details
   `,
     bg: "bg-accent-100",
   },
