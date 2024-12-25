@@ -46,9 +46,9 @@ const data = [
     bg: "bg-accent-400 text-white",
   },
   {
-    title: "IEEE Sponsorship",
+    title: "IEEE Technical Sponsorship",
     content:
-      "The proposal has been submitted for IEEE for the technical sponsorship for this conference",
+      "EAIC 2025 is technically sponsored by IEEE. All accepted and presented papers will be recommended for publication in IEEE Xplore",
     bg: "bg-accent-500 text-white",
   },
   // {
