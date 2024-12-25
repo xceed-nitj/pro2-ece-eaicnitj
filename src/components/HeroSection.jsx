@@ -134,7 +134,7 @@ function HeroSection() {
         </div>
       </div>
       <h1 className="xl:text-5xl md:text-4.5xl sm:text-4xl text-xl md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
-        IEEE sponsored <br /> International Conference on
+        IEEE Technically Sponsored <br /> International Conference on
         <br />
         <span className="md:text-5xl xl:text-6xl sm:text-4xl text-xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
           Electronics, AI and Computing
