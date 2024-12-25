@@ -11,7 +11,7 @@ function HeroSection() {
 
   function SubmitPaperButton(props) {
     return (
-      <div className='md:mr-3 flex flex-col justify-center'>
+      <div className='md:mr-5 flex flex-col justify-center'>
                   <a href={props.destination}
                     className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-accent-700 bg-accent-100 rounded-full 2xl:text-lg"
                     role="alert">
