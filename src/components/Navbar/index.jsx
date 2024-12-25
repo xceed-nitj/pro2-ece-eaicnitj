@@ -57,7 +57,10 @@ export default function Example() {
               <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center  nav">
                 <span className="text-xl font-bold text-accent-800 flex justify-center items-center">
 {/*                   <img src={ieeelogo} alt="ieee" style={{height:'5vh'}} /> */}
-                  EAIC 2025 (Technically Sponsored by IEEE)
+                  EAIC 2025 
+                  <span className="text-xs">
+                    (Technically Sponsored by IEEE)
+                  </span>
                 </span>
                 <div className="relative z-10 flex items-center lg:hidden">
                   <Disclosure.Button
