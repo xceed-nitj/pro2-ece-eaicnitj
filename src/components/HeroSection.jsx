@@ -155,11 +155,11 @@ function HeroSection() {
 
   function Logos() {
 
-    const logoStyle = "w-[40%] sm:h-[35%] object-contain sm:w-auto"
+    const logoStyle = "w-[40%] sm:h-[30%] object-contain sm:w-auto"
 
     return (
       // <></>
-      <div className='flex sm:h-full h-[10vh] m-1 sm:m-10 justify-center align-center'>
+      <div className='flex sm:h-full h-[8vh] m-1 sm:m-10 justify-center align-center'>
       <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
       <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
       </div>
