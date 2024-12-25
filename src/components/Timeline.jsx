@@ -1,27 +1,54 @@
 // import Separator from "./common/Separator";
-// import axios from "axios";
-// import getEnvironment from "../getenvironment";
-// import { useState, useEffect } from "react";
+import axios from "axios";
+import getEnvironment from "../getenvironment";
+import { useState, useEffect } from "react";
 // import formatDate from "../utility/formatDate"
 import "./Timeline.css"
 
-export default function Timeline() {
-  // const confid = props.confid;
-  // const [datesData, setDatesData] = useState([]);
+export default function Timeline(props) {
+  const confid = props.confid;
+  const [datesData, setDatesData] = useState([]);
   // const apiUrl = getEnvironment();
+  const [apiUrl, setApiUrl] = useState(null);
+
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
+    useEffect(() => {
+      if (apiUrl) {
+
+    window.scrollTo(0, 0);
+
+  axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
+    withCredentials: true
+  })
+    .then(res => {
+      // console.log('timeline -> ',res.data);
+      setDatesData(res.data.sort((a ,b)=> a.order - b.order).filter(d=>d.featured))
+
+    })
+    .catch(err => console.log(err))
+  }
+}, [apiUrl, confid]);
   // useEffect(() => {
   //   axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
   //     withCredentials: true
 
   //   })
   //     .then(res => {
-  //       setDatesData(res.data);
-  //       console.log(res.data);
+  //       // setDatesData(res.data);
+  //       console.log('dates ->',res.data);
 
   //     })
   //     .catch(err => console.log(err))
 
   // }, []);
+
+  function showDate(d) {
+    let dt = new Date(d.extended ? d.newDate : d.date)
+    return dt.toLocaleDateString('en-US',{ year: 'numeric', month: 'long', day: 'numeric' })
+  }
 
   return (<>
     <div className="text-center w-full">
@@ -92,7 +119,7 @@ export default function Timeline() {
         </div> */}
 
 <ol className="w-[70vw] sm:flex ">
-      <ListItem
+      {/* <ListItem
         version="Febraury 15, 2025"
         date=""
         description="● Paper Submission Deadline "
@@ -112,7 +139,16 @@ export default function Timeline() {
         date=""
         description="●	Registration Deadline " 
 
-      /> 
+      />  */}
+      {
+        datesData && datesData.map((d,k)=>(
+          <ListItem 
+          key={k} 
+          version={showDate(d)} 
+          date={''} 
+          description={d.title} />
+        ))
+      }
     </ol>
 
 
