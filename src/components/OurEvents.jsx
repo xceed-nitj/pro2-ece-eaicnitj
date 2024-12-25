@@ -4,7 +4,7 @@ const data = [
   {
     title: "Technical Paper Sessions",
     content:
-    Track 1: Nanoelectronics and VLSI Design <br>
+    "Track 1: Nanoelectronics and VLSI Design <br>
     Track 2: Communication Systems and Networks <br>
     Track 3: Machine Learning and Data Science <br>
     Track 4: Security and Privacy <br>
@@ -22,7 +22,7 @@ const data = [
 
     <br>
 
-    Click to View Additional details
+    Click to View Additional details"
   `,
     bg: "bg-accent-100",
   },
