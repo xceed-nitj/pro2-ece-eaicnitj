@@ -32,7 +32,7 @@ const data = [
   },
   {
     title: "Special Sessions",
-    content: "The proposals for special session shall be sent to eaic2025nitj@gmail.com",
+    content: "The proposals for special session shall be sent to eaic2025@nitj.ac.in",
     bg: "bg-accent-400 text-white",
   },
   {
