@@ -4,8 +4,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import "./hero.css"
 import SecNavbar from './SecNavbar';
 
-// import nitjlogo from '../../public/logo.png'
-// import ieeelogo from '../../public/ieee.svg'
+import nitjlogo from '../../public/logo.png'
+import ieeelogo from '../../public/ieee.svg'
 
 function HeroSection() {
 
@@ -83,8 +83,8 @@ function HeroSection() {
     }, [currentIndex, nextSlide]);
 
     return (
-      <div className="md:w-3/4 flex-auto pt-8 md:block hidden ">
-        <div className="h-4/6 w-5/6 m-auto  relative group ">
+      <div className="md:w-[80%] flex-auto pt-10 mt-10 md:block hidden">
+        <div className="h-4/6 m-auto  relative group ">
           <div className="slider">
             <div className="card"></div>
             <div
@@ -119,8 +119,8 @@ function HeroSection() {
 
   function TextSection() {
     return (
-      <>
-      <div className='flex flex-col justify-center '>
+      <div>
+      <div className='flex flex-col justify-center w-full'>
         <div className="md:ml-8 flex flex-row gap-2 sm:mb-3 mb-0 md:text-left text-center justify-center md:justify-normal">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -133,50 +133,47 @@ function HeroSection() {
               className=" opacity-60"
             />
           </svg>
-          <h3 className=" font-bold opacity-60 md:pb-0 pb-2">5th - 7th June 2025</h3>
+          <h3 className=" font-bold opacity-60">5th - 7th June 2025</h3>
         </div>
       </div>
-      <h1 className="xl:text-5xl md:text-4.5xl sm:text-4xl text-md md:ml-8 mt-1.5 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
+      <h1 className="xl:text-5xl md:text-3xl sm:text-2xl text-md md:ml-8 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
         IEEE Technically Sponsored <br /> International Conference on
         <br />
-        <span className="md:text-5xl xl:text-6xl sm:text-4xl text-xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
+        <span className="md:text-5xl xl:text-6xl sm:text-4xl text-3xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
           Electronics, AI and Computing
         </span>
         
       </h1>
-      <div className="inline-block text-center md:text-left md:pt-3 pt-4 rounded-full">
-        <span className="font-large text-accent-700 md:p-10 p-3 2xl:text-lg  font-bold">
+      <div className="inline-block flex justify-center text-center p-3 w-full md:text-left">
+        <span className="font-large text-accent-700 2xl:text-lg  font-bold">
         &quot;Innovating for a Sustainable and Connected Future&quot;
         </span>
       </div>
-      </>
+      </div>
     )
   }
 
-  // function Logos() {
+  function Logos() {
 
-  //   const logoStyle = "w-[40%] sm:h-[30%] object-contain sm:w-auto"
+    const logoStyle = "h-full object-contain"
 
-  //   return (
-  //     // <></>
-  //     <div className='flex sm:h-full h-[8vh] m-1 sm:m-10 justify-center align-center'>
-  //     <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
-  //     <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
-  //     </div>
-  //   )
-  // }
+    return (
+      <div className='flex gap-10 h-[7vh] justify-center align-center'>
+        <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
+        <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
+      </div>
+    )
+  }
 
   return (
     <>
-      <div className="Hero pattern flex md:flex-row flex-col sm:mt-[52px] mt-[40px]">
-
-        {/* Left Section */}
+      {/* <div className="h-full Hero pattern flex md:flex-row flex-col sm:mt-[52px] mt-[40px]">
         <div className="container lg:max-w-7xl p-4 h-full flex items-center justify-evenly mx-auto md:mb-5 flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
+
+          <Logos/>
+
           <TextSection/>
 
-{/*           <Logos/> */}
-
-          {/* button cluster */}
           <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
             <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
             <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
@@ -191,9 +188,41 @@ function HeroSection() {
           {url:'/ece4.jpg',},]} />
 
       </div>
-      <div className="flex flex-col justify-center ">
+      <div className="flex flex-col justify-center">
           <SecNavbar />
+      </div> */}
+
+      <div className='h-[100vh] pattern sm:pt-[52px] pt-[10px]'>
+        <div className='h-full box-border flex flex-row'>
+
+          {/* left div */}
+          <div className='h-full w-full sm:w-[50%] p-5 flex flex-col pb-10 justify-evenly items-center'>
+            <Logos/>
+            <TextSection/>
+            <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
+              <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
+              <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
+            </div>
+          </div>
+
+
+          {/* right div */}
+          <div className='Hero h-full w-[50%] sm:flex flex-col justify-center items-center hidden'>
+          <Gallery slides={[
+            {url: '/ece1.jpeg',},
+            {url: '/ece2.jpg',},
+            {url: '/ece3.jpeg',},
+            {url:'/ece4.jpg',},]} />
+          </div>
+
+        </div>
+
+        <div className="flex flex-col justify-center">
+          <SecNavbar />
+        </div>
+
       </div>
+        
     </>
   );
 }
