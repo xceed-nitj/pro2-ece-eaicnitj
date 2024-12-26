@@ -106,7 +106,7 @@ const Footer = () => {
               <li>Dr. Balwinder Raj</li> 
               <li> Conference Organizing Chairman</li>
               <li>NIT Jalandhar</li>
-                              <li>Email: eaic2025nitj@gmail.com                                          </li>
+                              <li>Email: eaic2025@nitj.ac.in                                          </li>
                              
                               
             
