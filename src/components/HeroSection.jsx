@@ -119,7 +119,8 @@ function HeroSection() {
 
   function TextSection() {
     return (
-      <div>
+      <>
+      {/* Date Section */}
       <div className='flex flex-col justify-center w-full'>
         <div className="md:ml-8 flex flex-row gap-2 sm:mb-3 mb-0 md:text-left text-center justify-center md:justify-normal">
           <svg
@@ -136,6 +137,8 @@ function HeroSection() {
           <h3 className=" font-bold opacity-60">5th - 7th June 2025</h3>
         </div>
       </div>
+
+      {/* Text Section */}
       <h1 className="xl:text-5xl md:text-3xl sm:text-2xl text-md md:ml-8 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
         IEEE Technically Sponsored <br /> International Conference on
         <br />
@@ -149,13 +152,13 @@ function HeroSection() {
         &quot;Innovating for a Sustainable and Connected Future&quot;
         </span>
       </div>
-      </div>
+      </>
     )
   }
 
   function Logos() {
 
-    const logoStyle = "h-full object-contain"
+    const logoStyle = "h-full sm:h-[150%] object-contain"
 
     return (
       <div className='flex gap-10 h-[7vh] justify-center align-center'>
@@ -192,15 +195,23 @@ function HeroSection() {
           <SecNavbar />
       </div> */}
 
-      <div className='h-[100vh] pattern sm:pt-[52px] pt-[10px]'>
+      <div className='h-[100svh] pattern sm:pt-[52px] pt-[10px]'>
         <div className='h-full box-border flex flex-row'>
 
           {/* left div */}
-          <div className='h-full w-full sm:w-[50%] p-5 flex flex-col pb-10 justify-evenly items-center'>
+          <div className='h-full w-full sm:w-[50%] p-5 flex flex-col pb-[70px] justify-evenly items-center'>
             <Logos/>
             <TextSection/>
-            <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
+            <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0
+             sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2 hidden sm:flex'>
               <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
+              <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
+            </div>
+            
+            <div className='sm:hidden w-full'>
+              <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
+            </div>
+            <div className='sm:hidden'>
               <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
             </div>
           </div>
