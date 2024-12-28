@@ -180,7 +180,6 @@ export default function Timeline(props) {
 
 const ListItem = ({ version, date, description, last}) => {
   const [hover, setHover] = useState(false)
-  console.log('hover state is',hover)
   return (
     <li 
       onMouseEnter={()=>{if(!hover)setHover(true)}} 

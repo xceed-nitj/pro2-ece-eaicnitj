@@ -1,11 +1,14 @@
 import  { useState ,useEffect} from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import Lottie from 'lottie-react';
 //import { RxDotFilled } from 'react-icons/rx';
 import "./hero.css"
 import SecNavbar from './SecNavbar';
 
+import hex from '../../public/hex.json'
+
 import nitjlogo from '../../public/logo.png'
-import ieeelogo from '../../public/ieee.svg'
+import ieeelogo from '../../public/ieee.png'
 
 function HeroSection() {
 
@@ -169,33 +172,15 @@ function HeroSection() {
   }
 
   return (
-    <>
-      {/* <div className="h-full Hero pattern flex md:flex-row flex-col sm:mt-[52px] mt-[40px]">
-        <div className="container lg:max-w-7xl p-4 h-full flex items-center justify-evenly mx-auto md:mb-5 flex-col xl:gap-2 xl:mt-6 xl:ml-10 xl:-mr-14 xl:pr-0 ">
+    <div className='h-[100svh] z-[-1] pattern w-full relative'>
 
-          <Logos/>
-
-          <TextSection/>
-
-          <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0 sm:justify-between md:ml-7 xl:justify-start 2xl:pt-4 justify-center gap-2'>
-            <SubmitPaperButton destination="https://cmt3.research.microsoft.com/EAIC2025"/>
-            <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
-          </div>
-
-        </div>
-
-        <Gallery slides={[
-          {url: '/ece1.jpeg',},
-          {url: '/ece2.jpg',},
-          {url: '/ece3.jpeg',},
-          {url:'/ece4.jpg',},]} />
-
+      <div className='border w-full z-[0] h-[100svh] absolute overflow-hidden'>
+        <Lottie
+          animationData={hex} style={{height:'100%', transform:'scale(1) translate(-40%)',opacity:"0.3"}}
+        />
       </div>
-      <div className="flex flex-col justify-center">
-          <SecNavbar />
-      </div> */}
 
-      <div className='h-[100svh] pattern sm:pt-[52px] pt-[10px]'>
+      <div className='h-[100svh] w-full sm:pt-[52px] pt-[10px] z-10 absolute'>
         <div className='h-full box-border flex flex-row'>
 
           {/* left div */}
@@ -224,17 +209,18 @@ function HeroSection() {
             {url: '/ece2.jpg',},
             {url: '/ece3.jpeg',},
             {url:'/ece4.jpg',},]} />
+
+          <div className="flex flex-col justify-center">
+            <SecNavbar />
+          </div>
+
           </div>
 
         </div>
 
-        <div className="flex flex-col justify-center">
-          <SecNavbar />
-        </div>
-
       </div>
         
-    </>
+    </div>
   );
 }
 
