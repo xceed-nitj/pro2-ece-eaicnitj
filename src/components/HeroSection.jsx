@@ -172,9 +172,9 @@ function HeroSection() {
   }
 
   return (
-    <div className='h-[100svh] z-[-1] pattern w-full relative'>
+    <div className='h-[100svh] z-[0] pattern w-full relative'>
 
-      <div className='border w-full z-[0] h-[100svh] absolute overflow-hidden'>
+      <div className='border w-full z-[1] h-[100svh] absolute overflow-hidden'>
         <Lottie
           animationData={hex} style={{height:'100%', transform:'scale(1) translate(-40%)',opacity:"0.3"}}
         />
