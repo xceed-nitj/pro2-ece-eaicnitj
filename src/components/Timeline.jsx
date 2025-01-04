@@ -58,9 +58,9 @@ export default function Timeline(props) {
 
           </h3>
         </div>
-    <div className=" container max-w-7xl flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-start mx-auto px-5 sm:px-10 py-16 lg:px-8 lg:py-16">
+    <div className="container w-full flex items-center justify-evenly mx-auto py-16 lg:py-16">
       
-      <div className="w-full lg:w-3/5 md:max-w-[800px] items-center sm:-ml-20 pl-10 sm:pl-0">
+      <div className="w-full items-center flex justify-evenly">
 
         
         {/* <div className="relative py-5">
