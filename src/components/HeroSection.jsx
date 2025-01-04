@@ -9,6 +9,7 @@ import hex from '../../public/hex.json'
 
 import nitjlogo from '../../public/logo.png'
 import ieeelogo from '../../public/ieee.png'
+import ieeenitj from '../../public/IEEE_student_branch.png'
 
 function HeroSection() {
 
@@ -161,12 +162,13 @@ function HeroSection() {
 
   function Logos() {
 
-    const logoStyle = "h-full sm:h-[150%] object-contain"
+    const logoStyle = "h-[70%] sm:h-[150%] object-contain"
 
     return (
-      <div className='flex gap-10 h-[7vh] justify-center align-center'>
+      <div className='flex gap-10 h-[7vh] mb-5 justify-center align-center flex-wrap'>
         <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
         <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
+        <img src={ieeenitj} className={logoStyle} alt="IEEE_NITJ" />
       </div>
     )
   }
@@ -199,6 +201,14 @@ function HeroSection() {
             <div className='sm:hidden'>
               <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
             </div>
+
+            <div style={{color:"#1b3f32", fontWeight:"bold"}}>
+            [ IEEE Conference Record No. #66483 ]
+            </div>
+            
+          <div style={{bottom:0}} className="flex transform translate-y-[60px] sm:hidden flex-col justify-center">
+            <SecNavbar />
+          </div>
           </div>
 
 
