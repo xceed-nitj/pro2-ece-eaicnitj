@@ -36,10 +36,19 @@ function MainCommittee(props) {
         </div>
         <SecNavbar />
         <div className="container max-w-7xl mx-auto px-5 sm:px-10  lg:px-8 mt-[58px] min-h-[300px] lg:mt-[70px] mb-5">
-                <div className="w-full mx-auto  md:w-[700px] px-4 lg:w-full" >
+                <div className="w-full mx-auto  md:w-[700px] px-4 lg:w-full pt-[50px]" >
                     <p className="text-2xl font-sans font-bold mb-5  text-gray-950 underline ">
                         {data? data.pageTitle: "Loading.."}
                     </p>
+                    {/* HELLO */}
+                    <div
+                      className='h-[30svh] flex justify-center items-center flex-col'
+                    >
+                      <img src="https://v1.nitj.ac.in/images/admin_page/Director/Director.jpg" 
+                      className='h-[90%]'
+                      alt="Prof. Binod Kumar Kanaujia" />
+                      <p className='underline font-bold'>Prof. Binod Kumar  Kanaujia</p>
+                    </div>
                     <p className="text-base  text-justify font-sans font-base text-gray-800">
                       
 
