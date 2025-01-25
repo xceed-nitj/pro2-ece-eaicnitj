@@ -26,7 +26,7 @@ export default function PatronCopatron() {
         <div className="flex sm:flex-row flex-col gap-4 flex-wrap items-center justify-evenly">
             <PersonSection 
                 name='Prof. Binod Kumar Kanaujia' 
-                post='Director, Faculty Advisor, NIT Jalandhar' 
+                post='Director, NIT Jalandhar & Faculty Advisor, IEEE Student Branch NIT Jalandahar' 
                 caption="Patron" 
                 img={'https://v1.nitj.ac.in/images/admin_page/Director/Director.jpg'} />
         </div>
