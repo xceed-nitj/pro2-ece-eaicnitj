@@ -9,6 +9,7 @@ import AboutNews from "../components/AboutNews";
 import { useEffect } from "react";
 // import Slider from "../components/Slider";
 import Navbar from "../components/Navbar"
+import PatronCopatron from "../components/PatronCopatron";
 // import AboutNews from "./components/Dummy";
 function Home(props) {
   useEffect(() => {
@@ -23,6 +24,7 @@ function Home(props) {
      
       <AboutNews confid={props.confId} />
       {/* <Slider/> */}
+      <PatronCopatron/>
       <Timeline confid={props.confId} />
       {/* <Speakers /> */}
       <OurEvents />
