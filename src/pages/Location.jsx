@@ -44,7 +44,7 @@ function Location(props) {
                     <p className="text-base  text-justify font-sans font-base text-gray-800">
                       
 
-                        {data? <div dangerouslySetInnerHTML={{__html:data.description}}/>: " "}
+                        {data? <div dangerouslySetInnerHTML={{__html:data.description}}/>: <b>Loading...</b>}
                     </p>
 
                 </div>
