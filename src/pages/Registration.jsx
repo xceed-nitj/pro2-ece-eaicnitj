@@ -138,12 +138,18 @@ function Registration() {
             <div className="container max-w-7xl mx-auto px-5 sm:px-10 lg:px-8 mt-[58px] lg:mt-[70px] min-h-[300px] mb-5 flex justify-center items-center">
                 <div className="w-full mx-auto md:w-[700px] px-4 lg:w-full">
                     <p className="text-2xl font-sans font-bold mb-5 text-gray-950 underline">
-                        Registration Fee
+                        Paper Registration Fee
                     </p>
                     {/* <p className="text-base text-left font-sans font-base text-gray-800">
                         <img src="/fee.png" alt="Registration Fee Table" style={{ width: '500px', height: '400px' }} />
                     </p> */}
                     <InfoTable/>
+                    <p className="text-2xl mt-10 font-sans font-bold mb-5 text-gray-950 underline">
+                        Poster Publication Registration Fee
+                    </p>
+                    <p>
+                        Poster Publication Registration Fee IEEE members Rs. 2000/ and Non-IEEE members Rs. 2500/-. Accepted posters abstract will publish in EAIC2025 abstract book.
+                    </p>
                 </div>
             </div>
             <Footer />
