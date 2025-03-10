@@ -11,6 +11,7 @@ import nitjlogo from '../../public/logo.png'
 import ieeelogo from '../../public/ieee.png'
 import ieeenitj from '../../public/IEEE_student_branch.png'
 import ieeephotonic from '../../public/photonics.png'
+import asianuni from '../../public/LogoAsianUniversityTaiwan.png'
 
 function HeroSection() {
 
@@ -203,6 +204,15 @@ function HeroSection() {
             <div className='sm:hidden'>
               <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
             </div>
+
+            <p className='text-center'>
+            Jointly organized with{" "}
+            <span className='font-bold'>
+            International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan.
+            </span>
+            </p>
+
+            <img src={asianuni} alt="Asian University Of Taiwan" className='h-[3rem] sm:h-[5rem] sm:m-4' />
 
             <div style={{color:"#1b3f32", fontWeight:"bold"}}>
             [ IEEE Conference Record No. #66483 ]
