@@ -172,6 +172,7 @@ function HeroSection() {
         <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
         <img src={ieeenitj} className={logoStyle} alt="IEEE_NITJ" />
         <img src={ieeephotonic} className={logoStyle} alt="IEEE_PHOTONIC" />
+        <img src={asianuni} className={logoStyle} alt="Asian University Of Taiwan" />
       </div>
     )
   }
@@ -212,7 +213,7 @@ function HeroSection() {
             </span>
             </p>
 
-            <img src={asianuni} alt="Asian University Of Taiwan" className='h-[3rem] sm:h-[5rem] sm:m-4' />
+            {/* <img src={asianuni} alt="Asian University Of Taiwan" className='h-[3rem] sm:h-[5rem] sm:m-4' /> */}
 
             <div style={{color:"#1b3f32", fontWeight:"bold"}}>
             [ IEEE Conference Record No. #66483 ]

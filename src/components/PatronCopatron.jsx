@@ -1,9 +1,10 @@
 import coPatronImg from '../../public/co_patron.jpg'
+import coPatronImg2 from '../../public/ProfRohitMehra.jpg'
 
 export default function PatronCopatron() {
     function PersonSection(props) {
         return (
-            <div className="flex flex-row w-[95%] sm:w-[35vw] items-center justify-between gap-4 p-4 shadow-lg rounded-xl border border-[#66ac8a] border-2">
+            <div className="flex flex-row w-[95%] sm:w-[31vw] items-center justify-between gap-4 p-4 shadow-lg rounded-xl border border-[#66ac8a] border-2">
                 <div className='w-[40%]'>
                     <img src={props.img} 
                         className="rounded h-[100px]"
@@ -41,6 +42,11 @@ export default function PatronCopatron() {
                 post='Chair, IEEE Delhi Section' 
                 caption="Co-Patron" 
                 img={coPatronImg} />
+            <PersonSection 
+                name='Prof. Rohit Mehra' 
+                post='Dean (R&C), NIT Jalandhar' 
+                caption="Co-Patron" 
+                img={coPatronImg2} />
         </div>
         </div>
         </>
