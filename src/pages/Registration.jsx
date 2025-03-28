@@ -144,11 +144,14 @@ function Registration() {
                         <img src="/fee.png" alt="Registration Fee Table" style={{ width: '500px', height: '400px' }} />
                     </p> */}
                     <InfoTable/>
+
+<p>Kindly note that extra 18% GST would be applicable on all categories of registration i.e. the above mentioned amount is without GST</p>
+
                     <p className="text-2xl mt-10 font-sans font-bold mb-5 text-gray-950 underline">
                         Poster Publication Registration Fee
                     </p>
 
-<p>Kindly note that extra 18% GST would be applicable on all categories of registration i.e. the above mentioned amount is without GST</p>
+
                     <p>
                         Poster Publication Registration Fee IEEE members Rs. 2000/ and Non-IEEE members Rs. 2500/-. Accepted posters abstract will publish in EAIC2025 abstract book.
                     </p>
