@@ -9,9 +9,6 @@ import hex from '../../public/hex.json'
 
 import nitjlogo from '../../public/logo.png'
 import ieeelogo from '../../public/ieee.png'
-import ieeenitj from '../../public/IEEE_student_branch.png'
-import ieeephotonic from '../../public/photonics.png'
-import asianuni from '../../public/LogoAsianUniversityTaiwan.png'
 
 function HeroSection() {
 
