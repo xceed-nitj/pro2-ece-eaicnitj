@@ -170,9 +170,6 @@ function HeroSection() {
       <div className='flex gap-5 h-[7vh] sm:h-[7vh] mb-8 justify-center align-center flex-wrap'>
         <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
         <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
-        <img src={ieeenitj} className={logoStyle} alt="IEEE_NITJ" />
-        <img src={ieeephotonic} className={logoStyle} alt="IEEE_PHOTONIC" />
-        <img src={asianuni} className={logoStyle} alt="Asian University Of Taiwan" />
       </div>
     )
   }
@@ -205,13 +202,6 @@ function HeroSection() {
             <div className='sm:hidden'>
               <CollegeName name='Dr. B. R. Ambedkar National Institute of Technology, Jalandhar' />            
             </div>
-
-            <p className='text-center'>
-            Jointly organized with{" "}
-            <span className='font-bold'>
-            International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan.
-            </span>
-            </p>
 
             {/* <img src={asianuni} alt="Asian University Of Taiwan" className='h-[3rem] sm:h-[5rem] sm:m-4' /> */}
 
