@@ -19,11 +19,11 @@ const navigation = [
       { name: "International Advisory Committee", href: "/committee/international" },
       { name: "National Advisory Committee", href: "/committee/national" },
       { name: "Technical Committee", href: "/committee/technical" },
-{ name: "IEEE Delhi Section Oversight Committee", href: "/committee/ieeesoc" },
       { name: "Other Committees", href: "/committee/others" },
 
     ],
   },
+{ name: "IEEE Delhi Section Oversight Committee", href: "/committee/ieeesoc" },
   { name: "Location", href: "/location", current: false },
   { name: "Accommodation", href: "/accommodation", current: false },
   { name: "Registration Fee", href: "/registration", current: false },
