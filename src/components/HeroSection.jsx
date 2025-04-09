@@ -143,7 +143,7 @@ function HeroSection() {
 
       {/* Text Section */}
       <h1 className="xl:text-5xl md:text-3xl sm:text-2xl text-md md:ml-8 font-bold sm:text-left text-center text-accent-900 2xl:text-6xl">
-        IEEE Technically Sponsored <br /> International Conference on
+        International Conference on
         <br />
         <span className="md:text-5xl xl:text-6xl sm:text-4xl text-3xl font-bold text-justify text-accent-950 xl:mt-4 2xl:text-7xl">
           Electronics, AI and Computing
@@ -168,6 +168,9 @@ function HeroSection() {
         <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
         <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
       </div>
+ <div style={{color:"#1b3f32", fontWeight:"bold"}}>
+            [ IEEE Conference Record No. #66483 ]
+            </div>
     )
   }
 
@@ -202,9 +205,7 @@ function HeroSection() {
 
             {/* <img src={asianuni} alt="Asian University Of Taiwan" className='h-[3rem] sm:h-[5rem] sm:m-4' /> */}
 
-            <div style={{color:"#1b3f32", fontWeight:"bold"}}>
-            [ IEEE Conference Record No. #66483 ]
-            </div>
+       
             
           <div style={{bottom:0}} className="flex transform translate-y-[60px] sm:hidden flex-col justify-center">
             <SecNavbar />
