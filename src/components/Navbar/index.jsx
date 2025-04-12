@@ -23,7 +23,7 @@ const navigation = [
 
     ],
   },
-{ name: "IEEE Delhi Section Oversight Committee", href: "/committee/ieeesoc" },
+{ name: "IEEE Delhi Oversight Committee", href: "/committee/ieeesoc" },
   { name: "Location", href: "/location", current: false },
   { name: "Accommodation", href: "/accommodation", current: false },
   { name: "Registration Fee", href: "/registration", current: false },
