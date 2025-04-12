@@ -169,10 +169,8 @@ function HeroSection() {
     return (
       <div className='flex gap-5 h-[7vh] sm:h-[7vh] mb-8 justify-center align-center flex-wrap'>
         <img src={nitjlogo} className={logoStyle} alt="NITJ_LOGO" />
-        <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" /><br>
-        <div style={{color:"#1b3f32", fontWeight:"bold"}}>
-            [ IEEE Conference Record No. #66483 ]
-            </div>
+        <img src={ieeelogo} className={logoStyle} alt="IEEE_LOGO" />
+        
       </div>
     )
   }
@@ -191,6 +189,9 @@ function HeroSection() {
 
           {/* left div */}
           <div className='h-full w-full sm:w-[50%] p-5 flex flex-col pb-[70px] justify-evenly items-center'>
+            <div style={{color:"#1b3f32", fontWeight:"bold"}}>
+            [ IEEE Conference Record No. #66483 ]
+            </div>
             <Logos/>
             <TextSection/>
             <div className='box-border md:mt-2 md:mt-10 mt-1 flex md:flex-row flex-col md:gap-0
