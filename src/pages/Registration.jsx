@@ -32,7 +32,7 @@ function Registration() {
                     <Th rowSpan='2'>
                         Category of Delegates/Authors
                     </Th>
-                        <Th colSpan='2'>Early Bird on or before 25th April, 2025</Th>
+                        <Th colSpan='2'>Early Bird on or before 30th April, 2025</Th>
                         <Th colSpan='2'>Till 10th May, 2025</Th>
                         <Th colSpan='2'>Spot Registration</Th>
 
