@@ -1,4 +1,4 @@
-import Timeline from "../components/Timeline";
+//import Timeline from "../components/Timeline";
 import OurEvents from "../components/OurEvents";
 import HeroSection from "../components/HeroSection";
 // import Speakers from "../components/SpeakerSection/Speakers";
@@ -25,7 +25,6 @@ function Home(props) {
       <AboutNews confid={props.confId} />
       {/* <Slider/> */}
       <PatronCopatron/>
-      <Timeline confid={props.confId} />
       {/* <Speakers /> */}
       <OurEvents />
       <AboutNITJ/>
