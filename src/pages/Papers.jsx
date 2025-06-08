@@ -46,7 +46,7 @@ function PaperDetails(props) {
                     <p className="text-base  text-justify font-sans font-base text-gray-800">
                       
 
-                        {data? <div dangerouslySetInnerHTML={{__html:data}}/>: " "}
+                        {data? <div dangerouslySetInnerHTML={{__html:data}}/>: <b>Loading...</b>}
                     </p>
 
                 </div>

@@ -19,11 +19,11 @@ const navigation = [
       { name: "International Advisory Committee", href: "/committee/international" },
       { name: "National Advisory Committee", href: "/committee/national" },
       { name: "Technical Committee", href: "/committee/technical" },
-{ name: "IEEE Delhi Section Oversight Committee", href: "/committee/ieeesoc" },
       { name: "Other Committees", href: "/committee/others" },
 
     ],
   },
+{ name: "IEEE Delhi Oversight Committee", href: "/committee/ieeesoc" },
   { name: "Location", href: "/location", current: false },
   { name: "Accommodation", href: "/accommodation", current: false },
   { name: "Registration Fee", href: "/registration", current: false },
@@ -55,10 +55,10 @@ export default function Example() {
             <div className="mx-auto ">
               
               <div className="relative px-2 sm:px-4 lg:px-8 flex justify-between items-center  nav">
-                <span className="text-xl font-bold text-accent-800 flex justify-center items-center">
+                <span className="text-xl font-bold text-white flex justify-center items-center">
 {/*                   <img src={ieeelogo} alt="ieee" style={{height:'5vh'}} /> */}
                   EAIC 2025 
-                  <span className="text-xs">
+                  <span className="text-xs pl-3">
                     (Technically Sponsored by IEEE)
                   </span>
                 </span>
@@ -83,7 +83,7 @@ export default function Example() {
                         <>
                           <Link
                             to={item.href}
-                            className={`inline-flex items-center py-5 px-2 text-xs text-accent-800 uppercase font-bold ${
+                            className={`inline-flex items-center py-5 px-2 text-xs text-white uppercase font-bold ${
                               isDropdownOpen
                                 ? "bg-accent-500 text-accent-100"
                                 : "hover:bg-accent-500 hover:text-accent-100"
@@ -112,7 +112,7 @@ export default function Example() {
                       ) : (
                         <Link
                           to={item.href}
-                          className="inline-flex py-5 px-2 text-xs text-accent-800 uppercase hover:bg-accent-500 hover:text-accent-100 font-bold"
+                          className="inline-flex py-5 px-2 text-xs text-white uppercase hover:bg-accent-500 hover:text-accent-100 font-bold"
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}

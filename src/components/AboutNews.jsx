@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Separator from "./common/Separator";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,11 @@ function AboutNews(props) {
         getEnvironment().then(url => setApiUrl(url));
     }, []);
   const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const aboutDiv = useRef(100)
+  console.log(aboutDiv)
+  console.log(aboutDiv.current.offsetHeight)
+
   const confId = props.confid;
   // const [data, setData] = useState(null)
 
@@ -45,8 +50,8 @@ function AboutNews(props) {
 
 
   return (
-    <div className=" container max-w-7xl flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-start  mx-auto px-5 sm:px-10  lg:px-8 py-20">
-      <div className="w-full  md:w-[700px]   px-4 lg:w-3/5 ">
+    <div className="container max-w-7xl flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-start  mx-auto px-5 sm:px-10  lg:px-8 py-20">
+      <div ref={aboutDiv} className="border border-[transparent] w-full  md:w-[700px] px-4 lg:w-3/5 ">
         <h2 className="text-4xl font-bold  text-accent-50 bg-accent-600 px-4 py-2 rounded-t-xl border-2 border-accent-600 ">
           About the <span className="text-4xl font-bold text-accent-50 py-2 ">Conference</span> 
         </h2>
@@ -67,16 +72,16 @@ function AboutNews(props) {
           {data ? <div dangerouslySetInnerHTML={{ __html: data.aboutIns }} /> : " "}
         </p> */}
       </div>
-      <div className="sm:w-full md:w-[700px] sm:pr-6 lg:w-2/5 lg:ml-4 max-w-[700px] h-96 mt-10 sm:px-2 lg:mt-0 ml-5 md:mx-auto lg:px-5  ">
+      <div className={`h-[${aboutDiv.current.offsetHeight}px] flex flex-col sm:w-full md:w-[700px] box-border sm:pr-6 lg:w-2/5 lg:ml-4 max-w-[700px] h-96 mt-10 sm:px-2 lg:mt-0 ml-5 md:mx-auto lg:px-5`}>
         <h2 className="text-4xl font-bold  text-accent-50 bg-accent-600 px-4 py-2 rounded-t-xl border-2 border-accent-600 shadow-xl shadow-accent-200 drop-shadow-xl">News</h2>
 
         <Separator />
         <div
           id="news"
-          className="h-[410px]  overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
+          className="flex-1 overflow-auto bg-accent-100 rounded-b-xl p-4 border-2 border-accent-600 border-t-0"
         >
           <div
-            className={`space-y-4  ${isMouseOver ? "animate-none cursor-default" : "animate-wiggle"
+            className={`space-y-4 h-full ${isMouseOver ? "animate-none cursor-default" : "animate-wiggle"
               }`}
             onMouseOver={() => setIsMouseOver(true)}
             onMouseOut={() => setIsMouseOver(false)}

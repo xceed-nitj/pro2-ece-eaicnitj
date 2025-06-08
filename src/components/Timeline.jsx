@@ -58,9 +58,9 @@ export default function Timeline(props) {
 
           </h3>
         </div>
-    <div className=" container max-w-7xl flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-start mx-auto px-5 sm:px-10 py-16 lg:px-8 lg:py-16">
+    <div className="container w-full flex items-center justify-evenly mx-auto py-16 lg:py-16">
       
-      <div className="w-full lg:w-3/5 md:max-w-[800px] items-center sm:-ml-20 pl-10 sm:pl-0">
+      <div className="w-full items-center flex justify-evenly">
 
         
         {/* <div className="relative py-5">
@@ -141,14 +141,16 @@ export default function Timeline(props) {
 
       />  */}
       {
-        datesData && datesData.map((d,k)=>(
+        datesData && (datesData.slice(0,-1).map((d,k)=>(
           <ListItem 
           key={k} 
           version={showDate(d)} 
           date={''} 
           description={d.title} />
         ))
+      )
       }
+      {datesData && datesData.length>1 && <ListItem version={showDate(datesData.slice(-1)[0])} date='' description={datesData.slice(-1)[0].title} last />}
     </ol>
 
 
@@ -176,19 +178,26 @@ export default function Timeline(props) {
   );
 }
 
-const ListItem = ({ version, date, description }) => {
+const ListItem = ({ version, date, description, last}) => {
+  const [hover, setHover] = useState(false)
   return (
-    <li className="relative mb-6 sm:mb-0">
+    <li 
+      onMouseEnter={()=>{if(!hover)setHover(true)}} 
+      onMouseLeave={()=>{if(hover)setHover(false)}}
+      className={`relative mb-6 sm:mb-0 cursor-pointer ${hover&&' bg-red-glow rounded-lg '}`}>
       <div className="flex items-center">
-        <div className="z-10 flex items-center justify-center w-6 h-6 bg-accent-100 rounded-full ring-0 ring-white dark:bg-accent-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+        <div 
+        className={"z-10 flex items-center justify-center w-6 h-6 bg-accent-100 rounded-full ring-0 ring-white dark:bg-accent-900 sm:ring-8 dark:ring-gray-900 shrink-0 "+
+          `${hover&&" animate-hover-bounce"}`
+        }>
           <svg className="w-2.5 h-2.5 text-accent-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
           </svg>
         </div>
-        <div className="hidden sm:flex w-full bg-accent-200 h-0.5 dark:bg-gray-700"></div>
+        {!last&&<div className="hidden sm:flex w-full bg-accent-200 h-0.5 dark:bg-gray-700"></div>}
       </div>
-      <div className="mt-3 sm:pe-7">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{version}</h3>
+      <div className={`mt-3 sm:pe-7 ${ hover && ' transform duration-500 transition scale-110' }`}>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white whitespace-nowrap">{version}</h3>
         <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {date}</time>
         <p className="text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
       </div>

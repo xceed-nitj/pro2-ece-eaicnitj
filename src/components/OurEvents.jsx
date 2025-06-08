@@ -32,7 +32,7 @@ const data = [
   },
   {
     title: "Special Sessions",
-    content: "The proposals for special session shall be sent to eaic2025nitj@gmail.com",
+    content: "The proposals for special session shall be sent to eaic2025@nitj.ac.in",
     bg: "bg-accent-400 text-white",
   },
   {
@@ -54,11 +54,11 @@ function OurEvents() {
           <div className="grid md:grid-rows-2 md:grid-cols-3 justify-around gap-5 md:gap-5">
             {data.map((item, index) => (
               <div
-                className={`py-8 px-4 max-h-[300px] overflow-hidden text-justify hover:shadow-xl hover:shadow-accent-700 border-solid rounded-xl ${item.bg} ${
-                  index % 7 === 0 ? "md:row-span-2 md:max-h-[620px]" : ""
-                }`}
-                key={index}
-              >
+              className={`py-8 px-4 max-h-[300px] overflow-hidden text-justify hover: hover:shadow-lg hover:shadow-accent-700 border-solid rounded-xl ${item.bg} ${
+                index % 7 === 0 ? "md:row-span-2 md:max-h-[620px]" : ""
+              } transition-all duration-500`}
+              key={index}
+            >
                 <div className="flex h-full">
                   <div>
                     <h4 className="font-semibold mb-3 md:text-2xl text-xl">{item.title}</h4>

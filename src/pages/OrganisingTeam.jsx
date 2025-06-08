@@ -40,10 +40,18 @@ function MainCommittee(props) {
                     <p className="text-2xl font-sans font-bold mb-5  text-gray-950 underline ">
                         {data? data.pageTitle: "Loading.."}
                     </p>
+                    <div
+                      className='h-[30svh] flex justify-center items-center flex-col'
+                    >
+                      <img src="https://v1.nitj.ac.in/images/admin_page/Director/Director.jpg" 
+                      className='h-[90%]'
+                      alt="Prof. Binod Kumar Kanaujia" />
+                      <p className='underline font-bold'>Prof. Binod Kumar  Kanaujia</p>
+                    </div>
                     <p className="text-base  text-justify font-sans font-base text-gray-800">
                       
 
-                        {data? <div dangerouslySetInnerHTML={{__html:data.description}}/>: " "}
+                        {data? <div dangerouslySetInnerHTML={{__html:data.description}}/>: <b>Loading...</b>}
                     </p>
 
                 </div>

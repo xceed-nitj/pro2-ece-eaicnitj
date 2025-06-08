@@ -27,10 +27,18 @@ export default {
           "0%,100%": { transform: "traslateY(0%)" },
           "50%": { transform: "translateY(-100%)" },
         },
+        updown: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px) scale(120%)' },
+        },
       },
       animation: {
         wiggle: "wiggle 15s linear infinite",
         "ping-slow": "ping 1.5s linear infinite",
+        'hover-bounce': 'updown 1s infinite',
+      },
+      backgroundImage: {
+        'red-glow': 'radial-gradient(circle, rgba(217, 249, 230, 0.7) 0%, transparent 55%)',
       },
     },
   },

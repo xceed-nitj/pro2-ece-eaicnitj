@@ -2,7 +2,7 @@
 function SecNavbar() {
   return (
 <div
-  className=" h-[50px]  sm:px-4 py-3 flex flex-row justify-center -mt-[50px] "
+  className=" h-[50px]  sm:px-4 py-3 flex flex-row justify-center -mt-[110px]"
 >
   <span className='relative '>
     {/* <CountdownTimer /> */}

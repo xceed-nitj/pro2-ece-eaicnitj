@@ -1,4 +1,4 @@
-import Timeline from "../components/Timeline";
+//import Timeline from "../components/Timeline";
 import OurEvents from "../components/OurEvents";
 import HeroSection from "../components/HeroSection";
 // import Speakers from "../components/SpeakerSection/Speakers";
@@ -9,6 +9,7 @@ import AboutNews from "../components/AboutNews";
 import { useEffect } from "react";
 // import Slider from "../components/Slider";
 import Navbar from "../components/Navbar"
+import PatronCopatron from "../components/PatronCopatron";
 // import AboutNews from "./components/Dummy";
 function Home(props) {
   useEffect(() => {
@@ -23,7 +24,7 @@ function Home(props) {
      
       <AboutNews confid={props.confId} />
       {/* <Slider/> */}
-      <Timeline confid={props.confId} />
+      <PatronCopatron/>
       {/* <Speakers /> */}
       <OurEvents />
       <AboutNITJ/>
