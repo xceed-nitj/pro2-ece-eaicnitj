@@ -20,7 +20,9 @@ module.exports = {
     "import/default": "error",
     "import/namespace": "error",
     "import/no-absolute-path": "error",
+    "import/no-self-import": "error",
     "import/no-cycle": "error",
+    "import/no-unused-modules": "error",
     "import/no-dynamic-require": "error",
     "react/prop-types": "off"
 

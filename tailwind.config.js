@@ -9,36 +9,63 @@ export default {
       },
       colors: {
         accent: {
-          50: "hsl(151.8, 81%, 95.9%)",
-          100: "hsl(149.3, 80.4%, 90%)",
-          200: "hsl(152.39999999999998, 76%, 80.4%)",
-          300: "hsl(156.20000000000005, 71.6%, 66.9%)",
-          400: "hsl(158.10000000000002, 64.4%, 51.6%)",
-          500: "hsl(160.10000000000002, 84.1%, 39.4%)",
-          600: "hsl(161.39999999999998, 93.5%, 30.4%)",
-          700: "hsl(161.39999999999998, 93.5%, 30.4%)",
-          800: "hsl(161.39999999999998, 93.5%, 30.4%)",
-          900: "hsl(164.20000000000005, 85.7%, 16.5%)",
-          950: "hsl(165.70000000000005, 91.3%, 9%)",
+          50:  "hsl(156, 100%, 95%)", // very pale neon green
+          100: "hsl(156, 100%, 85%)", // soft mint
+          200: "hsl(156, 100%, 70%)", // pastel green
+          300: "hsl(156, 100%, 60%)", // light neon
+          400: "hsl(156, 100%, 50%)", // exact neon green (#00FF9C)
+          500: "hsl(156, 90%, 45%)",  // slightly deeper neon
+          600: "hsl(156, 85%, 35%)",  // tealish neon green
+          700: "hsl(156, 70%, 25%)",  // deep green
+          800: "hsl(156, 60%, 18%)",  // very dark green
+          900: "hsl(156, 50%, 12%)",  // near-black with green hue
+          950: "hsl(156, 40%, 8%)",   // almost black
         },
+        // Add teal theme colors 
+        teal: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#2c5252', // Dark teal for text
+          900: '#1e3a3a', // Darker teal for hover
+        }
       },
       keyframes: {
         wiggle: {
           "0%,100%": { transform: "traslateY(0%)" },
           "50%": { transform: "translateY(-100%)" },
         },
-        updown: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px) scale(120%)' },
+        hoverUnderline: {
+          '0%': {
+            width: '0%',
+            opacity: 0.3,
+            left: '0%',
+          },
+          '50%': {
+            width: '50%',
+            opacity: 0.7,
+            left: '25%',
+          },
+          '100%': {
+            width: '100%',
+            opacity: 1,
+            left: '0%',
+          },
         },
       },
       animation: {
         wiggle: "wiggle 15s linear infinite",
         "ping-slow": "ping 1.5s linear infinite",
-        'hover-bounce': 'updown 1s infinite',
+        'hover-underline': 'hoverUnderline 0.5s ease-in-out forwards',
       },
-      backgroundImage: {
-        'red-glow': 'radial-gradient(circle, rgba(217, 249, 230, 0.7) 0%, transparent 55%)',
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
       },
     },
   },

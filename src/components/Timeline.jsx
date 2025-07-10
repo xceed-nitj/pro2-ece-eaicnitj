@@ -1,207 +1,226 @@
-// import Separator from "./common/Separator";
+// src/components/Timeline.jsx
+
 import axios from "axios";
 import getEnvironment from "../getenvironment";
-import { useState, useEffect } from "react";
-// import formatDate from "../utility/formatDate"
-import "./Timeline.css"
+import { useState, useEffect, forwardRef } from "react";
+import formatDate from "../utility/formatDate";
+import { motion } from "framer-motion";
 
-export default function Timeline(props) {
-  const confid = props.confid;
+const Timeline = forwardRef((props, ref) => {
+  const { confid } = props;
   const [datesData, setDatesData] = useState([]);
-  // const apiUrl = getEnvironment();
   const [apiUrl, setApiUrl] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-    useEffect(() => {
-        // Fetch the environment URL
-        getEnvironment().then(url => setApiUrl(url));
-    }, []);
-    useEffect(() => {
-      if (apiUrl) {
+  useEffect(() => {
+    getEnvironment().then((url) => setApiUrl(url));
+  }, []);
 
-    window.scrollTo(0, 0);
+  useEffect(() => {
+    if (!apiUrl) return;
 
-  axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
-    withCredentials: true
-  })
-    .then(res => {
-      // console.log('timeline -> ',res.data);
-      setDatesData(res.data.sort((a ,b)=> a.order - b.order).filter(d=>d.featured))
+    axios
+      .get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
+        withCredentials: true,
+      })
+      .then((res) => setDatesData(res.data))
+      .catch((err) => console.error(err));
+  }, [apiUrl, confid]);
 
-    })
-    .catch(err => console.log(err))
-  }
-}, [apiUrl, confid]);
-  // useEffect(() => {
-  //   axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
-  //     withCredentials: true
-
-  //   })
-  //     .then(res => {
-  //       // setDatesData(res.data);
-  //       console.log('dates ->',res.data);
-
-  //     })
-  //     .catch(err => console.log(err))
-
-  // }, []);
-
-  function showDate(d) {
-    let dt = new Date(d.extended ? d.newDate : d.date)
-    return dt.toLocaleDateString('en-US',{ year: 'numeric', month: 'long', day: 'numeric' })
-  }
-
-  return (<>
-    <div className="text-center w-full">
-          <h2 className="text-4xl text-accent-50 font-bold  mb-4 bg-accent-800 w-full mt-28 py-2">Important Dates</h2>
-
-          <h3 className="text-xl font-medium leading-relaxed text-gray-800 lg:w-2/3 mx-auto">
-
-          </h3>
-        </div>
-    <div className="container w-full flex items-center justify-evenly mx-auto py-16 lg:py-16">
-      
-      <div className="w-full items-center flex justify-evenly">
-
-        
-        {/* <div className="relative py-5">
-          <div
-            className="w-10 md:w-12 absolute top-0 left-0 bottom-0 flex flex-col justify-center lg:left-1/2 lg:-ml-6"
-            aria-hidden="true"
-          >
-            <div className="mx-auto w-1 h-2.5 grow-0 bg-gradient-to-b from-transparent to-accent-100 rounded-t" />
-            <div className="mx-auto w-1 grow bg-accent-100" />
-            <div className="mx-auto w-1 h-2.5 grow-0 bg-gradient-to-t from-transparent to-accent-100 rounded-b" />
-          </div>
-
-          <ul className="relative space-y-4 pl-10 md:pl-12 lg:pl-0">
-            {datesData.map((item, index) => (
-              index % 2 === 0 ? (
-
-                <li key={index} className="relative lg:w-1/2 lg:pr-6 lg:mr-auto">
-                  <div className="w-10 md:w-12 absolute top-0 left-0 bottom-0 -translate-x-full flex justify-center mt-5 lg:translate-x-6 lg:left-auto lg:right-0">
-                    <div className="w-3 h-3 bg-accent-500 rounded-full ring ring-accent-100 ring-opacity-100 ring-offset-2" />
-                  </div>
-                  <div className="bg-gray-100 hover:ring hover:ring-gray-100 hover:ring-offset-2 rounded-xl p-4">
-                    <h4 className="font-semibold mb-2">{item.title}{" "}
-                    </h4>
-                    <p className="text-sm leading-relaxed">
-                      <a
-                        href="#"
-                        className="font-medium text-accent-600 hover:text-accent-400"
-                      >
-                      </a>
-                    </p>
-                  </div>
-                  <div className="px-4 py-2 lg:w-40 lg:absolute lg:top-0 lg:right-0 lg:bottom-0 lg:translate-x-full lg:flex lg:flex-col lg:mt-4 lg:py-0 lg:pr-0 lg:pl-6">
-                    <p className="font-medium text-sm text-gray-500">
-                      {formatDate(item.date)}                </p>
-                  </div>
-                </li>
-
-              ) : (
-
-                <li key={index} className="relative lg:w-1/2 lg:pl-6 lg:ml-auto">
-                  <div className="w-10 md:w-12 absolute top-0 left-0 bottom-0 -translate-x-full flex justify-center mt-5 lg:-translate-x-6">
-                    <div className="w-3 h-3 bg-accent-500 rounded-full ring ring-accent-100 ring-opacity-100 ring-offset-2" />
-                  </div>
-                  <div className="bg-gray-100 hover:ring hover:ring-gray-100 hover:ring-offset-2 rounded-xl p-4">
-                    <h4 className="font-semibold mb-2">{item.title}</h4>
-                  </div>
-                  <div className="px-4 py-2 lg:w-40 lg:absolute lg:top-0 lg:left-0 lg:bottom-0 lg:-translate-x-full lg:flex lg:flex-col lg:text-right lg:mt-4 lg:py-0 lg:pl-0 lg:pr-6">
-                    <p className="font-medium text-sm text-gray-500">
-                      {formatDate(item.date)}                </p>
-                  </div>
-                </li>
-              )
-
-            ))}
-          </ul>
-        </div> */}
-
-<ol className="w-[70vw] sm:flex ">
-      {/* <ListItem
-        version="Febraury 15, 2025"
-        date=""
-        description="● Paper Submission Deadline "
-      />
-      <ListItem
-        version="March 30, 2025"
-        date=""
-        description="●	Notification for the Acceptance  "
-      />
-      <ListItem
-        version="April 10, 2025"
-        date=""
-        description="●Submission of Final Paper "
-      />
-      <ListItem
-        version="May 10, 2025"
-        date=""
-        description="●	Registration Deadline " 
-
-      />  */}
-      {
-        datesData && (datesData.slice(0,-1).map((d,k)=>(
-          <ListItem 
-          key={k} 
-          version={showDate(d)} 
-          date={''} 
-          description={d.title} />
-        ))
-      )
-      }
-      {datesData && datesData.length>1 && <ListItem version={showDate(datesData.slice(-1)[0])} date='' description={datesData.slice(-1)[0].title} last />}
-    </ol>
-
-
-      </div>
-
-      {/* <div classNameName="w-full md:w-[700px] lg:w-2/5 px-4 lg:px-0   mt-10 lg:mt-0 mx-auto lg:pl-5 lg:mx-0 ">
-        <h2 classNameName="text-4xl font-sans font-bold text-gray-950 mb-3 lg:mb-4">About Doaba Regional Centre (DRC)
-        </h2>
-        <Separator />
-        <p className="text-base text-justify font-sans font-base text-gray-800">
-          The Indian Institute of Chemical Engineers (IIChE) is the apex
-          professional body of Chemical Engineers in the country instituted
-          in the year 1947 and presently has more than 25,000 corporate
-          members on its roll. The activities of the Institute are spread
-          across the country through its 47 Regional Centres and 186
-          Student Chapters, apart from the HQ located at the Jadavpur
-          University Campus, Kolkata
-          The IIChE has been conducting the Associate Membership
-          Examination since 1960 and publishes an esteemed quarterly
-          Journal “The Indian Chemical Engineer” since 1959..
-        </p>
-      </div> */}
-    </div>
-    </>
-  );
-}
-
-const ListItem = ({ version, date, description, last}) => {
-  const [hover, setHover] = useState(false)
   return (
-    <li 
-      onMouseEnter={()=>{if(!hover)setHover(true)}} 
-      onMouseLeave={()=>{if(hover)setHover(false)}}
-      className={`relative mb-6 sm:mb-0 cursor-pointer ${hover&&' bg-red-glow rounded-lg '}`}>
-      <div className="flex items-center">
-        <div 
-        className={"z-10 flex items-center justify-center w-6 h-6 bg-accent-100 rounded-full ring-0 ring-white dark:bg-accent-900 sm:ring-8 dark:ring-gray-900 shrink-0 "+
-          `${hover&&" animate-hover-bounce"}`
-        }>
-          <svg className="w-2.5 h-2.5 text-accent-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-          </svg>
+    <motion.div
+      ref={ref}
+      className="relative py-10 sm:py-16 md:py-24 w-full bg-gradient-to-b from-white via-teal-50/30 to-white overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      {/* Floating decorative elements - hide some on mobile */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-teal-100/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-teal-200/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Intersecting Lines - hide on mobile */}
+        <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-teal-200/50 to-transparent"></div>
+        <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-teal-200/50 to-transparent"></div>
+        
+        {/* Particles - hide on mobile */}
+        <div className="absolute inset-0 hidden sm:block">
+          {[...Array(6)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-1 h-1 sm:w-2 sm:h-2 bg-teal-300/30 rounded-full"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `float ${3 + Math.random() * 7}s ease-in-out infinite`
+              }}
+            ></div>
+          ))}
         </div>
-        {!last&&<div className="hidden sm:flex w-full bg-accent-200 h-0.5 dark:bg-gray-700"></div>}
       </div>
-      <div className={`mt-3 sm:pe-7 ${ hover && ' transform duration-500 transition scale-110' }`}>
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white whitespace-nowrap">{version}</h3>
-        <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {date}</time>
-        <p className="text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        {/* Title Section */}
+        <motion.div 
+          className="text-center mb-8 sm:mb-12 md:mb-20"
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div 
+            className="inline-block"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-teal-900 mb-2 sm:mb-3 relative inline-block">
+              Important Dates
+              <motion.div 
+                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              ></motion.div>
+            </h2>
+          </motion.div>
+          <p className="text-sm sm:text-base text-teal-700 mt-2 sm:mt-4 max-w-xl mx-auto">
+            Mark your calendar for these key dates to stay on track with the conference timeline
+          </p>
+        </motion.div>
+
+        {/* Timeline Container */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Central Line */}
+          <motion.div 
+            className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-teal-400 via-teal-600 to-teal-400 transform sm:-translate-x-1/2 z-0"
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+          >
+            <div className="absolute inset-0 opacity-50 blur-sm"></div>
+          </motion.div>
+
+          {/* Timeline Items */}
+          {datesData.map((item, idx) => (
+            <motion.div
+              key={idx}
+              className={`relative flex items-start sm:items-center mb-8 sm:mb-16 group ${
+                idx % 2 === 0 || window.innerWidth < 640 ? "justify-start" : "justify-end"
+              }`}
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Connecting Line */}
+              <motion.div
+                className={`absolute top-6 sm:top-1/2 ${
+                  idx % 2 === 0 || window.innerWidth < 640 ? "left-4 sm:left-[calc(50%-1px)]" : "left-4 sm:right-[calc(50%-1px)]"
+                } h-[2px] bg-gradient-to-r from-teal-400 to-teal-600 sm:-translate-y-1/2 ${
+                  idx % 2 === 0 || window.innerWidth < 640 ? "" : "sm:rotate-180"
+                } z-10`}
+                initial={{ width: 0 }}
+                whileInView={{ width: window.innerWidth < 640 ? "30px" : "60px" }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
+              ></motion.div>
+
+              {/* Timeline Node */}
+              <motion.div
+                className="absolute left-4 sm:left-1/2 top-6 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-20"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 15,
+                  delay: 0.3 + idx * 0.1 
+                }}
+              >
+                <div 
+                  className={`w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-white bg-teal-500 shadow-lg shadow-teal-500/30 flex items-center justify-center transition-all duration-300 ${
+                    hoveredIndex === idx ? "scale-125 sm:scale-150" : "scale-100"
+                  }`}
+                >
+                  <div className={`w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-white transition-all duration-300 ${
+                    hoveredIndex === idx ? "scale-125 sm:scale-150" : "scale-100"
+                  }`}></div>
+                </div>
+              </motion.div>
+
+              {/* Content Card */}
+              <motion.div
+                className={`ml-12 sm:ml-0 w-[calc(100%-48px)] sm:w-[calc(50%-60px)] ${
+                  idx % 2 === 0 || window.innerWidth < 640 ? "sm:pr-6" : "sm:pl-6"
+                }`}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div 
+                  className={`bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg border border-teal-100 hover:shadow-xl sm:hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-300`}
+                >
+                  {/* Card Header */}
+                  <div className="bg-gradient-to-r from-teal-600 to-teal-500 py-2 sm:py-3 px-3 sm:px-4">
+                    <h3 className="text-white font-medium text-sm sm:text-base md:text-lg">
+                      {item.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Card Body */}
+                  <div className="p-3 sm:p-4 bg-gradient-to-b from-teal-50 to-white">
+                    {!item.extended ? (
+                      <div className="flex items-center">
+                        <div className="mr-2 sm:mr-3 text-teal-500">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <p className="text-teal-800 font-medium text-xs sm:text-sm">
+                          {formatDate(item.date)}
+                        </p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="flex items-center mb-1 sm:mb-2">
+                          <div className="mr-2 sm:mr-3 text-teal-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                          <p className="text-teal-800 font-medium text-xs sm:text-sm">
+                            {formatDate(item.newDate)}
+                          </p>
+                        </div>
+                        <div className="flex items-center pl-6 sm:pl-8">
+                          <p className="text-teal-400 text-xs sm:text-sm line-through">
+                            {formatDate(item.date)}
+                          </p>
+                          <span className="ml-1 sm:ml-2 bg-teal-100 text-teal-800 text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 sm:py-1 rounded">
+                            Extended
+                          </span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </li>
-    
+
+      {/* Custom Animation Keyframes */}
+      
+    </motion.div>
   );
-};
+});
+
+Timeline.displayName = "Timeline";
+export default Timeline;

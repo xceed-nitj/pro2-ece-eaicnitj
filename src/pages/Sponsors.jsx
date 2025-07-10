@@ -1,83 +1,89 @@
-import { useEffect } from 'react';
+
+
+import { useEffect, useState } from 'react';
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import SecNavbar from '../components/SecNavbar';
+import axios from "axios";
+import getEnvironment from "../getenvironment";
 
-
-
-function Sponsors() {
+function Sponsors(props) {
+    const confid = props.confid;
+    const [data, setData] = useState(null)
+    const [apiUrl, setApiUrl] = useState(null);
+    
+    useEffect(() => {
+        // Fetch the environment URL
+        getEnvironment().then(url => setApiUrl(url));
+    }, []);
+    
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
-    const data = [
-        { category: 'Platinum Sponsorship', price: 3000000 },
-        { category: 'Gold Sponsorship', price: 2000000 },
-        { category: 'Silver Sponsorship', price: 1500000 },
-        { category: 'Delegate Kit', price: 1000000 },
-        { category: 'Lunch (each day)', price: 500000 },
-        { category: 'Dinner (each day)', price: 500000 },
-        { category: 'High Tea (First day or last day)', price: 200000 },
-        { category: 'Breakfast (each day)', price: 200000 },
-        { category: 'Tea during break', price: 50000 },
-        { category: 'Plenary Lectures (each)', price: 100000 },
-        { category: 'Parallel Sessions (each)', price: 100000 },
-        { category: 'Poster Sessions (each)', price: 150000 },
-        { category: 'Cultural Programs (each)', price: 200000 },
-        { category: 'Conference Proceeding', price: 200000 },
-        { category: 'Delegate Kit CD/Pen Drive', price: 100000 },
-        { category: 'Banner of each event', price: 25000 },
-    ];
-
-
+        if (apiUrl) {
+            axios.get(`${apiUrl}/conferencemodule/commontemplate/conference/${confid}`, {
+                withCredentials: true
+            })
+                .then(res => {
+                    setData(res.data);
+                    console.log(res.data);
+                })
+                .catch(err => console.log(err))
+        }
+    }, [apiUrl, confid]);
+   
     return (
-        <>
-            <div className="fixed top-0 w-screen z-40 ">
-                <Navbar />
+        
+        <div className="bg-white min-h-screen relative overflow-hidden ">
+            <div className="top-0 w-screen z-40"> 
+                <Navbar />      
             </div>
-            <SecNavbar />
-
-            <div className="container max-w-7xl mx-auto px-5 sm:px-10  lg:px-8 mt-[58px] lg:mt-[10px] mb-5">
-                <div className="w-full mx-auto  md:w-[700px] px-4 lg:w-full" >
-                    <p className="text-2xl font-sans font-bold mb-5 text-gray-950 underline ">
-                        Sponsorship Rates
-                    </p>
-                    <p className="text-base  text-justify font-sans font-base text-gray-800">
-                        The sponsors are entitled to nominate two complimentary
-                        delegates along with availing of local hospitality during the
-                        congress. They are also entitled to put hoardings/ Banners at the
-                        suitable locations provided by the organizers.
-                        <table className="mt-3   border-collapse box-border max-w-[400px]">
-                            <thead>
-                                <tr className="border-[2px] bg-accent-100  border-accent-500">
-                                    <th className="p-1 md:pl-4 text-left">Category</th>
-                                    <th className="p-1 md:pl-4 text-left">Price in INR</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.length > 0 ? data.map((item, index) => (
-                                    <tr key={index} className="border-[1px] font-serif border-accent-500">
-                                        <td className="p-1 md:pl-4 text-left">{item.category}</td>
-                                        <td className="p-1 md:pl-4 text-left">{item.price}</td>
-
-                                    </tr>
-                                )) : (
-                                    <tr>
-                                        <td colSpan="7" className="p-1 text-center">No data available</td>
-                                    </tr>
-
-                                )}
-                            </tbody>
-                        </table>
-
-                    </p>
-
-                </div>
+            {/* Background decorative elements */}
+            <div className="absolute inset-0 pointer-events-none opacity-10">
+                <div className="absolute w-[800px] h-[800px] border border-[#2563eb]/10 rounded-full -right-1/4 top-1/4 transform -translate-y-1/2"></div>
+                <div className="absolute w-[500px] h-[500px] border border-[#2563eb]/15 rounded-full -left-1/4 bottom-1/4"></div>
+                <div className="absolute w-3 h-3 bg-[#2563eb] rounded-full left-[10%] top-[20%] animate-pulse"></div>
+                <div className="absolute w-2 h-2 bg-[#2563eb] rounded-full right-[15%] bottom-[30%] animate-pulse"></div>
             </div>
+            
+            
+            <div className="pt-[166px] container max-w-7xl mx-auto px-5 sm:px-10 lg:px-8 pt-[80px] lg:pt-[100px] pb-16 relative z-10">
+                <div className="bg-[white] border border-[#2563eb]/30 rounded-xl p-6 md:p-8 shadow-lg shadow-[#2563eb]/10 backdrop-blur-sm">
+                    <h1 className="text-4xl font-bold text-[#2563eb] mb-4">
+                          {data ?( 
+                        <div className="text-gray-700 prose prose-invert max-w-none">
+                            <div dangerouslySetInnerHTML={{__html:data[8].pageTitle}}/>
+                        </div>):(
+                        <div className="animate-pulse">
+                            <div className="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-1/2 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-5/6 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-2/3 mb-4"></div>
+                        </div>
+                    )}
+                    
+                    </h1>
+                    
+                    <div className="w-40 h-1 bg-blue-600 mb-4"></div>
+                    {data ? (
+                        <div className="text-gray-700 prose prose-invert max-w-none">
+                            <div dangerouslySetInnerHTML={{__html:data[8].description}}/>
+                        </div>
+                    ) : (
+                        <div className="animate-pulse">
+                            <div className="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-1/2 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-5/6 mb-4"></div>
+                            <div className="h-4 bg-gray-700 rounded w-2/3 mb-4"></div>
+                        </div>
+                    )}
+                    
+                    {/* Map container */}
+                                   </div>
+            </div>
+            
             <Footer />
-
-        </>
+        </div>
     )
 }
 
-export default Sponsors
+
+export default Sponsors;
