@@ -94,7 +94,7 @@ export default function Example() {
               />
             </svg>
             <a href="mailto:cipher@nitj.ac.in" className="text-[11px] sm:text-xs lg:text-sm font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
-              cipher@nitj.ac.in
+              eaic@nitj.ac.in
             </a>
           </div>
 
@@ -143,7 +143,7 @@ export default function Example() {
                     )}
                   </Disclosure.Button>
                   <span className="text-xl font-bold text-teal-700">
-                    CIPHER 2026
+                    EAIC 2026
                   </span>
                   <div className="w-6" /> {/* Spacer for centering */}
                 </div>
