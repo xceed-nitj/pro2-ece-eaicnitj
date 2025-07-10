@@ -4,26 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
-body {
-  overflow: auto;
-  height: 100%;
-  overscroll-behavior: none;
-}
-
 :root {
   font-family: "Plus Jakarta Sans", system-ui, Avenir, Helvetica, Arial,
     sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
 }
 
-::selection {
+/* ::selection {
   color: white;
-  background: hsl(161.39999999999998, 93.5%, 30.4%);
-}
+  background: #196a84;
+} */
 
 
 #news::-webkit-scrollbar {
@@ -82,30 +73,66 @@ body {
   transition: opacity 0.8s ease-in-out ;
 }
 
-
-/* styles.css */
-
-/* For WebKit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-  width: 20px;
+@layer base {
+  table {
+    width: 100%;
+    border: 2px solid #2563eb;
+    border-collapse: collapse;
+    color: #0c0c0c;
+  }
+  th,
+  td {
+    border: 1px solid #2563eb;
+    padding: 0.5rem 1rem;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* bottom of index.css */
+
+@keyframes wave-move {
+  0%   { transform: translateX(50%); }
+  100% { transform: translateX(-350%); }
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: hsl(161.39999999999998, 93.5%, 30.4%);
-  border-radius: 10px;
-  border: 3px solid #f1f1f1;
+.wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;      /* twice the viewport so we can scroll half */
+  height: 150px;    /* adjust to taste */
+  overflow: hidden;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background:  #f1f1f1;
+.wave-strip {
+  display: flex;
+  width: 200%;
+  animation: wave-move 60s linear infinite;
 }
 
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: hsl(161.39999999999998, 93.5%, 30.4%) #b5e7dd;
+@layer base {
+
+  a:hover {
+    color: #2563eb;
+  }
+
+a, a:visited {
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none !important;
 }
+  a:active {
+    color: #2563eb;
+  }
+}
+
+.navbar a{
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
+}
+
+/* .about-content * {
+  color: #056960 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 1.5 !important;
+  background-color: #854D0E !important;
+} */

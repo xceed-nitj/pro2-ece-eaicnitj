@@ -6,7 +6,7 @@ const TopNavInfo = ({ className, icon, value }) => {
     return (
         <div className={
             clsx(
-                "flex items-center gap-x-2 text-accent-700 hover:text-accent-900",
+                "flex items-center gap-x-1 text-black hover:text-gray transition-colors duration-200",
                 className
             )
         }>
@@ -14,8 +14,8 @@ const TopNavInfo = ({ className, icon, value }) => {
                 {icon}
             </dt>
             <dd>
-                <a className="text-xs" href={
-                    icon === <PhoneIcon className="w-3 h-3" />
+                <a className="text-[12px]" href={
+                    icon === <PhoneIcon className="w-5 h-5" />
                         ? `tel:${value}`
                         : `mailto:${value}`
                 }>
