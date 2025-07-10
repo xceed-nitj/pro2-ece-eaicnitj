@@ -36,6 +36,7 @@ function App() {
 <div id="content ">
       < Routes >
       {/* https://xceed.nitj.ac.in/conferencemodule/commontemplate/671fb502dbcf15e8ac081476 */}
+      
         <Route path="/" element={<Home confId={confid} />} />
         {/* <Route path="sponsorship" element={<Sponsors />} /> */}
         <Route path="tracks" element={<Tracks confid={confid}/>} />
