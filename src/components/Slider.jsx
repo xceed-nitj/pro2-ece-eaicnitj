@@ -24,8 +24,10 @@ const heroImages = [
   '/heroImages/hero1.jpg',
   '/heroImages/hero2.jpg',
   '/heroImages/hero3.jpg',
-  '/heroImages/hero4.jpg',
-  '/heroImages/hero5.jpg'
+  '/heroImages/hero9.jpeg',
+  '/heroImages/hero6.jpeg',
+  '/heroImages/hero7.jpeg',
+  '/heroImages/hero8.jpeg',
 ];
 
 /**
@@ -176,17 +178,17 @@ function Slider(props) {
 
           {/* Desktop Hero Text Box (hidden on mobile) */}
           <div
-            className="hidden lg:block absolute top-[50%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 w-[450px] max-w-xl h-[330px] backdrop-blur-md rounded-lg z-10 border border-white/10"
+            className="hidden lg:block absolute top-[50%] left-[25%] transform -translate-x-1/2 -translate-y-1/2 w-[650px] max-w-xl h-[330px] backdrop-blur-md rounded-lg z-10 border border-white/10"
             style={{
-              background: "rgba(20, 184, 165, 0.17)", // teal-500 with 18% opacity
+              background: "rgba(4, 80, 71, 0.4)", // teal-500 with 18% opacity
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center px-12 text-center">
-              <span className="text-4xl font-serif text-teal-900 font-medium mb-6 text-left w-full block">
-                International Conference on Intelligent Processing
+              <span className="text-4xl font-serif text-white font-medium mb-6 text-left w-full block">
+                International Conference on Electronics, AI and Computing
               </span>
               <p className="text-gray-900 font-sans text-lg max-w-md text-left w-full">
-                Hardware, Electronics, and Radio Systems | February 13-15, 2026 | NIT Jalandhar
+                December 13-15, 2026 | NIT Jalandhar
               </p>
               <div className="mt-6 flex items-center justify-start w-full">
                 <a
