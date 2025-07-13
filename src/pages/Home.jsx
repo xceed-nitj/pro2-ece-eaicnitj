@@ -1,4 +1,4 @@
-// import Timeline from "../components/Timeline";
+import Timeline from "../components/Timeline";
 // import OurEvents from "../components/OurEvents";
 // import HeroSection from "../components/HeroSection";
 // import Speakers from "../components/SpeakerSection/Speakers";
@@ -65,11 +65,11 @@ function Home(props) {
       </section>
       
       {/* Timeline */}
-      {/* <section className="px-3 md:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
+      <section className="px-3 md:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
         <div className="max-w-7xl mx-auto">
           <Timeline confid={props.confId} />
         </div>
-      </section> */}
+      </section>
 
       {/* Countdown Timers */}
       <section className="px-3 md:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
