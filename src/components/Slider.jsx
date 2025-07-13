@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // -----------------------------------------------------------------------------
 // CONFIGURATION DATA
 // -----------------------------------------------------------------------------
+import nitjlogo from '../../public/logo.png'
 
 /**
  * Static slider data for the hero section
@@ -195,7 +196,20 @@ function Slider(props) {
           {/* Left Content - 40% (hidden on mobile) */}
           <div className="hidden lg:flex w-1/5 pt-28 pb-16 px-8 lg:px-16 flex-col justify-center">
             {/* Decorative dots */}
-         
+        <div className="absolute top-[-5%] left-[8%] mb-16 w-36">
+  <div className="grid grid-cols-2 gap-4">
+    {[...Array(2)].map((_, i) => (
+      <img
+        key={i}
+        src={nitjlogo}
+        alt={`logo-${i}`}
+        className="w-40 h-40 object-contain opacity-90 animate-wobble hover:animate-ping"
+      />
+    ))}
+  </div>
+</div>
+
+
           </div>
 
           {/* Desktop Hero Text Box (hidden on mobile) */}
@@ -237,7 +251,7 @@ function Slider(props) {
                 </a>
               </div>
             </div>
-               <div className="absolute bottom-[-50%] left-[8%] mb-16 w-36">
+               <div className="absolute bottom-[-40%] left-[8%] mb-16 w-36">
               <div className="grid grid-cols-6 gap-2">
                 {[...Array(36)].map((_, i) => (
                   <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal-800/60"></div>
@@ -250,10 +264,10 @@ function Slider(props) {
           <div className="block lg:hidden absolute top-[45%] xs:top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xs:w-[85%] sm:w-[80%] md:w-[70%] max-w-md h-auto bg-white/30 backdrop-blur-sm rounded-lg z-10 border border-white/10 px-4 xs:px-5 sm:px-6 py-5 xs:py-6 sm:py-8">
             <div className="flex flex-col justify-center items-center text-center">
               <span className="text-xl xs:text-2xl sm:text-3xl font-serif text-teal-900 font-medium mb-2 xs:mb-3 sm:mb-4 text-center w-full block">
-                International Conference on Intelligent Processing
+                Second International Conference on Electronics, AI and Computing
               </span>
               <p className="text-gray-900 font-sans text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
-                Hardware, Electronics, and Radio Systems | February 13-15, 2026 | NIT Jalandhar
+                December 13-15, 2026 | NIT Jalandhar
               </p>
               <div className="mt-3 sm:mt-4 flex items-center justify-center w-full">
                 <a
