@@ -67,6 +67,34 @@ function Slider(props) {
     return () => clearInterval(interval);
   }, []);
 
+    // ★ Idle-behind behavior on large screens only
+  // ---------------------------------------------------------------------------
+  const [isIdle, setIsIdle] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    let idleTimer;
+
+    const handleActivity = () => {
+      if (!mq.matches) {
+        // always active on small screens
+        setIsIdle(false);
+        return;
+      }
+      setIsIdle(false);
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => setIsIdle(true), 7000);
+    };
+
+    document.addEventListener('mousemove', handleActivity);
+    document.addEventListener('keydown', handleActivity);
+    handleActivity();
+    return () => {
+      document.removeEventListener('mousemove', handleActivity);
+      document.removeEventListener('keydown', handleActivity);
+      clearTimeout(idleTimer);
+    };
+  }, []);
+
   /**
    * Initialize API URL from environment
    */
@@ -167,25 +195,29 @@ function Slider(props) {
           {/* Left Content - 40% (hidden on mobile) */}
           <div className="hidden lg:flex w-1/5 pt-28 pb-16 px-8 lg:px-16 flex-col justify-center">
             {/* Decorative dots */}
-            <div className="absolute top-[5%] left-[8%] mb-16 w-36">
-              <div className="grid grid-cols-6 gap-2">
-                {[...Array(36)].map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal-800/60"></div>
-                ))}
-              </div>
-            </div>
+         
           </div>
 
           {/* Desktop Hero Text Box (hidden on mobile) */}
-          <div
-            className="hidden lg:block absolute top-[50%] left-[25%] transform -translate-x-1/2 -translate-y-1/2 w-[650px] max-w-xl h-[330px] backdrop-blur-md rounded-lg z-10 border border-white/10"
+        <div
+            className={`
+              hidden lg:block absolute
+              top-[50%] left-[25%] transform -translate-x-1/2 -translate-y-1/2
+              w-[750px] max-w-xl h-[380px]
+              backdrop-blur-md rounded-lg border border-white/10
+              transition-all duration-300
+              ${isIdle
+                ? 'lg:z-0 lg:opacity-50 lg:pointer-events-none'
+                : 'lg:z-10 lg:opacity-100'}
+            `}
             style={{
-              background: "rgba(4, 80, 71, 0.4)", // teal-500 with 18% opacity
+              background:
+                'linear-gradient(45deg, rgba(1, 26, 23, 0.4) 0%, rgba(92, 208, 194, 0.5) 100%)',
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center px-12 text-center">
-              <span className="text-4xl font-serif text-white font-medium mb-6 text-left w-full block">
-                International Conference on Electronics, AI and Computing
+              <span className="text-5xl font-serif text-white font-medium mb-6 text-left w-full block">
+                Second International Conference on Electronics, AI and Computing
               </span>
               <p className="text-gray-900 font-sans text-lg max-w-md text-left w-full">
                 December 13-15, 2026 | NIT Jalandhar
@@ -203,6 +235,13 @@ function Slider(props) {
                 >
                   Register
                 </a>
+              </div>
+            </div>
+               <div className="absolute bottom-[-50%] left-[8%] mb-16 w-36">
+              <div className="grid grid-cols-6 gap-2">
+                {[...Array(36)].map((_, i) => (
+                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal-800/60"></div>
+                ))}
               </div>
             </div>
           </div>

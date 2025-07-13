@@ -163,7 +163,7 @@ export default function Example() {
                       className="text-2xl whitespace-nowrap "
                       style={{ color: COLOR_NAV_CENTER }}
                     >
-                      CIPHER 2026
+                      E A I C 2 0 2 6
                     </span>
                   </div>
 
