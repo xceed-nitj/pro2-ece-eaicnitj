@@ -238,7 +238,7 @@ const CountdownTimer = () => {
 
       {/* Section title */}
       <div className="relative mb-8 sm:mb-12 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-teal-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-teal-900">
           Important Dates
         </h2>
         <div className="mt-2 sm:mt-3">

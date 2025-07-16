@@ -32,84 +32,31 @@ const OrganizingHeads = () => {
   const patrons = [
     {
       name: "Prof. Binod Kumar Kanaujia",
-      position: "Director, NIT Jalandhar",
+      position: "Director, NIT Jalandhar & Faculty Advisor, IEEE Student Branch NIT Jalandhar",
       image: "director.jpg",
     },
-    // {
-    //   name: "Prof. Akash Deep",
-    //   position: "Director, Institute of Nano Science and Technology, Mohali",
-    //   image: "akashdeep.jpeg",
-    // },
   ];
 
-  // const coPatrons = [
-  //   {
-  //     name: "Prof. Ajay Bansal",
-  //     position: "Registrar, NIT Jalandhar",
-  //     image: "ajaybansal.jpg",
-  //   },
-  //   {
-  //     name: "Prof. Rohit Mehra",
-  //     position: "Dean (R&C), NIT Jalandhar",
-  //     image: "rohitmehra.jpg",
-  //   },
-  // ];
-
-  // const coPatrons2 = [
-  //   {
-  //     name: "Prof. H. M. Mittal",
-  //     position: "Head, Physics, NIT Jalandhar",
-  //     image: "mittal.jpg",
-  //   },
-  // ];
-
-  const chairman = [
+  const coPatrons = [
     {
-      name: "Dr. Ashish Raman",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "ashish_raman.jpg",
+      name: "Prof. Ajay Bansal",
+      position: "Registrar (I/C), NIT Jalandhar",
+      image: "ajaybansal.jpg",
     },
     {
-      name: "Dr. Sukwinder Singh",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "sukhwinder.jpg",
+      name: "Prof. A Q Ansari",
+      position: "Chair, IEEE Delhi Section",
+      image: "co_patron.jpg",
     },
     {
-      name: "Dr. Aijaz Mehdi Zaidi",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "zedimedi.jpg",
+      name: "Prof. Rohit Mehra",
+      position: "Dean (R&C), NIT Jalandhar",
+      image: "rohitmehra.jpg",
     },
   ];
 
-  const secretary = [
-    {
-      name: "Dr. Pawan Kumar Verma",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "pkverma.jpg",
-    },
-    {
-      name: "Dr. Ranjeet Kumar Rout",
-      position: "Information Technology, NIT Jalandhar",
-      image: "rkrout.jpeg",
-    },
-    {
-      name: "Dr. Nitesh Kashyap",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "nitesh.jpg",
-    },
-    {
-      name: "Dr. Rohit Singh",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "rohit.jpg",
-    },
-    {
-      name: "Dr. Roshan Bodile",
-      position: "Electronics and Communication Engineering, NIT Jalandhar",
-      image: "bodile.jpg",
-    },
-  ];
-//  Temp change to reopen PR
-  const renderSection = (title, members) => (
+  // Modified renderSection to allow custom className for the card container
+  const renderSection = (title, members, cardContainerClass = "") => (
     <motion.div 
       className="text-center mb-8 sm:mb-12 md:mb-16"
       initial={{ opacity: 0 }}
@@ -125,7 +72,7 @@ const OrganizingHeads = () => {
         {title}
       </motion.h2>
       <div className="flex flex-col items-center justify-center mt-6 sm:mt-8 md:mt-12">
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        <div className={cardContainerClass}>
           {members.map((person, idx) => (
             <ProfileCard key={idx} person={person} index={idx} />
           ))}
@@ -189,7 +136,7 @@ const OrganizingHeads = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-teal-900 mb-2 sm:mb-3 relative inline-block">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-poppins text-teal-900 mb-2 sm:mb-3 relative inline-block">
             Organizing Committee
             <motion.div 
               className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full"
@@ -204,11 +151,15 @@ const OrganizingHeads = () => {
           </p>
         </motion.div>
 
-        {renderSection("Chief Patron", patrons)}
-        {/* {renderSection("Patrons", coPatrons)} */}
-        {/* {renderSection("Co-Patron", coPatrons2)} */}
-        {renderSection("Organising Chairmen", chairman)}
-        {renderSection("Organising Secretaries", secretary)}
+        {renderSection("Patron", patrons, "flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10")}
+        {renderSection(
+          "Co-Patrons",
+          coPatrons,
+          // Use grid with 3 columns on md+ screens, fallback to flex/column on mobile
+          "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center"
+        )}
+        {/* {renderSection("Organising Chairmen", chairman)} */}
+        {/* {renderSection("Organising Secretaries", secretary)} */}
       </div>
     </motion.section>
   );

@@ -166,7 +166,7 @@ const AboutConf = (props) => {
               <motion.div className="space-y-4 sm:space-y-6">
                 {/* Title */}
                 <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-teal-900 font-medium mb-3 sm:mb-6 text-left w-full block">
+                  <h2 className="text-2xl font-poppins sm:text-3xl md:text-4xl  text-teal-900 font-medium mb-3 sm:mb-6 text-left w-full block">
                     About the Conference
                   </h2>
                   <div className="h-0.5 sm:h-1 w-16 sm:w-24 bg-gradient-to-r from-teal-600 to-teal-400 rounded-full"></div>

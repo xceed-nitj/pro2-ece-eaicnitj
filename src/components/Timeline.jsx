@@ -70,8 +70,8 @@ const Timeline = forwardRef((props, ref) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-serif text-teal-900 mb-3 relative inline-block ">
-            Important Dates
+          <h2 className="text-3xl font-poppins font-medium sm:text-4xl text-teal-900 mb-3 relative inline-block ">
+            Timeline
             <motion.div 
               className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full"
               initial={{ width: 0 }}

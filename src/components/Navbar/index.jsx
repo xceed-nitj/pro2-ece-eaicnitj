@@ -35,6 +35,17 @@ const navigationRight = [
   { name: "Location", href: "/6863bcdd9f5bf58c267f065c", current: false },
   
   { name: "Accommodation", href: "/6863b4e57b0acf10390f6b44", current: false },
+
+  {
+    name: (
+      <span style={{ color: "#14b8a6"}}>
+        EAIC 2025
+      </span>
+    ),
+    href: "http://eaic2025.netlify.app",
+    target: "_blank",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -160,7 +171,7 @@ export default function Example() {
                   {/* Left side with CIPHER text */}
                   <div className="flex items-center space-x-10">
                     <span
-                      className="text-2xl whitespace-nowrap "
+                      className="text-2xl whitespace-nowrap font-poppins "
                       style={{ color: COLOR_NAV_CENTER }}
                     >
                       E A I C 2 0 2 6
@@ -264,7 +275,7 @@ export default function Example() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="inline-flex items-center py-2 px-1 text-sm uppercase transition-colors duration-200"
+                            className="inline-flex items-center py-2 px-1 text-sm  uppercase transition-colors duration-200 font-poppins"
                             style={{ color: COLOR_NAV_TEXT }}
                             aria-current={item.current ? "page" : undefined}
                             onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}

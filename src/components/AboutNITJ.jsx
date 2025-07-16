@@ -151,7 +151,7 @@ function AboutNITJ(props) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="inline-block text-xl sm:text-2xl md:text-3xl font-serif text-teal-900 mb-2 sm:mb-3 relative">
+          <h2 className="inline-block text-xl sm:text-2xl md:text-3xl font-medium font-poppins text-teal-900 mb-2 sm:mb-3 relative">
             Dr B R Ambedkar National Institute of Technology Jalandhar
             <motion.div 
               className="absolute -bottom-1 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full"
