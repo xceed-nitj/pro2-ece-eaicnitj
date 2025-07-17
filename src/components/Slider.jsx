@@ -16,7 +16,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // -----------------------------------------------------------------------------
 // CONFIGURATION DATA
 // -----------------------------------------------------------------------------
-import nitjlogo from '../../public/logo.png'
+// import nitjlogo from '../../public/logo.png'
 
 /**
  * Static slider data for the hero section
@@ -42,7 +42,7 @@ const heroImages = [
 // MAIN COMPONENT
 // -----------------------------------------------------------------------------
 
-function Slider(props) {
+const Slider = (props) => {
   // Props and state
   const confid = props.confid;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -195,29 +195,24 @@ function Slider(props) {
         <div className="flex flex-col lg:flex-row h-full w-full max-w-7xl mx-auto">
           {/* Left Content - 40% (hidden on mobile) */}
           <div className="hidden lg:flex w-1/5 pt-28 pb-16 px-8 lg:px-16 flex-col justify-center">
-            {/* Decorative dots */}
-        <div className="absolute top-[-5%] left-[8%] mb-16 w-36">
-  <div className="grid grid-cols-2 gap-4">
-    {[...Array(2)].map((_, i) => (
-      <img
-        key={i}
-        src={nitjlogo}
-        alt={`logo-${i}`}
-        className="w-40 h-40 object-contain opacity-90 animate-wobble hover:animate-ping"
-      />
-    ))}
-  </div>
-</div>
-
-
+            {/* Decorative dots removed */}
+          </div>
+          {/* NITJ Logo - visible on all screen sizes, positioned at top left of hero section */}
+          <div className="hidden lg:flex absolute top-6 left-6 z-20 items-center">
+             <img
+              src="/logo.png"
+              alt="NIT Jalandhar Logo"
+              className="h-14 w-auto ml-24 sm:h-16 md:h-20 object-contain rounded-lg p-1"
+              style={{ maxWidth: "90px" }}
+            />
           </div>
 
           {/* Desktop Hero Text Box (hidden on mobile) */}
-        <div
+          <div
             className={`
               hidden lg:block absolute
-              top-[50%] left-[25%] transform -translate-x-1/2 -translate-y-1/2
-              w-[750px] max-w-xl h-[380px]
+              top-[55%] left-[22%] transform -translate-x-1/2 -translate-y-1/2
+              w-[500px] max-w-lg h-[350px]
               backdrop-blur-md rounded-lg border border-white/10
               transition-all duration-300
               ${isIdle
@@ -230,16 +225,16 @@ function Slider(props) {
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-center items-center px-12 text-center">
-              <span className="text-5xl font-serif text-white font-medium mb-6 text-left w-full block">
+              <span className="text-4xl font-poppins text-white font-medium mb-6 text-left w-full block">
                 Second International Conference on Electronics, AI and Computing
               </span>
-              <p className="text-gray-900 font-sans text-lg max-w-md text-left w-full">
+              <p className="text-gray-900 font-poppins text-lg max-w-md text-left w-full">
                 December 13-15, 2026 | NIT Jalandhar
               </p>
               <div className="mt-6 flex items-center justify-start w-full">
                 <a
                   href="/6863b4da7b0acf10390f6b41"
-                  className="inline-block bg-white hover:bg-teal-50 text-teal-900 text-base font-semibold px-8 py-2 rounded-sm shadow-md transition duration-200 border border-teal-900/20"
+                  className="inline-block bg-white hover:bg-teal-50 text-teal-900 text-base font-semibold px-8 py-2 rounded-sm shadow-md transition duration-200 border border-teal-900/20 font-poppins"
                   style={{
                     fontWeight: 500,
                     borderRadius: "10px",
@@ -251,28 +246,22 @@ function Slider(props) {
                 </a>
               </div>
             </div>
-               <div className="absolute bottom-[-40%] left-[8%] mb-16 w-36">
-              <div className="grid grid-cols-6 gap-2">
-                {[...Array(36)].map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-teal-800/60"></div>
-                ))}
-              </div>
-            </div>
+            {/* Decorative dots removed */}
           </div>
 
           {/* Mobile Hero Text Box (hidden on desktop) */}
           <div className="block lg:hidden absolute top-[45%] xs:top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xs:w-[85%] sm:w-[80%] md:w-[70%] max-w-md h-auto bg-white/30 backdrop-blur-sm rounded-lg z-10 border border-white/10 px-4 xs:px-5 sm:px-6 py-5 xs:py-6 sm:py-8">
             <div className="flex flex-col justify-center items-center text-center">
-              <span className="text-xl xs:text-2xl sm:text-3xl font-serif text-teal-900 font-medium mb-2 xs:mb-3 sm:mb-4 text-center w-full block">
+              <span className="text-xl xs:text-2xl sm:text-3xl font-poppins text-teal-900 font-medium mb-2 xs:mb-3 sm:mb-4 text-center w-full block">
                 Second International Conference on Electronics, AI and Computing
               </span>
-              <p className="text-gray-900 font-sans text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
+              <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
                 December 13-15, 2026 | NIT Jalandhar
               </p>
               <div className="mt-3 sm:mt-4 flex items-center justify-center w-full">
                 <a
                   href="/6863b4da7b0acf10390f6b41"
-                  className="inline-block bg-white hover:bg-teal-50 text-teal-900 text-xs xs:text-sm sm:text-base font-semibold px-4 xs:px-5 sm:px-6 py-1.5 xs:py-2 rounded-sm shadow-md transition duration-200 border border-teal-900/20"
+                  className="inline-block bg-white hover:bg-teal-50 text-teal-900 text-xs xs:text-sm sm:text-base font-semibold px-4 xs:px-5 sm:px-6 py-1.5 xs:py-2 rounded-sm shadow-md transition duration-200 border border-teal-900/20 font-poppins "
                   style={{
                     fontWeight: 500,
                     borderRadius: "10px",

@@ -16,7 +16,7 @@ export default {
           400: "hsl(156, 100%, 50%)", // exact neon green (#00FF9C)
           500: "hsl(156, 90%, 45%)",  // slightly deeper neon
           600: "hsl(156, 85%, 35%)",  // tealish neon green
-          700: "hsl(156, 70%, 25%)",  // deep green
+          700: "#136c49",  // deep green
           800: "hsl(156, 60%, 18%)",  // very dark green
           900: "hsl(156, 50%, 12%)",  // near-black with green hue
           950: "hsl(156, 40%, 8%)",   // almost black
@@ -66,6 +66,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+        poppins: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import FlagCounter from './FlagCounter';
 
 // import { SocialIcon } from "react-social-icons";
 
@@ -133,25 +134,7 @@ const Footer = () => {
             <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6">
               EAIC 2026 is an international conference focused on Intelligent Processing in Hardware, Electronics, and Radio Systems, bringing together experts from academia and industry.
             </p>
-            <div className="flex gap-3 sm:gap-4">
-              {/* Social icons */}
-              {[
-                { icon: "ri-linkedin-fill", url: "#" },
-                { icon: "ri-twitter-fill", url: "#" },
-                { icon: "ri-facebook-fill", url: "#" },
-                { icon: "ri-instagram-line", url: "#" }
-              ].map((social, idx) => (
-                <a 
-                  key={idx} 
-                  href={social.url}
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 hover:bg-teal-600 hover:text-white transition-colors duration-300"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <i className={social.icon}></i>
-                </a>
-              ))}
-            </div>
+            
           </div>
 
           {/* Quick links */}
@@ -228,10 +211,8 @@ const Footer = () => {
         </div>
         
         {/* Flag counter */}
-        <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 overflow-hidden">
-          <a href="https://info.flagcounter.com/0oJR" className="max-w-full">
-            <img src="https://s01.flagcounter.com/count2/0oJR/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" className="max-w-full h-auto" />
-          </a>
+        <div className="mt-6 md:mt-8 flex justify-center md:justify-start">
+          <FlagCounter />
         </div>
         
         {/* Copyright */}
