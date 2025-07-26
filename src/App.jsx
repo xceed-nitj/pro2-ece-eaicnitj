@@ -29,7 +29,7 @@ import Guidelines from "./pages/Guidelines";
 import CommonTemplate from "./pages/CommonTemplate";
 
 function App() {
-   const confid="686270aa85f2e21ce21bfb19";
+   const confid="6884bd85959ec9c788efbba3";
   return (
     <>
 
