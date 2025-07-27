@@ -147,7 +147,7 @@ const OrganizingHeads = () => {
             ></motion.div>
           </h2>
           <p className="text-teal-700 mt-2 sm:mt-4 max-w-2xl mx-auto text-xs sm:text-sm">
-            Meet the distinguished experts who are organizing CIPHER 2026
+            Meet the distinguished experts who are organizing EAIC 2026
           </p>
         </motion.div>
 
