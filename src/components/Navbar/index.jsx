@@ -19,8 +19,17 @@ const COLOR_NAV_BORDER = "#14b8a6"; // teal-500
 
 const navigationLeft = [
   { name: "Home", href: "/", current: true },
-  { name: "Tracks", href: "/6863a71585f2e21ce21c8d42", current: false },
-  { name: "Committees", href: "/6863b4857b0acf10390f6b39", current: false },
+  { name: "Tracks", href: "/6885973a959ec9c788f10545", current: false },
+  { name: "Committees", href: "", current: false,
+     subItems: [
+      { name: "Organising Heads", href: "/688594be959ec9c788f1011b" },
+      { name: "International Advisory Committee", href: "/68859585959ec9c788f10130" },
+      { name: "National Advisory Committee", href: "/688595ab959ec9c788f1018d" },
+      { name: "Technical Committee", href: "/6885960c959ec9c788f1036f" },
+      { name: "Other Committees", href: "/688596b7959ec9c788f10482" },
+
+    ],
+   },
 ];
 const navigationRight = [
   {
@@ -35,6 +44,9 @@ const navigationRight = [
   { name: "Location", href: "/6863bcdd9f5bf58c267f065c", current: false },
   
   { name: "Accommodation", href: "/6863b4e57b0acf10390f6b44", current: false },
+  { name: "Keynote Speakers", href: "/68859782959ec9c788f1056d", current: false },
+  { name: "Contact Us", href: "/6885989c959ec9c788f1084b  ", current: false },
+
 
   {
     name: (
@@ -127,7 +139,7 @@ export default function Example() {
               />
             </svg>
             <a href="tel:+911234567890" className="text-[11px] sm:text-xs lg:text-sm font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
-              +91-12345-67890
+              +91-6280432258
             </a>
           </div>
         </div>
