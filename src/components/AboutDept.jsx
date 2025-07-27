@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 
 const sliderData = [
   { image: "/ece1.jpeg", label: "ECE Department" },
-  { image: "/ece2.png", label: "Research Lab" },
+  // { image: "/ece2.png", label: "Research Lab" },
   { image: "/ece3.png", label: "Innovation Center" },
+  { image: "/ece4.jpg", label: "Academic Block" },
+
   // { image: "/slider2.jpg", label: " " },
 ];
 
@@ -170,7 +172,7 @@ function AboutDept(props) {
             ></motion.div>
           </h2>
           <p className="text-teal-700 mt-2 sm:mt-4 max-w-2xl mx-auto text-xs sm:text-sm">
-            Pioneering research and education in electronics, communications, and signal processing
+            Pioneering research and education in electronics, AI, communications, and signal processing
           </p>
         </motion.div>
 
@@ -202,7 +204,7 @@ function AboutDept(props) {
                 <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
                   {data ? (
                     <div
-                      className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-light"
+                      className="text-xs sm:text-sm text-justify md:text-base text-gray-700 leading-relaxed font-light"
                       dangerouslySetInnerHTML={{
                         __html: highlightKeywords(data.about[2]?.description || ""),
                       }}

@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const sliderData = [
-  { image: "/nitj.png", label: "Innovation at NITJ" },
-  { image: "/ece1.jpeg", label: "Research Excellence" },
+  { image: "/ece3.png", label: "Innovation at NITJ" },
+  // { image: "/ece1.jpeg", label: "Research Excellence" },
   { image: "/ece2.png", label: "Collaborative Learning" },
-  { image: "/ece3.png", label: "Future Technology" },
+  { image: "/ece4.jpg", label: "Future Technology" },
 ];
 
 // Animation variants
@@ -145,11 +145,11 @@ const AboutConf = (props) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
           {/* Left side - Image */}
           <motion.div 
-            className="h-[250px] sm:h-[300px] md:h-[350px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl"
-            variants={itemVariants}
-          >
-            <Slider />
-          </motion.div>
+  className="h-full rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl flex"
+  variants={itemVariants}
+>
+  <Slider />
+</motion.div>
           
           {/* Right side - Content */}
           <motion.div 
@@ -173,9 +173,9 @@ const AboutConf = (props) => {
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-teal-700 text-xs sm:text-sm font-medium tracking-wider uppercase">
+                {/* <p className="text-teal-700 text-xs sm:text-sm font-medium tracking-wider uppercase">
                   International Conference on Innovative Practices in High-End Research
-                </p>
+                </p> */}
 
                 {/* Content */}
                 {isLoading ? (
@@ -207,7 +207,7 @@ const AboutConf = (props) => {
                 )}
 
                 {/* Decorative element */}
-                <motion.div 
+                {/* <motion.div 
                   className="flex items-center pt-3 sm:pt-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -225,7 +225,7 @@ const AboutConf = (props) => {
                     </svg>
                   </motion.div>
                   <div className="flex-grow h-px bg-gradient-to-r from-transparent via-teal-200 to-transparent"></div>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </motion.div>
           </motion.div>

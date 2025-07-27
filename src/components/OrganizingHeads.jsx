@@ -44,9 +44,9 @@ const OrganizingHeads = () => {
       image: "ajaybansal.jpg",
     },
     {
-      name: "Prof. A Q Ansari",
-      position: "Chair, IEEE Delhi Section",
-      image: "co_patron.jpg",
+      name: "Prof. Subrata Mukhopadhyay",
+      position: "Adjunct Professor, NSUT",
+      image: "suba.png",
     },
     {
       name: "Prof. Rohit Mehra",

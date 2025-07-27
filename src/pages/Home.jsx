@@ -74,7 +74,7 @@ function Home(props) {
       {/* Countdown Timers */}
       <section className="px-3 md:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
         <div className="max-w-7xl mx-auto">
-          <CountdownBox />
+          <CountdownBox confid={props.confId}/>
         </div>
       </section>
       

@@ -37,13 +37,13 @@ const navigationRight = [
     href: "",
     current: false,
     subItems: [
-      { name: "Registration Fee", href: "/6863b4cd7b0acf10390f6b3e" },
-      { name: "Registration Link", href: "/6863b4da7b0acf10390f6b41" },
+      { name: "Registration Fee", href: "/6885a873959ec9c788f12867" },
+      { name: "Registration Link", href: "/68859b12959ec9c788f10d16" },
     ],
   },
-  { name: "Location", href: "/6863bcdd9f5bf58c267f065c", current: false },
+  { name: "Location", href: "/6885b8ff959ec9c788f17673", current: false },
   
-  { name: "Accommodation", href: "/6863b4e57b0acf10390f6b44", current: false },
+  { name: "Accommodation", href: "/6885b92d959ec9c788f17730", current: false },
   { name: "Keynote Speakers", href: "/68859782959ec9c788f1056d", current: false },
   { name: "Contact Us", href: "/6885989c959ec9c788f1084b  ", current: false },
 

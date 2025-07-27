@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const sliderData = [
-  { image: "/slider1.jpg", label: "NIT Campus" },
-  { image: "/slider4.jpg", label: "Innovation Hub" },
+  { image: "/img1.jpg", label: "NIT Campus" },
+  { image: "/img2.jpg", label: "Innovation Hub" },
   { image: "/img3.jpg", label: "Research Center" },
-  { image: "/slider2.jpg", label: "Academic Block" },
+  { image: "/ece2.jpg", label: "Academic Block" },
+
 ];
 
 function Slider() {

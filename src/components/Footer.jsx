@@ -132,8 +132,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6">
-              EAIC 2026 is an international conference focused on Intelligent Processing in Hardware, Electronics, and Radio Systems, bringing together experts from academia and industry.
-            </p>
+              EAIC 2026 is an second international conference on Electronics, AI and Computing brings together leading researchers and industry experts to explore cutting‑edge advances in electronic systems, artificial intelligence, and computational methodologies.</p>
             
           </div>
 
@@ -143,11 +142,11 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-2 sm:gap-4">
               {[
                 { name: "Home", href: "/" },
-                { name: "Tracks", href: "/6863a71585f2e21ce21c8d42" },
-                { name: "Committee", href: "/6863b4857b0acf10390f6b39" },
-                { name: "Registration", href: "/6863b4da7b0acf10390f6b41" },
-                { name: "Location", href: "/6863bcdd9f5bf58c267f065c" },
-                { name: "Accommodation", href: "/6863b4e57b0acf10390f6b44" },
+                { name: "Tracks", href: "/6885973a959ec9c788f10545" },
+                { name: "Organising Heads", href: "//688594be959ec9c788f1011b" },
+                { name: "Registration", href: "/68859b12959ec9c788f10d16  " },
+                { name: "Location", href: "/6885b8ff959ec9c788f17673" },
+                { name: "Accommodation", href: "/6885b92d959ec9c788f17730" },
               ].map((link, idx) => (
                 <a 
                   key={idx}
@@ -175,7 +174,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-gray-700 font-medium">Email:</p>
-                  <a href="mailto:cipher@nitj.ac.in" className="text-xs sm:text-sm text-teal-600 hover:text-teal-800 transition-colors duration-300">cipher@nitj.ac.in</a>
+                  <a href="mailto:cipher@nitj.ac.in" className="text-xs sm:text-sm text-teal-600 hover:text-teal-800 transition-colors duration-300">eaic@nitj.ac.in</a>
                 </div>
               </div>
               
@@ -188,8 +187,8 @@ const Footer = () => {
                 <div className="flex flex-col">
                   <p className="text-xs sm:text-sm text-gray-700 font-medium">Phone:</p>
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-600">Dr. Nitesh Kashyap: +91 9753301930</p>
-                    <p className="text-xs sm:text-sm text-gray-600">Dr. Rohit Singh: +91 7087513174</p>
+                    <p className="text-xs sm:text-sm text-gray-600">Dr. Balwinder Raj: 0181-5037855</p>
+                    {/* <p className="text-xs sm:text-sm text-gray-600">Dr. Rohit Singh: +91 7087513174</p> */}
                   </div>
                 </div>
               </div>
@@ -224,7 +223,7 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-[10px] xs:text-xs text-gray-600">
-            © 2024 CIPHER. All rights reserved. Developed and Maintained by{' '}
+            © 2025 EAIC2026. All rights reserved. Developed and Maintained by{' '}
             <a 
               href="https://xceed.nitj.ac.in" 
               target="_blank" 

@@ -229,11 +229,11 @@ const Slider = (props) => {
                 Second International Conference on Electronics, AI and Computing
               </span>
               <p className="text-gray-900 font-poppins text-lg max-w-md text-left w-full">
-                December 13-15, 2026 | NIT Jalandhar
+                October 15-17, 2026 | NIT Jalandhar
               </p>
               <div className="mt-6 flex items-center justify-start w-full">
                 <a
-                  href="/6863b4da7b0acf10390f6b41"
+                  href="/68859b12959ec9c788f10d16"
                   className="inline-block bg-white hover:bg-teal-50 text-teal-900 text-base font-semibold px-8 py-2 rounded-sm shadow-md transition duration-200 border border-teal-900/20 font-poppins"
                   style={{
                     fontWeight: 500,
@@ -349,21 +349,21 @@ const Slider = (props) => {
           <div className="flex flex-wrap justify-center items-center gap-3 xs:gap-4 sm:gap-8 md:gap-12">
             {/* Three featured buttons/logos */}
             <a 
-              href="/submit-paper" 
+              href="/68859b12959ec9c788f10d16" 
               className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
             >
               <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Submit Paper</span>
             </a>
 
             <a 
-              href="/registration" 
+              href="/68859b12959ec9c788f10d16" 
               className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
             >
               <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Register Now</span>
             </a>
 
             <a 
-              href="/contact" 
+              href="/6885989c959ec9c788f1084b" 
               className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
             >
               <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Contact Us</span>
