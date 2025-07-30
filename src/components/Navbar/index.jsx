@@ -147,7 +147,7 @@ export default function Example() {
 
       {/* Main Navigation */}
       <Disclosure as="header" className="bg-white shadow relative">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <div className="mx-auto relative z-20 bg-white">
               <div
@@ -320,58 +320,44 @@ export default function Example() {
                   {[...navLeft, ...navRight].map((item) => (
                     <div key={item.href} className="py-0.5">
                       {item.subItems ? (
-                        <Disclosure>
-                          {({ open }) => (
-                            <>
-                              <Disclosure.Button
-                                className={classNames(
-                                  item.current
-                                    ? "bg-teal-50 text-teal-900"
-                                    : "text-teal-800 hover:bg-teal-50 hover:text-teal-900",
-                                  "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-medium transition-colors"
-                                )}
+                        <>
+                          <button
+                            className={classNames(
+                              item.current
+                                ? "bg-teal-50 text-teal-900"
+                                : "text-teal-800 hover:bg-teal-50 hover:text-teal-900",
+                              "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-medium transition-colors"
+                            )}
+                            // Optionally, you can add expand/collapse logic for submenus here
+                          >
+                            <span>{item.name}</span>
+                            <svg
+                              className="transform transition-transform duration-200"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </button>
+                          <div className="mt-1 space-y-1">
+                            {item.subItems.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                to={subItem.href}
+                                className="block rounded-md py-2 pl-8 pr-3 text-sm font-medium text-teal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors"
+                                onClick={close}
                               >
-                                <span>{item.name}</span>
-                                <svg
-                                  className={classNames(
-                                    "transform transition-transform duration-200",
-                                    open ? "rotate-180" : ""
-                                  )}
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 20 20"
-                                  fill="currentColor"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </Disclosure.Button>
-                              <Transition
-                                enter="transition duration-100 ease-out"
-                                enterFrom="transform scale-95 opacity-0"
-                                enterTo="transform scale-100 opacity-100"
-                                leave="transition duration-75 ease-out"
-                                leaveFrom="transform scale-100 opacity-100"
-                                leaveTo="transform scale-95 opacity-0"
-                              >
-                                <Disclosure.Panel className="mt-1 space-y-1">
-                                  {item.subItems.map((subItem) => (
-                                    <Link
-                                      key={subItem.name}
-                                      to={subItem.href}
-                                      className="block rounded-md py-2 pl-8 pr-3 text-sm font-medium text-teal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors"
-                                    >
-                                      {subItem.name}
-                                    </Link>
-                                  ))}
-                                </Disclosure.Panel>
-                              </Transition>
-                            </>
-                          )}
-                        </Disclosure>
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </>
                       ) : (
                         <Link
                           to={item.href}
@@ -381,6 +367,7 @@ export default function Example() {
                               : "text-teal-800 hover:bg-teal-50 hover:text-teal-900",
                             "block rounded-lg px-3 py-2 text-base font-medium transition-colors"
                           )}
+                          onClick={close}
                         >
                           {item.name}
                         </Link>
