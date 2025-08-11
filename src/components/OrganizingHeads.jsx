@@ -43,11 +43,11 @@ const OrganizingHeads = () => {
       position: "Registrar (I/C), NIT Jalandhar",
       image: "ajaybansal.jpg",
     },
-    {
-      name: "Prof. Subrata Mukhopadhyay",
-      position: "Adjunct Professor, NSUT",
-      image: "suba.png",
-    },
+    //{
+     // name: "Prof. Subrata Mukhopadhyay",
+    //  position: "Adjunct Professor, NSUT",
+    //  image: "suba.png",
+    //},
     {
       name: "Prof. Rohit Mehra",
       position: "Dean (R&C), NIT Jalandhar",
