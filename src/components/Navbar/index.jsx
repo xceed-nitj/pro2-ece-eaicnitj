@@ -166,7 +166,7 @@ export default function Example() {
                     )}
                   </Disclosure.Button>
                   <span className="text-xl font-bold text-teal-700">
-                    EAIC 2026
+                    EAIC 2027
                   </span>
                   <div className="w-6" /> {/* Spacer for centering */}
                 </div>
