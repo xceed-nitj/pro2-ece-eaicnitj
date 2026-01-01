@@ -256,7 +256,10 @@ const Slider = (props) => {
                 Second International Conference on Electronics, AI and Computing
               </span>
               <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
-                October 15-17, 2026 | NIT Jalandhar
+                Theme:  AI-Driven VLSI, Communication, and Computing Architecture
+              </p>
+              <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
+                June 3-5, 2027 | NIT Jalandhar
               </p>
               <div className="mt-3 sm:mt-4 flex items-center justify-center w-full">
                 <a
