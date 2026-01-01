@@ -223,7 +223,7 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-[10px] xs:text-xs text-gray-600">
-            © 2025 EAIC2026. All rights reserved. Developed and Maintained by{' '}
+            © 2025 All rights reserved. Developed and Maintained by{' '}
             <a 
               href="https://xceed.nitj.ac.in" 
               target="_blank" 
