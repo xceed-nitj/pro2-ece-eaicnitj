@@ -127,12 +127,12 @@ const Footer = () => {
             <div className="flex items-center mb-4 sm:mb-6">
               <img src="/nitjlogo.png" alt="NITJ Logo" className="h-10 sm:h-12 mr-3 sm:mr-4" />
               <div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-teal-800">EAIC 2026</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-teal-800">EAIC 2027</h3>
                 <p className="text-xs sm:text-sm text-teal-700">International Conference</p>
               </div>
             </div>
             <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6">
-              EAIC 2026 is an second international conference on Electronics, AI and Computing brings together leading researchers and industry experts to explore cutting‑edge advances in electronic systems, artificial intelligence, and computational methodologies.</p>
+              EAIC 2027 is a second international conference on Electronics, AI and Computing that brings together leading researchers and industry experts to explore cutting‑edge advances in electronic systems, artificial intelligence, and computational methodologies.</p>
             
           </div>
 
