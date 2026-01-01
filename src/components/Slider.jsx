@@ -228,8 +228,11 @@ const Slider = (props) => {
               <span className="text-4xl font-poppins text-white font-medium mb-6 text-left w-full block">
                 Second International Conference on Electronics, AI and Computing
               </span>
-              <p className="text-gray-900 font-poppins text-lg max-w-md text-left w-full">
-                October 15-17, 2026 | NIT Jalandhar
+              <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
+                Theme:  AI-Driven VLSI, Communication, and Computing Architecture
+              </p>
+              <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
+                June 3-5, 2027 | NIT Jalandhar
               </p>
               <div className="mt-6 flex items-center justify-start w-full">
                 <a
