@@ -186,7 +186,7 @@ export default function Example() {
                       className="text-2xl whitespace-nowrap font-poppins "
                       style={{ color: COLOR_NAV_CENTER }}
                     >
-                      E A I C 2 0 2 6
+                      E A I C 2 0 2 7
                     </span>
                   </div>
 
