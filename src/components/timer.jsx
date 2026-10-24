@@ -30,9 +30,9 @@ const CountdownDigit = ({ value, label, color, animate }) => {
   }, [value, animate, controls]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center flex-1 min-w-0 max-w-[2rem] xs:max-w-[2.5rem] sm:max-w-[3rem] md:max-w-[3.5rem] xl:max-w-[4rem]">
       <motion.div
-        className="h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
+        className="w-full h-8 xs:h-10 sm:h-12 md:h-14 xl:h-16
                    rounded-lg sm:rounded-xl perspective-[1000px] relative shadow-lg"
         style={{ transformStyle: 'preserve-3d' }}
       >
@@ -52,8 +52,8 @@ const CountdownDigit = ({ value, label, color, animate }) => {
         </motion.div>
       </motion.div>
 
-      <span className="text-[8px] xs:text-[10px] sm:text-xs lg:text-sm
-                       uppercase mt-1 sm:mt-2 font-medium tracking-wider text-teal-800">
+      <span className="text-[8px] xs:text-[10px] sm:text-xs lg:text-[10px] xl:text-sm
+                       uppercase mt-1 sm:mt-2 font-medium tracking-wider lg:tracking-normal xl:tracking-wider text-teal-800">
         {label}
       </span>
     </div>
@@ -71,20 +71,21 @@ const CountdownCard = ({ title, time, mainColor, delay, description }) => {
 
   return (
     <motion.div
-      className="group w-full"
+      className="group w-full h-full flex flex-col"
       initial={{ opacity: 0, y: 50, rotateY: 25 }}
       whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: delay * 0.2, type: 'spring' }}
     >
       <motion.div
-        className="rounded-xl sm:rounded-2xl overflow-hidden transform-gpu h-full"
+        className="rounded-xl sm:rounded-2xl overflow-hidden transform-gpu flex-1 flex flex-col"
         whileHover={{ scale: 1.03, rotateY: 5, z: 20 }}
         transition={{ duration: 0.4 }}
       >
         {/* Header */}
         <div
-          className="py-2 sm:py-3 px-3 sm:px-4 md:px-5 text-white relative overflow-hidden"
+          className="py-2 sm:py-3 px-3 sm:px-4 md:px-5 text-white relative overflow-hidden
+                     flex items-center min-h-[3rem] sm:min-h-[3.5rem] lg:min-h-[5rem] xl:min-h-[3.5rem]"
           style={{ backgroundColor: mainColor }}
         >
           {[...Array(6)].map((_, i) => (
@@ -118,15 +119,14 @@ const CountdownCard = ({ title, time, mainColor, delay, description }) => {
         </div>
 
         {/* Body */}
-        <div className="bg-white/80 backdrop-blur-md border border-teal-100 p-2 xs:p-3 sm:p-4 md:p-6">
+        <div className="bg-white/80 backdrop-blur-md border border-teal-100 p-2 xs:p-3 sm:p-4 md:p-6 lg:p-3 xl:p-6 flex-1 flex flex-col">
           <p className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-gray-600
-                        mb-2 sm:mb-3 md:mb-4 min-h-[24px] xs:min-h-[28px]
-                        sm:min-h-[32px] md:min-h-[40px]">
+                        mb-2 sm:mb-3 md:mb-4 flex-1">
             {description}
           </p>
 
           {/* Digits */}
-          <div className="flex justify-center gap-1 xs:gap-1.5 sm:gap-2 md:gap-3">
+          <div className="flex justify-center gap-1 xs:gap-1.5 sm:gap-2 md:gap-3 lg:gap-2 xl:gap-3">
             <CountdownDigit value={time.days}    label="days"    color={mainColor} animate={animate} />
             <CountdownDigit value={time.hours}   label="hours"   color={mainColor} animate={animate} />
             <CountdownDigit value={time.minutes} label="minutes" color={mainColor} animate={animate} />
@@ -292,7 +292,7 @@ const CountdownTimer = ({ confid }) => {
       </div>
 
       {/* Cards */}
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr
                       gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
         {cardData.map(({ title, color, description, time, index }) => (
           time && (
