@@ -32,6 +32,15 @@ const heroImages = [
 ];
 
 /**
+ * Buttons under the hero when there are no announcements to show
+ */
+const defaultButtons = [
+  { key: "submit", title: "Submit Paper", href: "/68859b12959ec9c788f10d16" },
+  { key: "register", title: "Register Now", href: "/68859b12959ec9c788f10d16" },
+  { key: "contact", title: "Contact Us", href: "/6885989c959ec9c788f1084b" },
+];
+
+/**
  * Color constants for styling
  */
 // const COLOR_BG_NEWS = "#f0f7f4";  // Light green background
@@ -48,7 +57,6 @@ const Slider = (props) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [apiUrl, setApiUrl] = useState(null);
   const [newsData, setNewsData] = useState([]);
-  const scrollRef = useRef(null);
 
   // -----------------------------------------------------------------------------
   // EFFECTS
@@ -127,33 +135,6 @@ const Slider = (props) => {
       });
   }, [apiUrl, confid]);
 
-  /**
-   * Auto-scroll news items when news data is loaded
-   */
-  useEffect(() => {
-    if (!newsData.length) return;
-    
-    const container = scrollRef.current;
-    let reqId;
-    const scrollAmount = 0.5;
-
-    function animate() {
-      if (container) {
-        container.scrollLeft += scrollAmount;
-        if (
-          container.scrollLeft + container.offsetWidth >=
-          container.scrollWidth
-        ) {
-          container.scrollLeft = 0;
-        }
-      }
-      reqId = requestAnimationFrame(animate);
-    }
-
-    reqId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(reqId);
-  }, [newsData]);
-
   // Warm the browser cache for the other slides once the first one is on
   // screen, so they don't compete with it for bandwidth. The slider never
   // waits on this: the current slide renders straight away, and one slow or
@@ -167,6 +148,15 @@ const Slider = (props) => {
       img.src = src;
     });
   };
+
+  const announcements = newsData.filter((item) => !item.hidden && item.title);
+  const buttons = announcements.length
+    ? announcements.map((item) => ({
+        key: item._id,
+        title: item.title,
+        href: item.link ? item.link.trim() : `/news/${item._id}`,
+      }))
+    : defaultButtons;
 
   // Navigation functions for slider
   const nextSlide = () => {
@@ -188,7 +178,7 @@ const Slider = (props) => {
   return (
     <div className="w-full  sm:min-h-screen flex flex-col relative">
       {/* Hero Section with Image Slider */}
-      <section className="relative  overflow-hidden h-[50vh] sm:h-[80vh] md:h-[90vh] px-4 sm:px-6 lg:px-8">
+      <section className="relative  overflow-hidden h-[50vh] sm:h-[80vh] md:h-[90vh] lg:min-h-[500px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row h-full w-full max-w-7xl mx-auto">
           {/* Left Content - 40% (hidden on mobile) */}
           <div className="hidden lg:flex w-1/5 pt-28 pb-16 px-8 lg:px-16 flex-col justify-center">
@@ -208,7 +198,7 @@ const Slider = (props) => {
           <div
             className={`
               hidden lg:block absolute
-              top-[55%] left-[22%] transform -translate-x-1/2 -translate-y-1/2
+              top-[max(55%,300px)] left-[max(22%,266px)] transform -translate-x-1/2 -translate-y-1/2
               w-[500px] max-w-lg h-[350px]
               backdrop-blur-md rounded-lg border border-white/10
               transition-all duration-300
@@ -229,7 +219,7 @@ const Slider = (props) => {
                 Theme:  AI-Driven VLSI, Communication, and Computing Architecture
               </p>
               <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
-                June 3-5, 2027 | NIT Jalandhar
+                November 12-14, 2027 | NIT Jalandhar
               </p>
               <div className="mt-6 flex items-center justify-start w-full">
                 <a
@@ -259,7 +249,7 @@ const Slider = (props) => {
                 Theme:  AI-Driven VLSI, Communication, and Computing Architecture
               </p>
               <p className="text-gray-900 font-poppins text-xs xs:text-sm sm:text-base max-w-xs text-center w-full">
-                June 3-5, 2027 | NIT Jalandhar
+                November 12-14, 2027 | NIT Jalandhar
               </p>
               <div className="mt-3 sm:mt-4 flex items-center justify-center w-full">
                 <a
@@ -348,27 +338,18 @@ const Slider = (props) => {
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-3 xs:gap-4 sm:gap-8 md:gap-12">
-            {/* Three featured buttons/logos */}
-            <a 
-              href="/68859b12959ec9c788f10d16" 
-              className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
-            >
-              <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Submit Paper</span>
-            </a>
-
-            <a 
-              href="/68859b12959ec9c788f10d16" 
-              className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
-            >
-              <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Register Now</span>
-            </a>
-
-            <a 
-              href="/6885989c959ec9c788f1084b" 
-              className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
-            >
-              <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">Contact Us</span>
-            </a>
+            {/* One button per announcement: its heading, linking to its link
+                (or its news page when it has none) */}
+            {buttons.map((button) => (
+              <a
+                key={button.key}
+                href={button.href}
+                {...(/^https?:\/\//.test(button.href) && { target: "_blank", rel: "noopener noreferrer" })}
+                className="flex items-center justify-center bg-white py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200"
+              >
+                <span className="text-teal-800 text-xs xs:text-sm sm:text-base font-semibold">{button.title}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
