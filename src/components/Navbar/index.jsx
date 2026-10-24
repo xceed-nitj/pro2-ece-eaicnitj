@@ -108,7 +108,7 @@ export default function Example() {
               viewBox="0 0 24 24"
               strokeWidth="1"
               stroke="currentColor"
-              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-100"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -116,7 +116,7 @@ export default function Example() {
                 d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9m19.5 0l-9.75 6.75L2.25 7.5m19.5 0L12 14.25 2.25 7.5"
               />
             </svg>
-            <a href="mailto:cipher@nitj.ac.in" className="text-[11px] sm:text-xs font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
+            <a href="mailto:eaic@nitj.ac.in" className="text-[11px] sm:text-xs font-medium tracking-wide text-white hover:text-teal-100 transition-colors">
               eaic@nitj.ac.in
             </a>
           </div>
@@ -130,7 +130,7 @@ export default function Example() {
               viewBox="0 0 24 24"
               strokeWidth="1"
               stroke="currentColor"
-              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-100"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -138,7 +138,7 @@ export default function Example() {
                 d="M2.25 6.75c0-.621.504-1.125 1.125-1.125h3.375c.444 0 .84.255 1.03.654l1.174 2.348a1.125 1.125 0 01-.21 1.248l-1.239 1.238a11.25 11.25 0 005.303 5.303l1.238-1.239a1.125 1.125 0 011.248-.21l2.348 1.174c.399.19.654.586.654 1.03v3.375c0 .621-.504 1.125-1.125 1.125h-.75C10.67 20.25 3.75 13.33 3.75 5.25v-.75z"
               />
             </svg>
-            <a href="tel:+911234567890" className="text-[11px] sm:text-xs font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
+            <a href="tel:+916280432258" className="text-[11px] sm:text-xs font-medium tracking-wide text-white hover:text-teal-100 transition-colors">
               +91-6280432258
             </a>
           </div>
