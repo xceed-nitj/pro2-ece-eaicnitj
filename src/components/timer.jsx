@@ -194,7 +194,7 @@ const CountdownTimer = ({ confid }) => {
       submission: new Date(datesData[0].date),
       acceptance: new Date(datesData[1].date),
       registration: new Date(datesData[3].date),
-      conference: new Date('2026-10-15T09:00:00'),
+      conference: new Date('2027-11-12T09:00:00'),
     };
 
     const tick = () => {
