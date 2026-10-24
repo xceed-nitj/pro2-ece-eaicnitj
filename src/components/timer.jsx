@@ -164,39 +164,64 @@ const CountdownCard = ({ title, time, mainColor, delay, description }) => {
   );
 };
 
+// Used when the important dates can't be loaded or one isn't there:
+// the dates in the EAIC 2027 brochure.
+const fallbackTargets = {
+  submission:   new Date('2027-06-05T23:59:59+05:30'),
+  acceptance:   new Date('2027-07-25T23:59:59+05:30'),
+  registration: new Date('2027-09-05T23:59:59+05:30'),
+  conference:   new Date('2027-11-12T09:00:00+05:30'),
+};
+
+const IST_OFFSET_MS = (5 * 60 + 30) * 60 * 1000;
+
+// An important date's deadline: the end of its day in India, using the new
+// date when it has been extended.
+const deadlineOf = (item) => {
+  const date = new Date(item.extended && item.newDate ? item.newDate : item.date);
+  const day = new Date(+date + IST_OFFSET_MS).toISOString().slice(0, 10);
+  return new Date(`${day}T23:59:59+05:30`);
+};
+
+// Pick each countdown's important date by its title, so the order the
+// dates are entered in doesn't matter. Acceptance counts down to the first
+// notification, registration to the last (late) deadline.
+const targetsFrom = (dates) => {
+  const find = (pattern, pick) => {
+    const deadlines = dates
+      .filter((item) => item.title && item.date && pattern.test(item.title))
+      .map(deadlineOf)
+      .sort((x, y) => x - y);
+    return deadlines.length ? pick(deadlines) : undefined;
+  };
+  const first = (list) => list[0];
+  const last = (list) => list[list.length - 1];
+  return {
+    submission:   find(/submission/i, last) || fallbackTargets.submission,
+    acceptance:   find(/acceptance|notification/i, first) || fallbackTargets.acceptance,
+    registration: find(/registration/i, last) || fallbackTargets.registration,
+    conference:   fallbackTargets.conference,
+  };
+};
+
 // Top‐level timer component
 const CountdownTimer = ({ confid }) => {
-  const [datesData, setDatesData] = useState([]);
+  const [targets, setTargets] = useState(fallbackTargets);
   const [times, setTimes]     = useState({});
-  const [apiUrl, setApiUrl]   = useState(null);
   const sectionRef = useRef(null);
 
-  // 1. get base URL
+  // the conference's important dates
   useEffect(() => {
-    getEnvironment().then(setApiUrl);
-  }, []);
+    getEnvironment()
+      .then((apiUrl) => axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
+        withCredentials: true,
+      }))
+      .then((res) => setTargets(targetsFrom(res.data)))
+      .catch(console.error);
+  }, [confid]);
 
-  // 2. fetch datesData
+  // compute & update times
   useEffect(() => {
-    if (!apiUrl) return;
-    axios.get(`${apiUrl}/conferencemodule/eventDates/conference/${confid}`, {
-      withCredentials: true,
-    })
-    .then(res => setDatesData(res.data))
-    .catch(console.error);
-  }, [apiUrl, confid]);
-
-  // 3. compute & update times
-  useEffect(() => {
-    if (!datesData || datesData.length < 4) return;
-
-    const targets = {
-      submission: new Date(datesData[0].date),
-      acceptance: new Date(datesData[1].date),
-      registration: new Date(datesData[3].date),
-      conference: new Date('2026-10-15T09:00:00'),
-    };
-
     const tick = () => {
       setTimes({
         submission:  getTimeLeft(targets.submission),
@@ -209,7 +234,7 @@ const CountdownTimer = ({ confid }) => {
     tick();
     const interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
-  }, [datesData]);
+  }, [targets]);
 
   // color + data mapping
   const cardData = [
