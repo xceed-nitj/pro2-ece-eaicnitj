@@ -94,7 +94,7 @@ export default function Example() {
       <div
         className="w-full flex items-center justify-between flex-wrap p-1 relative z-20"
         style={{ 
-          height: "30px",
+          height: "24px",
           background: "linear-gradient(90deg, #0f766e 0%, #2c5252 100%)"
         }}
       >
@@ -108,7 +108,7 @@ export default function Example() {
               viewBox="0 0 24 24"
               strokeWidth="1"
               stroke="currentColor"
-              className="w-4 h-4 sm:w-5 sm:h-5 text-teal-100"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-100"
             >
               <path
                 strokeLinecap="round"
@@ -116,7 +116,7 @@ export default function Example() {
                 d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9m19.5 0l-9.75 6.75L2.25 7.5m19.5 0L12 14.25 2.25 7.5"
               />
             </svg>
-            <a href="mailto:cipher@nitj.ac.in" className="text-[11px] sm:text-xs lg:text-sm font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
+            <a href="mailto:cipher@nitj.ac.in" className="text-[11px] sm:text-xs font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
               eaic@nitj.ac.in
             </a>
           </div>
@@ -130,7 +130,7 @@ export default function Example() {
               viewBox="0 0 24 24"
               strokeWidth="1"
               stroke="currentColor"
-              className="w-4 h-4 sm:w-5 sm:h-5 text-teal-100"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-100"
             >
               <path
                 strokeLinecap="round"
@@ -138,7 +138,7 @@ export default function Example() {
                 d="M2.25 6.75c0-.621.504-1.125 1.125-1.125h3.375c.444 0 .84.255 1.03.654l1.174 2.348a1.125 1.125 0 01-.21 1.248l-1.239 1.238a11.25 11.25 0 005.303 5.303l1.238-1.239a1.125 1.125 0 011.248-.21l2.348 1.174c.399.19.654.586.654 1.03v3.375c0 .621-.504 1.125-1.125 1.125h-.75C10.67 20.25 3.75 13.33 3.75 5.25v-.75z"
               />
             </svg>
-            <a href="tel:+911234567890" className="text-[11px] sm:text-xs lg:text-sm font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
+            <a href="tel:+911234567890" className="text-[11px] sm:text-xs font-medium tracking-wide text-teal-100 hover:text-white transition-colors">
               +91-6280432258
             </a>
           </div>
@@ -151,12 +151,12 @@ export default function Example() {
           <>
             <div className="mx-auto relative z-20 bg-white">
               <div
-                className="relative px-2 sm:px-4 lg:px-8 flex h-12 justify-between items-center"
+                className="relative px-2 sm:px-4 lg:px-8 flex h-10 justify-between items-center"
                 style={{ background: COLOR_NAV_OPTION_BG, borderColor: COLOR_NAV_BORDER }}
               >
                 {/* Mobile menu button and logo */}
                 <div className="flex items-center justify-between w-full lg:hidden">
-                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-teal-800 hover:bg-teal-50 hover:text-teal-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500 transition-colors">
+                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-1.5 text-teal-800 hover:bg-teal-50 hover:text-teal-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500 transition-colors">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open menu</span>
                     {open ? (
@@ -165,14 +165,14 @@ export default function Example() {
                       <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
-                  <span className="text-xl font-bold text-teal-700">
+                  <span className="text-lg font-bold text-teal-700">
                     EAIC 2027
                   </span>
                   <div className="w-6" /> {/* Spacer for centering */}
                 </div>
                 
                 <nav
-                  className="hidden lg:flex items-center justify-between w-full px-4"
+                  className="hidden lg:flex items-center justify-between gap-4 w-full xl:px-4"
                   aria-label="Global"
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
@@ -183,7 +183,7 @@ export default function Example() {
                   {/* Left side with CIPHER text */}
                   <div className="flex items-center space-x-10">
                     <span
-                      className="text-2xl whitespace-nowrap font-poppins "
+                      className="text-xl xl:text-2xl whitespace-nowrap font-poppins "
                       style={{ color: COLOR_NAV_CENTER }}
                     >
                       E A I C 2 0 2 7
@@ -191,14 +191,14 @@ export default function Example() {
                   </div>
 
                   {/* Center navigation */}
-                  <div className="flex items-center justify-center space-x-6">
+                  <div className="flex items-center justify-center space-x-1 xl:space-x-2">
                     {navLeft.map((item) => (
                       <div key={item.name} className="relative group">
                         {item.subItems ? (
                           <>
                             <Link
                               to={item.href}
-                              className="inline-flex items-center py-2 px-3 text-sm uppercase font-medium transition-colors duration-200"
+                              className="inline-flex items-center py-1 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap font-medium transition-colors duration-200"
                               style={{ color: COLOR_NAV_TEXT }}
                               aria-current={item.current ? "page" : undefined}
                               onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -226,7 +226,7 @@ export default function Example() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="inline-flex items-center py-2 px-1 text-sm uppercase transition-colors duration-200"
+                            className="inline-flex items-center py-1 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200"
                             style={{ color: COLOR_NAV_TEXT }}
                             aria-current={item.current ? "page" : undefined}
                             onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -259,7 +259,7 @@ export default function Example() {
                           <>
                             <Link
                               to={item.href}
-                              className="inline-flex items-center py-2 px-3 text-sm uppercase transition-colors duration-200"
+                              className="inline-flex items-center py-1 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200"
                               style={{ color: COLOR_NAV_TEXT }}
                               aria-current={item.current ? "page" : undefined}
                               onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -287,7 +287,7 @@ export default function Example() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="inline-flex items-center py-2 px-1 text-sm  uppercase transition-colors duration-200 font-poppins"
+                            className="inline-flex items-center py-1 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200 font-poppins"
                             style={{ color: COLOR_NAV_TEXT }}
                             aria-current={item.current ? "page" : undefined}
                             onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
