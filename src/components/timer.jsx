@@ -71,20 +71,21 @@ const CountdownCard = ({ title, time, mainColor, delay, description }) => {
 
   return (
     <motion.div
-      className="group w-full"
+      className="group w-full h-full flex flex-col"
       initial={{ opacity: 0, y: 50, rotateY: 25 }}
       whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: delay * 0.2, type: 'spring' }}
     >
       <motion.div
-        className="rounded-xl sm:rounded-2xl overflow-hidden transform-gpu h-full"
+        className="rounded-xl sm:rounded-2xl overflow-hidden transform-gpu flex-1 flex flex-col"
         whileHover={{ scale: 1.03, rotateY: 5, z: 20 }}
         transition={{ duration: 0.4 }}
       >
         {/* Header */}
         <div
-          className="py-2 sm:py-3 px-3 sm:px-4 md:px-5 text-white relative overflow-hidden"
+          className="py-2 sm:py-3 px-3 sm:px-4 md:px-5 text-white relative overflow-hidden
+                     flex items-center min-h-[3rem] sm:min-h-[3.5rem] lg:min-h-[5rem] xl:min-h-[3.5rem]"
           style={{ backgroundColor: mainColor }}
         >
           {[...Array(6)].map((_, i) => (
@@ -118,10 +119,9 @@ const CountdownCard = ({ title, time, mainColor, delay, description }) => {
         </div>
 
         {/* Body */}
-        <div className="bg-white/80 backdrop-blur-md border border-teal-100 p-2 xs:p-3 sm:p-4 md:p-6 lg:p-3 xl:p-6">
+        <div className="bg-white/80 backdrop-blur-md border border-teal-100 p-2 xs:p-3 sm:p-4 md:p-6 lg:p-3 xl:p-6 flex-1 flex flex-col">
           <p className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-gray-600
-                        mb-2 sm:mb-3 md:mb-4 min-h-[24px] xs:min-h-[28px]
-                        sm:min-h-[32px] md:min-h-[40px]">
+                        mb-2 sm:mb-3 md:mb-4 flex-1">
             {description}
           </p>
 
@@ -292,7 +292,7 @@ const CountdownTimer = ({ confid }) => {
       </div>
 
       {/* Cards */}
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr
                       gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
         {cardData.map(({ title, color, description, time, index }) => (
           time && (
