@@ -172,7 +172,7 @@ export default function Example() {
                 </div>
                 
                 <nav
-                  className="hidden lg:flex items-center justify-between w-full px-4"
+                  className="hidden lg:flex items-center justify-between gap-4 w-full xl:px-4"
                   aria-label="Global"
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
@@ -183,7 +183,7 @@ export default function Example() {
                   {/* Left side with CIPHER text */}
                   <div className="flex items-center space-x-10">
                     <span
-                      className="text-2xl whitespace-nowrap font-poppins "
+                      className="text-xl xl:text-2xl whitespace-nowrap font-poppins "
                       style={{ color: COLOR_NAV_CENTER }}
                     >
                       E A I C 2 0 2 7
@@ -191,14 +191,14 @@ export default function Example() {
                   </div>
 
                   {/* Center navigation */}
-                  <div className="flex items-center justify-center space-x-6">
+                  <div className="flex items-center justify-center space-x-1 xl:space-x-2">
                     {navLeft.map((item) => (
                       <div key={item.name} className="relative group">
                         {item.subItems ? (
                           <>
                             <Link
                               to={item.href}
-                              className="inline-flex items-center py-2 px-3 text-sm uppercase font-medium transition-colors duration-200"
+                              className="inline-flex items-center py-2 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap font-medium transition-colors duration-200"
                               style={{ color: COLOR_NAV_TEXT }}
                               aria-current={item.current ? "page" : undefined}
                               onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -226,7 +226,7 @@ export default function Example() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="inline-flex items-center py-2 px-1 text-sm uppercase transition-colors duration-200"
+                            className="inline-flex items-center py-2 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200"
                             style={{ color: COLOR_NAV_TEXT }}
                             aria-current={item.current ? "page" : undefined}
                             onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -259,7 +259,7 @@ export default function Example() {
                           <>
                             <Link
                               to={item.href}
-                              className="inline-flex items-center py-2 px-3 text-sm uppercase transition-colors duration-200"
+                              className="inline-flex items-center py-2 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200"
                               style={{ color: COLOR_NAV_TEXT }}
                               aria-current={item.current ? "page" : undefined}
                               onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
@@ -287,7 +287,7 @@ export default function Example() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="inline-flex items-center py-2 px-1 text-sm  uppercase transition-colors duration-200 font-poppins"
+                            className="inline-flex items-center py-2 px-1 xl:px-2 text-xs xl:text-sm uppercase whitespace-nowrap transition-colors duration-200 font-poppins"
                             style={{ color: COLOR_NAV_TEXT }}
                             aria-current={item.current ? "page" : undefined}
                             onMouseOver={e => (e.currentTarget.style.color = COLOR_NAV_TEXT_HOVER)}
