@@ -116,7 +116,7 @@ function RegistrationFee() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="https://eaicnitj.com/"
+                href="https://eaicnitjal.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-teal-700 hover:bg-teal-800 text-white font-medium px-6 py-2 rounded-lg shadow-md transition-colors"
