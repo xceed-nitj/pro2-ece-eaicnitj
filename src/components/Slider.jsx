@@ -49,7 +49,6 @@ const Slider = (props) => {
   const [apiUrl, setApiUrl] = useState(null);
   const [newsData, setNewsData] = useState([]);
   const scrollRef = useRef(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // -----------------------------------------------------------------------------
   // EFFECTS
@@ -155,21 +154,19 @@ const Slider = (props) => {
     return () => cancelAnimationFrame(reqId);
   }, [newsData]);
 
-  // Preload images
-  useEffect(() => {
-    const loadImage = (src) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-    };
-
-    Promise.all(heroImages.map(loadImage))
-      .then(() => setImagesLoaded(true))
-      .catch(console.error);
-  }, []);
+  // Warm the browser cache for the other slides once the first one is on
+  // screen, so they don't compete with it for bandwidth. The slider never
+  // waits on this: the current slide renders straight away, and one slow or
+  // missing image no longer leaves the whole hero blank.
+  const preloaded = useRef(false);
+  const preloadOtherSlides = () => {
+    if (preloaded.current) return;
+    preloaded.current = true;
+    heroImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  };
 
   // Navigation functions for slider
   const nextSlide = () => {
@@ -283,28 +280,26 @@ const Slider = (props) => {
         
           {/* Right Image Section - 60% */}
           <div className="w-full md:relative h-[350px] xs:h-[400px] sm:h-[450px] md:h-[500px] m-0 p-0 rounded-none overflow-hidden lg:ml-auto lg:w-4/5 lg:h-[90%] lg:mt-[2vh] lg:rounded-lg">
-            {imagesLoaded && (
-              <AnimatePresence >
-                <motion.div
-                  key={currentImageIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ 
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute inset-0"
-                >
-                  <img 
-                    src={heroImages[currentImageIndex]}
-                    alt={`Conference image ${currentImageIndex + 1}`}
-                    className="h-full w-full object-cover"
-                    style={{ opacity: imagesLoaded ? 1 : 0 }}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            )}
+            <AnimatePresence >
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ 
+                  duration: 0.3,
+                  ease: "easeInOut"
+                }}
+                className="absolute inset-0"
+              >
+                <img 
+                  src={heroImages[currentImageIndex]}
+                  alt={`Conference image ${currentImageIndex + 1}`}
+                  className="h-full w-full object-cover"
+                  onLoad={preloadOtherSlides}
+                />
+              </motion.div>
+            </AnimatePresence>
             
             {/* Navigation Arrows */}
             <div className="absolute bottom-2 xs:bottom-3 sm:bottom-4 right-2 xs:right-3 sm:right-4 z-10 flex flex-row gap-2 xs:gap-3 sm:gap-4 lg:bottom-10 lg:right-10">
