@@ -151,13 +151,8 @@ const OrganizingHeads = () => {
           </p>
         </motion.div>
 
-        {renderSection("Patron", patrons, "flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10")}
-        {renderSection(
-          "Co-Patrons",
-          coPatrons,
-          // Use grid with 3 columns on md+ screens, fallback to flex/column on mobile
-          "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center"
-        )}
+        {renderSection("Patron", patrons, "w-full flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10")}
+        {renderSection("Co-Patrons", coPatrons, "w-full flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10")}
         {/* {renderSection("Organising Chairmen", chairman)} */}
         {/* {renderSection("Organising Secretaries", secretary)} */}
       </div>
